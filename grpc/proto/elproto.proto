@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpcserver;
+
+// Define the request message containing the input data
+message MovingAverageRequest {
+    repeated double input = 1; // Vector of complex numbers, represented by interleaving real and imaginary parts
+    int32 window_size = 2;
+}
+
+// Define the response message containing the output data
+message MovingAverageResponse {
+    repeated double output = 1; // Resulting vector, represented by interleaving real and imaginary parts
+}
+
+// Define the gRPC service
+service SignalProcessingService {
+    rpc ComputeMovingAverage(MovingAverageRequest) returns (MovingAverageResponse);
+}
