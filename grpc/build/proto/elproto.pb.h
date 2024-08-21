@@ -49,20 +49,17 @@ struct TableStruct_proto_2felproto_2eproto {
 };
 extern const ::google::protobuf::internal::DescriptorTable
     descriptor_table_proto_2felproto_2eproto;
-namespace grpcserver {
 class MovingAverageRequest;
 struct MovingAverageRequestDefaultTypeInternal;
 extern MovingAverageRequestDefaultTypeInternal _MovingAverageRequest_default_instance_;
 class MovingAverageResponse;
 struct MovingAverageResponseDefaultTypeInternal;
 extern MovingAverageResponseDefaultTypeInternal _MovingAverageResponse_default_instance_;
-}  // namespace grpcserver
 namespace google {
 namespace protobuf {
 }  // namespace protobuf
 }  // namespace google
 
-namespace grpcserver {
 
 // ===================================================================
 
@@ -70,7 +67,7 @@ namespace grpcserver {
 // -------------------------------------------------------------------
 
 class MovingAverageResponse final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcserver.MovingAverageResponse) */ {
+/* @@protoc_insertion_point(class_definition:MovingAverageResponse) */ {
  public:
   inline MovingAverageResponse() : MovingAverageResponse(nullptr) {}
   ~MovingAverageResponse() override;
@@ -176,7 +173,7 @@ class MovingAverageResponse final : public ::google::protobuf::Message
   void InternalSwap(MovingAverageResponse* other);
  private:
   friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcserver.MovingAverageResponse"; }
+  static ::absl::string_view FullMessageName() { return "MovingAverageResponse"; }
 
  protected:
   explicit MovingAverageResponse(::google::protobuf::Arena* arena);
@@ -214,7 +211,7 @@ class MovingAverageResponse final : public ::google::protobuf::Message
   ::google::protobuf::RepeatedField<double>* _internal_mutable_output();
 
   public:
-  // @@protoc_insertion_point(class_scope:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(class_scope:MovingAverageResponse)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -245,7 +242,7 @@ class MovingAverageResponse final : public ::google::protobuf::Message
 // -------------------------------------------------------------------
 
 class MovingAverageRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:grpcserver.MovingAverageRequest) */ {
+/* @@protoc_insertion_point(class_definition:MovingAverageRequest) */ {
  public:
   inline MovingAverageRequest() : MovingAverageRequest(nullptr) {}
   ~MovingAverageRequest() override;
@@ -351,7 +348,7 @@ class MovingAverageRequest final : public ::google::protobuf::Message
   void InternalSwap(MovingAverageRequest* other);
  private:
   friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() { return "grpcserver.MovingAverageRequest"; }
+  static ::absl::string_view FullMessageName() { return "MovingAverageRequest"; }
 
  protected:
   explicit MovingAverageRequest(::google::protobuf::Arena* arena);
@@ -400,7 +397,7 @@ class MovingAverageRequest final : public ::google::protobuf::Message
   void _internal_set_window_size(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(class_scope:MovingAverageRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -458,26 +455,26 @@ inline void MovingAverageRequest::clear_input() {
   _impl_.input_.Clear();
 }
 inline double MovingAverageRequest::input(int index) const {
-  // @@protoc_insertion_point(field_get:grpcserver.MovingAverageRequest.input)
+  // @@protoc_insertion_point(field_get:MovingAverageRequest.input)
   return _internal_input().Get(index);
 }
 inline void MovingAverageRequest::set_input(int index, double value) {
   _internal_mutable_input()->Set(index, value);
-  // @@protoc_insertion_point(field_set:grpcserver.MovingAverageRequest.input)
+  // @@protoc_insertion_point(field_set:MovingAverageRequest.input)
 }
 inline void MovingAverageRequest::add_input(double value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _internal_mutable_input()->Add(value);
-  // @@protoc_insertion_point(field_add:grpcserver.MovingAverageRequest.input)
+  // @@protoc_insertion_point(field_add:MovingAverageRequest.input)
 }
 inline const ::google::protobuf::RepeatedField<double>& MovingAverageRequest::input() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:grpcserver.MovingAverageRequest.input)
+  // @@protoc_insertion_point(field_list:MovingAverageRequest.input)
   return _internal_input();
 }
 inline ::google::protobuf::RepeatedField<double>* MovingAverageRequest::mutable_input()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_list:grpcserver.MovingAverageRequest.input)
+  // @@protoc_insertion_point(field_mutable_list:MovingAverageRequest.input)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_input();
 }
@@ -497,12 +494,12 @@ inline void MovingAverageRequest::clear_window_size() {
   _impl_.window_size_ = 0;
 }
 inline ::int32_t MovingAverageRequest::window_size() const {
-  // @@protoc_insertion_point(field_get:grpcserver.MovingAverageRequest.window_size)
+  // @@protoc_insertion_point(field_get:MovingAverageRequest.window_size)
   return _internal_window_size();
 }
 inline void MovingAverageRequest::set_window_size(::int32_t value) {
   _internal_set_window_size(value);
-  // @@protoc_insertion_point(field_set:grpcserver.MovingAverageRequest.window_size)
+  // @@protoc_insertion_point(field_set:MovingAverageRequest.window_size)
 }
 inline ::int32_t MovingAverageRequest::_internal_window_size() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
@@ -529,26 +526,26 @@ inline void MovingAverageResponse::clear_output() {
   _impl_.output_.Clear();
 }
 inline double MovingAverageResponse::output(int index) const {
-  // @@protoc_insertion_point(field_get:grpcserver.MovingAverageResponse.output)
+  // @@protoc_insertion_point(field_get:MovingAverageResponse.output)
   return _internal_output().Get(index);
 }
 inline void MovingAverageResponse::set_output(int index, double value) {
   _internal_mutable_output()->Set(index, value);
-  // @@protoc_insertion_point(field_set:grpcserver.MovingAverageResponse.output)
+  // @@protoc_insertion_point(field_set:MovingAverageResponse.output)
 }
 inline void MovingAverageResponse::add_output(double value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _internal_mutable_output()->Add(value);
-  // @@protoc_insertion_point(field_add:grpcserver.MovingAverageResponse.output)
+  // @@protoc_insertion_point(field_add:MovingAverageResponse.output)
 }
 inline const ::google::protobuf::RepeatedField<double>& MovingAverageResponse::output() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:grpcserver.MovingAverageResponse.output)
+  // @@protoc_insertion_point(field_list:MovingAverageResponse.output)
   return _internal_output();
 }
 inline ::google::protobuf::RepeatedField<double>* MovingAverageResponse::mutable_output()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_list:grpcserver.MovingAverageResponse.output)
+  // @@protoc_insertion_point(field_mutable_list:MovingAverageResponse.output)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   return _internal_mutable_output();
 }
@@ -567,7 +564,6 @@ inline ::google::protobuf::RepeatedField<double>* MovingAverageResponse::_intern
 #endif  // __GNUC__
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace grpcserver
 
 
 // @@protoc_insertion_point(global_scope)

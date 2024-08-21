@@ -21,7 +21,6 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::google::protobuf;
 namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
-namespace grpcserver {
 
 inline constexpr MovingAverageResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -61,7 +60,6 @@ struct MovingAverageRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MovingAverageRequestDefaultTypeInternal _MovingAverageRequest_default_instance_;
-}  // namespace grpcserver
 static ::_pb::Metadata file_level_metadata_proto_2felproto_2eproto[2];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_proto_2felproto_2eproto = nullptr;
@@ -71,50 +69,49 @@ const ::uint32_t
     TableStruct_proto_2felproto_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
         ~0u,  // no _has_bits_
-        PROTOBUF_FIELD_OFFSET(::grpcserver::MovingAverageRequest, _internal_metadata_),
+        PROTOBUF_FIELD_OFFSET(::MovingAverageRequest, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
         ~0u,  // no _weak_field_map_
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::grpcserver::MovingAverageRequest, _impl_.input_),
-        PROTOBUF_FIELD_OFFSET(::grpcserver::MovingAverageRequest, _impl_.window_size_),
+        PROTOBUF_FIELD_OFFSET(::MovingAverageRequest, _impl_.input_),
+        PROTOBUF_FIELD_OFFSET(::MovingAverageRequest, _impl_.window_size_),
         ~0u,  // no _has_bits_
-        PROTOBUF_FIELD_OFFSET(::grpcserver::MovingAverageResponse, _internal_metadata_),
+        PROTOBUF_FIELD_OFFSET(::MovingAverageResponse, _internal_metadata_),
         ~0u,  // no _extensions_
         ~0u,  // no _oneof_case_
         ~0u,  // no _weak_field_map_
         ~0u,  // no _inlined_string_donated_
         ~0u,  // no _split_
         ~0u,  // no sizeof(Split)
-        PROTOBUF_FIELD_OFFSET(::grpcserver::MovingAverageResponse, _impl_.output_),
+        PROTOBUF_FIELD_OFFSET(::MovingAverageResponse, _impl_.output_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::grpcserver::MovingAverageRequest)},
-        {10, -1, -1, sizeof(::grpcserver::MovingAverageResponse)},
+        {0, -1, -1, sizeof(::MovingAverageRequest)},
+        {10, -1, -1, sizeof(::MovingAverageResponse)},
 };
 static const ::_pb::Message* const file_default_instances[] = {
-    &::grpcserver::_MovingAverageRequest_default_instance_._instance,
-    &::grpcserver::_MovingAverageResponse_default_instance_._instance,
+    &::_MovingAverageRequest_default_instance_._instance,
+    &::_MovingAverageResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_proto_2felproto_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\023proto/elproto.proto\022\ngrpcserver\":\n\024Mov"
-    "ingAverageRequest\022\r\n\005input\030\001 \003(\001\022\023\n\013wind"
-    "ow_size\030\002 \001(\005\"\'\n\025MovingAverageResponse\022\016"
-    "\n\006output\030\001 \003(\0012v\n\027SignalProcessingServic"
-    "e\022[\n\024ComputeMovingAverage\022 .grpcserver.M"
-    "ovingAverageRequest\032!.grpcserver.MovingA"
-    "verageResponseb\006proto3"
+    "\n\023proto/elproto.proto\":\n\024MovingAverageRe"
+    "quest\022\r\n\005input\030\001 \003(\001\022\023\n\013window_size\030\002 \001("
+    "\005\"\'\n\025MovingAverageResponse\022\016\n\006output\030\001 \003"
+    "(\0012`\n\027SignalProcessingService\022E\n\024Compute"
+    "MovingAverage\022\025.MovingAverageRequest\032\026.M"
+    "ovingAverageResponseb\006proto3"
 };
 static ::absl::once_flag descriptor_table_proto_2felproto_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2felproto_2eproto = {
     false,
     false,
-    262,
+    228,
     descriptor_table_protodef_proto_2felproto_2eproto,
     "proto/elproto.proto",
     &descriptor_table_proto_2felproto_2eproto_once,
@@ -143,7 +140,6 @@ const ::_pbi::DescriptorTable descriptor_table_proto_2felproto_2eproto = {
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_proto_2felproto_2eproto_getter() {
   return &descriptor_table_proto_2felproto_2eproto;
 }
-namespace grpcserver {
 // ===================================================================
 
 class MovingAverageRequest::_Internal {
@@ -153,7 +149,7 @@ class MovingAverageRequest::_Internal {
 MovingAverageRequest::MovingAverageRequest(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(arena_constructor:MovingAverageRequest)
 }
 inline PROTOBUF_NDEBUG_INLINE MovingAverageRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
@@ -172,7 +168,7 @@ MovingAverageRequest::MovingAverageRequest(
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
   _impl_.window_size_ = from._impl_.window_size_;
 
-  // @@protoc_insertion_point(copy_constructor:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(copy_constructor:MovingAverageRequest)
 }
 inline PROTOBUF_NDEBUG_INLINE MovingAverageRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -185,7 +181,7 @@ inline void MovingAverageRequest::SharedCtor(::_pb::Arena* arena) {
   _impl_.window_size_ = {};
 }
 MovingAverageRequest::~MovingAverageRequest() {
-  // @@protoc_insertion_point(destructor:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(destructor:MovingAverageRequest)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
@@ -209,7 +205,7 @@ MovingAverageRequest::GetClassData() const {
   return &_data_;
 }
 PROTOBUF_NOINLINE void MovingAverageRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcserver.MovingAverageRequest)
+// @@protoc_insertion_point(message_clear_start:MovingAverageRequest)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -242,7 +238,7 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> MovingAverageRequest::_table_ = {
     &_MovingAverageRequest_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::grpcserver::MovingAverageRequest>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::MovingAverageRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // int32 window_size = 2;
@@ -269,7 +265,7 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> MovingAverageRequest::_table_ = {
 ::uint8_t* MovingAverageRequest::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:MovingAverageRequest)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -290,12 +286,12 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> MovingAverageRequest::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:MovingAverageRequest)
   return target;
 }
 
 ::size_t MovingAverageRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcserver.MovingAverageRequest)
+// @@protoc_insertion_point(message_byte_size_start:MovingAverageRequest)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -327,7 +323,7 @@ const ::_pbi::TcParseTable<1, 2, 0, 0, 2> MovingAverageRequest::_table_ = {
 void MovingAverageRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<MovingAverageRequest*>(&to_msg);
   auto& from = static_cast<const MovingAverageRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcserver.MovingAverageRequest)
+  // @@protoc_insertion_point(class_specific_merge_from_start:MovingAverageRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -340,7 +336,7 @@ void MovingAverageRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, co
 }
 
 void MovingAverageRequest::CopyFrom(const MovingAverageRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcserver.MovingAverageRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:MovingAverageRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -371,7 +367,7 @@ class MovingAverageResponse::_Internal {
 MovingAverageResponse::MovingAverageResponse(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(arena_constructor:MovingAverageResponse)
 }
 inline PROTOBUF_NDEBUG_INLINE MovingAverageResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
@@ -389,7 +385,7 @@ MovingAverageResponse::MovingAverageResponse(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
-  // @@protoc_insertion_point(copy_constructor:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(copy_constructor:MovingAverageResponse)
 }
 inline PROTOBUF_NDEBUG_INLINE MovingAverageResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -401,7 +397,7 @@ inline void MovingAverageResponse::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
 MovingAverageResponse::~MovingAverageResponse() {
-  // @@protoc_insertion_point(destructor:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(destructor:MovingAverageResponse)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
@@ -425,7 +421,7 @@ MovingAverageResponse::GetClassData() const {
   return &_data_;
 }
 PROTOBUF_NOINLINE void MovingAverageResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:grpcserver.MovingAverageResponse)
+// @@protoc_insertion_point(message_clear_start:MovingAverageResponse)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -457,7 +453,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> MovingAverageResponse::_table_ = {
     &_MovingAverageResponse_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::grpcserver::MovingAverageResponse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::MovingAverageResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // repeated double output = 1;
@@ -478,7 +474,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> MovingAverageResponse::_table_ = {
 ::uint8_t* MovingAverageResponse::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:MovingAverageResponse)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -492,12 +488,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> MovingAverageResponse::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:MovingAverageResponse)
   return target;
 }
 
 ::size_t MovingAverageResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:grpcserver.MovingAverageResponse)
+// @@protoc_insertion_point(message_byte_size_start:MovingAverageResponse)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -523,7 +519,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 0, 2> MovingAverageResponse::_table_ = {
 void MovingAverageResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<MovingAverageResponse*>(&to_msg);
   auto& from = static_cast<const MovingAverageResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:grpcserver.MovingAverageResponse)
+  // @@protoc_insertion_point(class_specific_merge_from_start:MovingAverageResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -533,7 +529,7 @@ void MovingAverageResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, c
 }
 
 void MovingAverageResponse::CopyFrom(const MovingAverageResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:grpcserver.MovingAverageResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:MovingAverageResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -555,7 +551,6 @@ void MovingAverageResponse::InternalSwap(MovingAverageResponse* PROTOBUF_RESTRIC
                                    file_level_metadata_proto_2felproto_2eproto[1]);
 }
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace grpcserver
 namespace google {
 namespace protobuf {
 }  // namespace protobuf
