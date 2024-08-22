@@ -1,6 +1,6 @@
 #include <grpcpp/grpcpp.h>
 #include "proto/signal.grpc.pb.h"
-#include <Eigen/Dense>
+#include "Eigen/Dense"
 #include <complex>
 #include <stdexcept>
 
