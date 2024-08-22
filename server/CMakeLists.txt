@@ -26,5 +26,3 @@ PLUGIN "protoc-gen-grpc=${grpc_cpp_plugin_location}")
 add_executable(server src/server.cc)
 target_link_libraries(server protolib Eigen3::Eigen gRPC::grpc++)
 
-# Set include directories
-target_include_directories(server PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

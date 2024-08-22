@@ -25,11 +25,11 @@ public:
             for (int i = 0; i < request->signal_size(); ++i)
             {
                 const Complex &complex_msg = request->signal(i);
-                signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
+                signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag()); // crear complex para la señal de tipo double
             }
 
             int window_size = request->window_size();
-            Eigen::VectorXcd result = MovingAverage(signal, window_size);
+            Eigen::VectorXcd result = MovingAverage(signal, window_size); // vector resultante del moving average
 
             for (int i = 0; i < result.size(); ++i)
             {
