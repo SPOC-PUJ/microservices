@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package signal;
+
+// Represents a complex number with real and imaginary parts.
+message Complex {
+    double real = 1;
+    double imag = 2;
+}
+
+// The request message containing the signal data and window size.
+message MovingAverageRequest {
+    repeated Complex signal = 1; // The input signal
+    int32 window_size = 2;       // The window size for moving average
+}
+
+// The response message containing the result of moving average.
+message MovingAverageResponse {
+    repeated Complex result = 1; // The result of moving average
+}
+
+// The signal service definition.
+service SignalService {
+    rpc ComputeMovingAverage (MovingAverageRequest) returns (MovingAverageResponse);
+}
