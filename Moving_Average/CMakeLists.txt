@@ -7,8 +7,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(Protobuf CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 
-# Find Eigen
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 # Add protolib
 add_library(protolib proto/signal.proto)
@@ -24,5 +22,5 @@ PLUGIN "protoc-gen-grpc=${grpc_cpp_plugin_location}")
 
 # Add server executable
 add_executable(server src/server.cc)
-target_link_libraries(server protolib Eigen3::Eigen gRPC::grpc++)
+target_link_libraries(server protolib  gRPC::grpc++)
 
