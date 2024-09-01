@@ -22,7 +22,7 @@ FROM ubuntu:latest
 WORKDIR /app
 
 # Copiar el ejecutable compilado desde la imagen de construcción
-COPY --from=builder /root/server/microservices/build/server /app/server
+COPY --from=builder /root/server/build/server /app/server
 
 # Asegurar que el ejecutable tenga los permisos correctos
 RUN chmod +x /app/server
