@@ -24,5 +24,8 @@ COPY --from=builder /root/server/microservices/build/server /app/server
 # Asegurar que el ejecutable tenga los permisos correctos
 RUN chmod +x /app/server
 
+# Exponer el puerto en el que el microservicio está corriendo
+EXPOSE 5000
+
 # Definir el comando por defecto para ejecutar el servidor
 CMD ["/app/server"]

@@ -28,4 +28,6 @@ jobs:
         with:
           context: ./Moving_Average
           push: true
-          tags: ghcr.io/spoc-puj/moving_average:latest
+          tags: |
+            ghcr.io/spoc-puj/moving_average:latest
+            ghcr.io/spoc-puj/moving_average:5000-latest
