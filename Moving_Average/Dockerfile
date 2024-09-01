@@ -1,8 +1,14 @@
 # Etapa 1: Construcción
 FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 
-# Hacer git pull
-RUN cd /root/server/microservices && git pull
+# Cambiar al directorio de trabajo
+WORKDIR /root/server
+
+# Clonar el repositorio
+RUN git clone https://github.com/SPOC-PUJ/microservices.git
+
+RUN cd /microservices/Moving_Average
+
 
 # Crear el directorio de construcción y compilar el proyecto
 RUN mkdir -p build && cd build \
