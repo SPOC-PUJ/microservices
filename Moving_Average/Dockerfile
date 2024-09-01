@@ -1,11 +1,8 @@
 # Etapa 1: Construcción
 FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 
-# Establecer el directorio de trabajo dentro del contenedor de construcción
-WORKDIR /root/server/microservices
-
-# Hacer git pull para obtener la última versión del código
-RUN git pull
+# Hacer git pull
+RUN cd /root/server/microservices && git pull
 
 # Crear el directorio de construcción y compilar el proyecto
 RUN mkdir -p build && cd build \
