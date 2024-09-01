@@ -5,7 +5,7 @@ FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 RUN cd /root/server
 
 # Copiar la carpeta Moving_Average al directorio de trabajo en el contenedor
-COPY ./Moving_Average /root/server/Moving_Average
+COPY . /root/server/Moving_Average
 
 # Cambiar al directorio Moving_Average
 WORKDIR /root/server/Moving_Average
