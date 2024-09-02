@@ -29,5 +29,5 @@ jobs:
           context: ./FirstDifference
           push: true
           tags: |
-            ghcr.io/spoc-puj/FirstDifference:latest
-            ghcr.io/spoc-puj/FirstDifference:5000-latest
+            ghcr.io/spoc-puj/first_difference:latest
+            ghcr.io/spoc-puj/first_difference:5000-latest
