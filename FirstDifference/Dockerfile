@@ -5,10 +5,10 @@ FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 RUN cd /root/server
 
 # Copiar la carpeta Moving_Average al directorio de trabajo en el contenedor
-COPY . /root/server/Moving_Average
+COPY . /root/server/FirstDifference
 
 # Cambiar al directorio Moving_Average
-WORKDIR /root/server/Moving_Average
+WORKDIR /root/server/FirstDifference
 
 # Crear el directorio de construcción y compilar el proyecto
 RUN mkdir -p build && cd build \
@@ -22,7 +22,7 @@ FROM ubuntu:latest
 WORKDIR /app
 
 # Copiar el ejecutable compilado desde la imagen de construcción
-COPY --from=builder /root/server/Moving_Average/build/server /app/server
+COPY --from=builder /root/server/FirstDifference/build/server /app/server
 
 # Asegurar que el ejecutable tenga los permisos correctos
 RUN chmod +x /app/server
