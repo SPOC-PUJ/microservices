@@ -4,11 +4,11 @@ FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 # Hacer git pull
 RUN cd /root/server
 
-# Copiar la carpeta FirstDifference al directorio de trabajo en el contenedor
-COPY . /root/server/FirstDifference
+# Copiar la carpeta Runing_sum al directorio de trabajo en el contenedor
+COPY . /root/server/Runing_sum
 
-# Cambiar al directorio FirstDifference
-WORKDIR /root/server/FirstDifference
+# Cambiar al directorio Runing_sum
+WORKDIR /root/server/Runing_sum
 
 # Crear el directorio de construcción y compilar el proyecto
 RUN mkdir -p build && cd build \
@@ -21,8 +21,8 @@ FROM ubuntu:latest
 # Establecer el directorio de trabajo en el contenedor final
 WORKDIR /app
 
-# Copiar el ejecutable compilado desde la imagen de construcción para disminuir peso
-COPY --from=builder /root/server/FirstDifference/build/server /app/server
+# Copiar el ejecutable compilado desde la imagen de construcción
+COPY --from=builder /root/server/Runing_sum/build/server /app/server
 
 # Asegurar que el ejecutable tenga los permisos correctos
 RUN chmod +x /app/server

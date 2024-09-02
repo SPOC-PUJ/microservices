@@ -1,0 +1,33 @@
+name: Build and Push Docker Image for Running sum
+
+on:
+  push:
+    paths:
+      - 'Runing_sum/**'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_MICROSERVICES }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./Runing_sum
+          push: true
+          tags: |
+            ghcr.io/spoc-puj/runing_sum:latest
+            ghcr.io/spoc-puj/runing_sum:5000-latest
