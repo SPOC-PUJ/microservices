@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package signal;
+
+
+message Complex {
+    double real = 1;
+    double imag = 2;
+}
+
+
+message IFFTRequest {
+    repeated Complex signal = 1;      
+}
+
+
+message IFFTResponse {
+    repeated Complex result = 1; 
+}
+
+
+service SignalService {
+    rpc ComputeIFFT (IFFTRequest) returns (IFFTResponse);
+}
