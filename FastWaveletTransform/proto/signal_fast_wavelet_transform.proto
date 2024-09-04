@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package signal;
+
+
+message Complex {
+    double real = 1;
+    double imag = 2;
+}
+
+message VectorXcd {
+    repeated Complex values = 1;
+}
+
+message FastWaveletTransformRequest {
+    repeated Complex signal = 1;   
+    int32 dec_level = 2;
+    string wave_name = 3;   
+}
+
+
+message FastWaveletTransformResponse   {
+    repeated VectorXcd approximations = 1;
+    repeated VectorXcd details = 2;
+}
+
+
+service SignalService {
+    rpc ComputeFastWaveletTransform  (FastWaveletTransformRequest) returns (FastWaveletTransformResponse);
+}
