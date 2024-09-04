@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package signal;
+
+
+message Complex {
+    double real = 1;
+    double imag = 2;
+}
+
+
+message FastWaveletTransformHaarRequest {
+    repeated Complex signal = 1;      
+}
+
+
+message FastWaveletTransformHaarResponse  {
+    repeated Complex approximation = 1;
+    repeated Complex detail = 2;
+}
+
+
+service SignalService {
+    rpc ComputeFastWaveletTransformHaar (FastWaveletTransformHaarRequest) returns (FastWaveletTransformHaarResponse);
+}
