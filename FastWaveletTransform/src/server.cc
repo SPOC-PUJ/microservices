@@ -59,10 +59,11 @@ public:
             // Obtener el nivel de descomposición y el nombre del wavelet
             int dec_level = request->dec_level();
             std::string wave_name = request->wave_name();
-
+            std::cout<< "level:" << dec_level << std::endl;
+            std::cout<< "nombre:" << wave_name << std::endl;
             // Calcular la Transformada de Wavelet
             auto [approximations, details] = FastWaveletTransform(signal, dec_level, wave_name);
-
+            
             // Convertir el resultado a FastWaveletTransformResponse
             for (const auto& approx : approximations) {
                 auto* vec = reply->add_approximations();
@@ -72,7 +73,7 @@ public:
                     complex_msg->set_imag(value.imag());
                 }
             }
-
+            
             for (const auto& detail : details) {
                 auto* vec = reply->add_details();
                 for (const auto& value : detail) {
@@ -89,34 +90,36 @@ public:
     }
 
 private:
-    
-    std::pair<std::vector<Eigen::VectorXcd>, std::vector<Eigen::VectorXcd>> FastWaveletTransform(const Eigen::VectorXcd& input, int DecLevel, const std::string& WaveName) {
-        std::vector<Eigen::VectorXcd> Aproximations;
-        std::vector<Eigen::VectorXcd> Details;
+        
+        std::pair< std::vector< Eigen::VectorXcd >, std::vector< Eigen::VectorXcd > > FastWaveletTransform(const Eigen::VectorXcd& input,int DecLevel,std::string WaveName){
 
+        std::vector<Eigen::VectorXcd>Aproximations;
+        std::vector<Eigen::VectorXcd>Details;
         const auto getWaveletFilters = [](const std::string& waveName) -> std::pair<Eigen::VectorXcd, Eigen::VectorXcd> {
-        if (waveName == "db1") {
-            return std::make_pair(Db1DecLow, Db1DecHigh);
-        } else if (waveName == "db2") {
-            return std::make_pair(Db2DecLow, Db2DecHigh);
-        } else if (waveName == "db3") {
-            return std::make_pair(Db3DecLow, Db3DecHigh);
-        } else if (waveName == "db4") {
-            return std::make_pair(Db4DecLow, Db4DecHigh);
-        } else if (waveName == "bior3.1") {
-            return std::make_pair(Bio31DecLow, Bio31DecHigh);
-        } else {
-            throw std::invalid_argument("Unknown wavelet name");
-        }
-    };
+            if (waveName == "db1") {
+                return std::make_pair(Db1DecLow, Db1DecHigh);
+            } else if (waveName == "db2") {
+                return std::make_pair(Db2DecLow, Db2DecHigh);
+            } else if (waveName == "db3") {
+                return std::make_pair(Db3DecLow, Db3DecHigh);
+            } else if (waveName == "db4") {
+                return std::make_pair(Db4DecLow, Db4DecHigh);
+            } else if (waveName == "bior3.1") {
+                return std::make_pair(Bio31DecLow, Bio31DecHigh);
+            } else {
+                throw std::invalid_argument("Unknown wavelet name");
+            }
+        };
 
         auto [Lo_d, Hi_d] = getWaveletFilters(WaveName);
-        auto [aprox, detail] = FastWaveletTransformAux(input, Lo_d, Hi_d);
+
+        
+        auto [aprox ,detail ] = FastWaveletTransformAux(input,Lo_d,Hi_d );
+        
         Aproximations.push_back(aprox);
         Details.push_back(detail);
-        
         if(DecLevel > 1){
-
+            
         for( int i = 1 ; i < DecLevel ; i++ ){
 
             auto descompocision = FastWaveletTransformAux(aprox,Lo_d,Hi_d );
@@ -128,20 +131,32 @@ private:
 
 
         }
-
+        
         return std::make_pair(Aproximations, Details);
     }
 
-    std::pair<Eigen::VectorXcd, Eigen::VectorXcd> FastWaveletTransformAux(const Eigen::VectorXcd& input, const Eigen::VectorXcd& Lo_d, const Eigen::VectorXcd& Hi_d) {
-        auto aprox = FFTconvolveEigen(input, Lo_d);
-        auto detail = FFTconvolveEigen(input, Hi_d);
+    std::pair<Eigen::VectorXcd,Eigen::VectorXcd> FastWaveletTransformAux(const Eigen::VectorXcd& input,Eigen::VectorXcd Lo_d , Eigen::VectorXcd Hi_d){
 
+    // conseguir filtros segun el nombre
+    // Tipos de filtros
+
+    // conseguir aproximation FFTConvolve con low pass 
+    
+        auto aprox = FFTconvolveEigen(input, Lo_d );
+        
+    // conseguir detail FFTConvolve con High pass
+    
+        auto detail = FFTconvolveEigen(input, Hi_d );
+        
+    // hacer down sample de aproximation y de detail
         int n = aprox.size();
         int m = detail.size();
-        aprox = aprox(Eigen::seq(0, n - 1, 2));
-        detail = detail(Eigen::seq(0, m - 1, 2));
+        auto aproxi = aprox(Eigen::seq(0,n-1,2));
+        auto detaili = detail(Eigen::seq(0,m-1,2));
 
-        return std::make_pair(aprox, detail);
+        // llamar la descompocision denuevo hata que se acben los niveles
+
+        return std::make_pair(aproxi, detaili);
     }
 
     Eigen::VectorXcd FFTconvolveEigen(const Eigen::VectorXcd& x, const Eigen::VectorXcd& h, bool shift = false) {
@@ -169,13 +184,20 @@ private:
         return convolutionResult.head(x.size());
     }
 
-    Eigen::VectorXcd ZeroPadGivenSize(const Eigen::VectorXcd& a, int m) {
+
+    Eigen::VectorXcd ZeroPadGivenSize(const Eigen::VectorXcd &a,int m) {
         int n = a.size();
+
+        // If n is already a power of two, return the original array
         if (m == n) {
             return a;
         }
+        // Directly initializing the new VectorXcd with zero-padding
         Eigen::VectorXcd padded_a = Eigen::VectorXcd::Zero(m);
+
+        // Copy the input vector into the beginning of the padded vector
         padded_a.head(n) = a;
+
         return padded_a;
     }
 
