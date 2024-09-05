@@ -2,6 +2,8 @@ name: Build and Push Docker Image for Fast Wavelet transform harr
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'FastWaveletHaar/**'
 
