@@ -2,6 +2,8 @@ name: Build and Push Docker Image for IFFT
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'IFFT/**'
 

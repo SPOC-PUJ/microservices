@@ -2,6 +2,8 @@ name: Build and Push Docker Image for Moving_Average
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'Moving_Average/**'
 

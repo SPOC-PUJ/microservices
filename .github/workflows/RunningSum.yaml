@@ -2,6 +2,8 @@ name: Build and Push Docker Image for Running sum
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'Runing_sum/**'
 

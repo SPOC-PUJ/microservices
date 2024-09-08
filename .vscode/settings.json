@@ -1,5 +1,6 @@
 {
     "files.associations": {
+
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -70,6 +71,8 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "core": "cpp",
-        "fft": "cpp"
+        "fft": "cpp",
+        "complex": "cpp"
+
     }
 }
