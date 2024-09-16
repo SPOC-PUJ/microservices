@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package signal;
+
+service ABFService{
+  rpc readAbf(ABFRequest) returns (ABFResponse) {}
+}
+message ABFRequest{
+  bytes file_content = 1;
+
+}
+message ABFResponse{
+  repeated float numbers  = 1;
+  int32 sp = 2;
+}
