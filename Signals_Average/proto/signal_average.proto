@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package signal;
+
+message Complex {
+    double real = 1;
+    double imag = 2;
+}
+
+message Signal {
+    repeated Complex values = 1;
+}
+
+message AverageRequest {
+    repeated Signal signals = 1;  // Lista de señales complejas
+}
+
+message AverageResponse {
+    repeated Complex result = 1;  // Resultado del promedio
+}
+
+service SignalService {
+    rpc ComputeAverage (AverageRequest) returns (AverageResponse);
+}
