@@ -22,5 +22,5 @@ PLUGIN "protoc-gen-grpc=${grpc_cpp_plugin_location}")
 
 # Add server executable
 add_executable(server src/server.cc)
-target_link_libraries(server protolib  gRPC::grpc++)
+target_link_libraries(server protolib  gRPC::grpc++ gRPC::grpc++_reflection)
 

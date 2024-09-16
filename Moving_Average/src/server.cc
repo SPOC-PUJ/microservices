@@ -1,4 +1,5 @@
 #include <grpcpp/grpcpp.h>
+#include <grpcpp/ext/proto_server_reflection_plugin.h>
 #include "proto/signal.grpc.pb.h"
 #include "Eigen/Dense"
 #include <complex>
@@ -84,6 +85,8 @@ int main()
 {
     std::string server_address("0.0.0.0:5000");
     SignalServiceImpl service;
+
+    grpc::reflection::InitProtoReflectionServerBuilderPlugin();
 
     ServerBuilder builder;
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
