@@ -32,4 +32,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/spoc-puj/moving_average:latest
-            ghcr.io/spoc-puj/moving_average:8080-latest
+            ghcr.io/spoc-puj/moving_average:5000-latest
