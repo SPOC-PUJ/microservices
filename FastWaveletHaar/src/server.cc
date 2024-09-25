@@ -17,7 +17,7 @@ using signal::SignalService;
 class SignalServiceImpl final : public SignalService::Service
 {
 public:
-    Status ComputeFastWaveletTransformHaar(ServerContext* context, const FastWaveletTransformHaarRequest* request,
+    Status ComputeFastWaveletHaar(ServerContext* context, const FastWaveletTransformHaarRequest* request,
                                            FastWaveletTransformHaarResponse* reply) override
     {
         try
@@ -50,6 +50,7 @@ public:
         }
         catch (const std::exception& ex)
         {
+            std::cout << "Error"<< std::endl;
             return Status(grpc::INVALID_ARGUMENT, ex.what());
         }
     }

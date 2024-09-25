@@ -1,11 +1,11 @@
-name: Build and Push Docker Image for Moving_Average
+name: Build and Push Docker Image for FFT_CONVOLVE
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'Moving_Average/**'
+      - 'FFT_CONVOLVE/**'
 
 jobs:
   build-and-push:
@@ -28,9 +28,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./Moving_Average
+          context: ./FFT_CONVOLVE
           push: true
-          platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/spoc-puj/moving_average:latest
-            ghcr.io/spoc-puj/moving_average:5000-latest
+            ghcr.io/spoc-puj/fft_colvolve:latest
+            ghcr.io/spoc-puj/fft_colvolve:5000-latest

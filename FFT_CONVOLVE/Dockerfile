@@ -4,11 +4,11 @@ FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 # Hacer git pull
 RUN cd /root/server
 
-# Copiar la carpeta Moving_Average al directorio de trabajo en el contenedor
-COPY . /root/server/Moving_Average
+# Copiar la carpeta FFT_CONVOLVE al directorio de trabajo en el contenedor
+COPY . /root/server/FFT_CONVOLVE
 
-# Cambiar al directorio Moving_Average
-WORKDIR /root/server/Moving_Average
+# Cambiar al directorio FFT_CONVOLVE
+WORKDIR /root/server/FFT_CONVOLVE
 
 # Crear el directorio de construcción y compilar el proyecto
 RUN mkdir -p build && cd build \
@@ -21,8 +21,8 @@ FROM ubuntu:latest
 # Establecer el directorio de trabajo en el contenedor final
 WORKDIR /app
 
-# Copiar el ejecutable compilado desde la imagen de construcción
-COPY --from=builder /root/server/Moving_Average/build/server /app/server
+# Copiar el ejecutable compilado desde la imagen de construcción para disminuir peso
+COPY --from=builder /root/server/FFT_CONVOLVE/build/server /app/server
 
 # Asegurar que el ejecutable tenga los permisos correctos
 RUN chmod +x /app/server

@@ -99,6 +99,7 @@ int main()
     SignalServiceImpl service;
 
     ServerBuilder builder;
+    builder.SetMaxReceiveMessageSize(20 * 1024 * 1024);  // 20 MB
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
     builder.RegisterService(&service);
 
