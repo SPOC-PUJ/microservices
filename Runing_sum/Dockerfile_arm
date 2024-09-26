@@ -1,6 +1,7 @@
 # Etapa 1: Construcción
 FROM ghcr.io/spoc-puj/grpc_image_arm64:latest AS builder
 
+
 # Hacer git pull
 RUN cd /root/server
 
