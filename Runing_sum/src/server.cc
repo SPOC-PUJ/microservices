@@ -3,14 +3,15 @@
 #include "Eigen/Dense"
 #include <complex>
 #include <iostream>
-
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+
 using signal::Complex;
 using signal::RuningSumRequest;
 using signal::RuningSumResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 class SignalServiceImpl final : public SignalService::Service
@@ -21,11 +22,14 @@ public:
     {
         try
         {
+            // Obtener la señal encapsulada en SignalGrpc
+            const SignalGrpc& grpc_signal = request->signal(); // Acceder a SignalGrpc
+            Eigen::VectorXcd signal(grpc_signal.values_size()); // Usar values_size() para el tamaño
+
             // Convertir la señal de entrada a Eigen::VectorXcd
-            Eigen::VectorXcd signal(request->signal_size());
-            for (int i = 0; i < request->signal_size(); i++)
+            for (int i = 0; i < grpc_signal.values_size(); i++)
             {
-                const Complex& complex_msg = request->signal(i);
+                const Complex& complex_msg = grpc_signal.values(i); // Obtener cada valor
                 signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 

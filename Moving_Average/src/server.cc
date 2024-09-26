@@ -4,7 +4,6 @@
 #include "Eigen/Dense"
 #include <complex>
 #include <stdexcept>
-
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
@@ -12,6 +11,7 @@ using grpc::Status;
 using signal::Complex;
 using signal::MovingAverageRequest;
 using signal::MovingAverageResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 class SignalServiceImpl final : public SignalService::Service
@@ -22,15 +22,18 @@ public:
     {
         try
         {
-            Eigen::VectorXcd signal(request->signal_size());
-            for (int i = 0; i < request->signal_size(); ++i)
+            const SignalGrpc& grpc_signal = request->signal(); // Ahora accede al nuevo tipo SignalGrpc
+            Eigen::VectorXcd signal(grpc_signal.values_size()); // Usa values_size() para el tamaño
+
+            for (int i = 0; i < grpc_signal.values_size(); ++i)
             {
-                const Complex &complex_msg = request->signal(i);
-                signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag()); // crear complex para la señal de tipo double
+                const Complex &complex_msg = grpc_signal.values(i); // Accede a cada Complex dentro de values
+                signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 
             int window_size = request->window_size();
-            Eigen::VectorXcd result = MovingAverage(signal, window_size); // vector resultante del moving average
+            std::cout << window_size << std::endl;
+            Eigen::VectorXcd result = MovingAverage(signal, window_size);
 
             for (int i = 0; i < result.size(); ++i)
             {
@@ -51,6 +54,7 @@ private:
     Eigen::VectorXcd MovingAverage(const Eigen::VectorXcd &a, int window_size)
     {
         int n = a.size();
+        std::cout << n << std::endl;
         Eigen::VectorXcd result(n);
 
         if (window_size <= 0 || window_size > n)

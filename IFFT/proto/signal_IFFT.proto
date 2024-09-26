@@ -8,9 +8,12 @@ message Complex {
     double imag = 2;
 }
 
+message SignalGrpc {
+    repeated Complex values = 1;
+}
 
 message IFFTRequest {
-    repeated Complex signal = 1;      
+    SignalGrpc signal = 1;      
 }
 
 

@@ -14,6 +14,7 @@ using signal::Complex;
 using signal::VectorXcd;
 using signal::FastWaveletTransformRequest;
 using signal::FastWaveletTransformResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 
@@ -49,10 +50,12 @@ public:
     Status ComputeFastWaveletTransform(ServerContext* context, const FastWaveletTransformRequest* request,
                                         FastWaveletTransformResponse* reply) override {
         try {
+            const SignalGrpc& grpc_signal = request->signal();
+            size_t n = grpc_signal.values_size();  // Obtener el tamaño de la señal
             // Convertir la señal de entrada a Eigen::VectorXcd
-            Eigen::VectorXcd signal(request->signal_size());
-            for (int i = 0; i < request->signal_size(); i++) {
-                const Complex& complex_msg = request->signal(i);
+            Eigen::VectorXcd signal(n);
+            for (int i = 0; i < n; i++) {
+                const Complex& complex_msg = grpc_signal.values(i);
                 signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 

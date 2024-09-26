@@ -8,10 +8,14 @@ message Complex {
     double imag = 2;
 }
 
+message SignalGrpc {
+    repeated Complex values = 1;
+}
+
 
 message FftConvolveRequest {
-    repeated Complex signalx = 1;   
-    repeated Complex signalh = 2;
+    SignalGrpc signalx = 1;   
+    SignalGrpc signalh = 2;
     bool shift = 3;  
 }
 

@@ -13,6 +13,7 @@ using grpc::Status;
 using signal::Complex;
 using signal::FftConvolveRequest;
 using signal::FftConvolveResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 class SignalServiceImpl final : public SignalService::Service
@@ -23,28 +24,28 @@ public:
     {
         try
         {
-            // Convert request data to Eigen vectors
-            Eigen::VectorXcd signalx(request->signalx_size());
-            Eigen::VectorXcd signalh(request->signalh_size());
+            // Convertir los datos de la solicitud a Eigen::VectorXcd
+            Eigen::VectorXcd signalx(request->signalx().values_size());
+            Eigen::VectorXcd signalh(request->signalh().values_size());
 
-            for (int i = 0; i < request->signalx_size(); ++i)
+            for (int i = 0; i < request->signalx().values_size(); ++i)
             {
-                const Complex &complex_msg = request->signalx(i);
+                const Complex &complex_msg = request->signalx().values(i);
                 signalx[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 
-            for (int i = 0; i < request->signalh_size(); ++i)
+            for (int i = 0; i < request->signalh().values_size(); ++i)
             {
-                const Complex &complex_msg = request->signalh(i);
+                const Complex &complex_msg = request->signalh().values(i);
                 signalh[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 
             bool shift = request->shift();
 
-            // Perform FFT convolution using Eigen
+            // Realizar la convolución FFT usando Eigen
             Eigen::VectorXcd result = FFTconvolveEigen(signalx, signalh, shift);
 
-            // Fill the response
+            // Llenar la respuesta
             for (int i = 0; i < result.size(); ++i)
             {
                 auto complex_number = result[i];

@@ -8,9 +8,13 @@ message Complex {
     double imag = 2;
 }
 
+message SignalGrpc {
+    repeated Complex values = 1;
+}
+
 // The request message containing the signal data and window size.
 message MovingAverageRequest {
-    repeated Complex signal = 1; // The input signal
+    SignalGrpc signal = 1; // The input signal
     int32 window_size = 2;       // The window size for moving average
 }
 

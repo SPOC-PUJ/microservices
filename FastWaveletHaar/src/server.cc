@@ -12,6 +12,7 @@ using grpc::Status;
 using signal::Complex;
 using signal::FastWaveletTransformHaarRequest;
 using signal::FastWaveletTransformHaarResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 class SignalServiceImpl final : public SignalService::Service
@@ -22,12 +23,13 @@ public:
     {
         try
         {
-            // Convertir la señal de entrada a Eigen::VectorXcd
-            size_t n = request->signal_size();
+            // Acceder al mensaje SignalGrpc dentro de la solicitud
+            const SignalGrpc& grpc_signal = request->signal();
+            size_t n = grpc_signal.values_size();  // Obtener el tamaño de la señal
             Eigen::VectorXcd input(n);
             for (size_t i = 0; i < n; i++)
             {
-                const Complex& complex_msg = request->signal(i);
+                const Complex& complex_msg = grpc_signal.values(i);
                 input[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
 

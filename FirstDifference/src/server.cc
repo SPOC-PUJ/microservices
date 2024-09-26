@@ -9,9 +9,11 @@ using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+
 using signal::Complex;
 using signal::FirstDifferenceRequest;
 using signal::FirstDifferenceResponse;
+using signal::SignalGrpc;
 using signal::SignalService;
 
 
@@ -21,13 +23,15 @@ public:
     Status ComputeFirstDifference(ServerContext* context, const FirstDifferenceRequest* request,
                                   FirstDifferenceResponse* reply) override {
         try {
-            
-            Eigen::VectorXcd signal(request->signal_size());
-            for (int i = 0; i < request->signal_size(); i++) {
-                const Complex& complex_msg = request->signal(i);
+
+            const SignalGrpc& grpc_signal = request->signal(); // Ahora accede al nuevo tipo SignalGrpc
+            Eigen::VectorXcd signal(grpc_signal.values_size()); // Usa values_size() para el tamaño
+
+            for (int i = 0; i < grpc_signal.values_size(); ++i)
+            {
+                const Complex &complex_msg = grpc_signal.values(i); // Accede a cada Complex dentro de values
                 signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
             }
-
             
             Eigen::VectorXcd result = FirstDifference(signal);
 
