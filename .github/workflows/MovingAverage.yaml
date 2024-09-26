@@ -30,7 +30,6 @@ jobs:
         with:
           context: ./Moving_Average
           push: true
-          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/spoc-puj/moving_average:latest
             ghcr.io/spoc-puj/moving_average:5000-latest
@@ -57,6 +56,5 @@ jobs:
           context: ./Moving_Average
           dockerfile: ./Dockerfile_arm
           push: true
-          platforms: linux/arm64
           tags: |
             ghcr.io/spoc-puj/moving_average:arm64-latest
