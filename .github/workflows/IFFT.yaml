@@ -33,7 +33,7 @@ jobs:
           tags: |
             ghcr.io/spoc-puj/ifft:latest
             ghcr.io/spoc-puj/ifft:5000-latest
-  build-and-push:
+  build-and-push-arm64:
     runs-on: ubuntu-latest
 
     steps:
