@@ -32,7 +32,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/spoc-puj/fast_wavelet_transform:latest
-            ghcr.io/spoc-puj/fast_wavelet_transform:5000-latest
+            ghcr.io/spoc-puj/fast_wavelet_transform:5001-latest
   build-and-push-arm64:
     runs-on: ubuntu-latest
 

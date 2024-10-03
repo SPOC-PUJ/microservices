@@ -28,7 +28,7 @@ COPY --from=builder /root/server/Signals_Average/build/server /app/server
 RUN chmod +x /app/server
 
 # Exponer el puerto en el que el microservicio está corriendo
-EXPOSE 5000
+EXPOSE 5001
 
 # Definir el comando por defecto para ejecutar el servidor
 CMD ["/app/server"]

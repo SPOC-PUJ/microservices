@@ -32,7 +32,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/spoc-puj/runing_sum:latest
-            ghcr.io/spoc-puj/runing_sum:5000-latest
+            ghcr.io/spoc-puj/runing_sum:5001-latest
   build-and-push-arm64:
     runs-on: ubuntu-latest
 

@@ -32,7 +32,7 @@ jobs:
           push: true
           tags: |
             ghcr.io/spoc-puj/fastwavelethaar:latest
-            ghcr.io/spoc-puj/fastwavelethaar:5000-latest
+            ghcr.io/spoc-puj/fastwavelethaar:5001-latest
   build-and-push-arm64:
     runs-on: ubuntu-latest
 
