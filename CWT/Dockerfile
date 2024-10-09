@@ -18,6 +18,8 @@ RUN mkdir -p build && cd build \
 # Etapa 2: Imagen final
 FROM ubuntu:latest
 
+RUN apt install libtbb-dev
+
 # Establecer el directorio de trabajo en el contenedor final
 WORKDIR /app
 
