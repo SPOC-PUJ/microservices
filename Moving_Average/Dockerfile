@@ -17,7 +17,7 @@ RUN mkdir -p build && cd build \
     && make
 
 # Etapa 2: Imagen final
-FROM ubuntu:latest
+FROM alpine:latest
 
 # Establecer el directorio de trabajo en el contenedor final
 WORKDIR /app
