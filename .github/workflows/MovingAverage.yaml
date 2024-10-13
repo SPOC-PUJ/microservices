@@ -35,6 +35,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./Moving_Average
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
             ghcr.io/spoc-puj/moving_average:${{ github.run_number }}
@@ -46,7 +47,7 @@ jobs:
           git config user.name "${{ secrets.GIT_NAME }}"
           pwd
           ls
-          sed -i "s+ghcr.io/spoc-puj/moving_average:.*+ghcr.io/spoc-puj/moving_average:${{ github.run_number }}+g" MovingAverageBack.yaml
+          sed -i "s+ghcr.io/spoc-puj/moving_average:.*+ghcr.io/spoc-puj/moving_average:5001-${{ github.run_number }}+g" MovingAverageBack.yaml
           git add .
           git commit -m "Update Deployment with image version ${{ github.run_number }}"
           git push origin main

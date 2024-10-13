@@ -57,4 +57,3 @@ spec:
         - grpc-status
         - grpc-message
       allowCredentials: true
-      
