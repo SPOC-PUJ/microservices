@@ -37,12 +37,13 @@ jobs:
             ghcr.io/spoc-puj/moving_average:${{ github.run_number }}
             ghcr.io/spoc-puj/moving_average:5001-${{ github.run_number }}
       - name: Modify the deployment manifest
+        working-directory: ./Moving_Average/Deployment
         run: |
           git config user.email "${{ secrets.GIT_EMAIL }}"
           git config user.name "${{ secrets.GIT_NAME }}"
           pwd
           ls
-          sed -i "s+ghcr.io/spoc-puj/moving_average:.*+ghcr.io/spoc-puj/moving_average:${{ github.run_number }}+g" ./Deployment/MovingAverageBack.yaml
+          sed -i "s+ghcr.io/spoc-puj/moving_average:.*+ghcr.io/spoc-puj/moving_average:${{ github.run_number }}+g" MovingAverageBack.yaml
           git add .
           git commit -m "Update Deployment with image version ${{ github.run_number }}"
           git push origin main
