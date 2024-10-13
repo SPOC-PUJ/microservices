@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: movingaverageserver
-        image: ghcr.io/spoc-puj/moving_average:32
+        image: ghcr.io/spoc-puj/moving_average:33
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001
