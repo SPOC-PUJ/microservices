@@ -18,9 +18,34 @@ using signal::CWTResponse;
 using signal::SignalGrpc;
 using signal::SignalService;
 
+/**
+ * \defgroup CWTService Microservicio CWT
+ * @{
+ * Este grupo contiene la implementación del microservicio para calcular la
+ * Transformada Wavelet Continua (CWT) utilizando gRPC.
+ */
+
+/**
+ * @brief Clase que implementa el servicio de CWT.
+ * 
+ * Esta clase proporciona el servicio de gRPC para calcular la Transformada
+ * Wavelet Continua a partir de una señal de entrada.
+ */
 class SignalServiceImpl final : public SignalService::Service {
 public:
     // Implementación del servicio ComputeCWT
+    /**
+     * @brief Computes the Continuous Wavelet Transform (CWT) for a given signal.
+     *
+     * This function receives a signal in the form of complex numbers, computes
+     * the CWT using a set of specified scales, and returns the coefficients.
+     *
+     * @param context Server context for handling requests.
+     * @param request The request containing the signal and scale parameters.
+     * @param response The response object where the CWT coefficients will be stored.
+     * @return gRPC status indicating success or failure of the operation.
+     * @ingroup CWT
+     */
     Status ComputeCWT(ServerContext* context, const CWTRequest* request, CWTResponse* response) override {
         try {
             // Acceder al mensaje SignalGrpc dentro de la solicitud
@@ -59,6 +84,17 @@ public:
 
 private:
     // Función para generar escalas logarítmicas
+    /**
+     * @brief Genera escalas logarítmicas.
+     * 
+     * Esta función genera una serie de escalas logarítmicas entre un
+     * rango especificado.
+     * 
+     * @param start Escala inicial.
+     * @param end Escala final.
+     * @param numScales Número de escalas a generar.
+     * @return Vector de escalas generadas.
+     */
     std::vector<double> GenerateLogScales(double start, double end, int numScales) {
         std::vector<double> scales(numScales);
         double logStart = std::log10(start);
@@ -73,6 +109,16 @@ private:
     }
 
     // Función para calcular la CWT utilizando el Wavelet de Morlet
+       /**
+     * @brief Calcula la CWT utilizando el Wavelet de Morlet.
+     * 
+     * Esta función calcula la Transformada Wavelet Continua para la señal
+     * proporcionada utilizando un conjunto de escalas.
+     * 
+     * @param signal La señal de entrada representada como un vector de números complejos.
+     * @param scales Un vector de escalas a utilizar para el cálculo de la CWT.
+     * @return Un vector de vectores complejos que representan los coeficientes de la CWT.
+     */
     std::vector<Eigen::VectorXcd> CWTEigen(const Eigen::VectorXcd& signal, const std::vector<double>& scales) {
         int n = signal.size();
         std::vector<Eigen::VectorXcd> coeffs(scales.size());
@@ -86,6 +132,18 @@ private:
     }
 
     // Función que genera el Wavelet de Morlet
+   /**
+     * @brief Genera el Wavelet de Morlet.
+     * 
+     * Esta función genera un vector que representa el Wavelet de Morlet
+     * para un tamaño dado y una escala especificada.
+     * 
+     * @param N Tamaño del wavelet.
+     * @param scale Escala del wavelet.
+     * @param f0 Frecuencia central (por defecto 1.0).
+     * @param fb Ancho de banda (por defecto 1.0).
+     * @return Vector de números complejos que representa el Wavelet de Morlet.
+     */
     Eigen::VectorXcd MorletWavelet(int N, double scale, double f0 = 1.0, double fb = 1.0) {
         Eigen::VectorXcd wavelet(N);
         double t;
@@ -98,6 +156,17 @@ private:
     }
 
     // Función que realiza la convolución en el dominio de Fourier
+    /**
+     * @brief Realiza la convolución en el dominio de Fourier.
+     * 
+     * Esta función utiliza la transformada de Fourier para realizar la
+     * convolución de dos señales en el dominio de Fourier.
+     * 
+     * @param x La señal de entrada.
+     * @param h El kernel de convolución.
+     * @param shift Indica si se debe realizar un desplazamiento en el dominio de la frecuencia.
+     * @return Resultado de la convolución.
+     */
     Eigen::VectorXcd FFTconvolveEigen(const Eigen::VectorXcd& x, const Eigen::VectorXcd& h, bool shift) {
         int N = x.size();
 
@@ -126,6 +195,17 @@ private:
     }
 
     // Función para hacer el padding a un vector de tamaño N
+      /**
+     * @brief Zero-pads a vector to a specified size.
+     * 
+     * Esta función rellena el vector de entrada con ceros para asegurar que
+     * su tamaño coincida con el tamaño objetivo especificado. Si el vector
+     * de entrada ya tiene el tamaño objetivo, se devuelve sin cambios.
+     * 
+     * @param a El vector de entrada a rellenar.
+     * @param m El tamaño objetivo para el vector rellenado.
+     * @return Un vector relleno con ceros de tamaño m.
+     */
     Eigen::VectorXcd ZeroPadGivenSize(const Eigen::VectorXcd &a,int m) {
        int n = a.size();
 
@@ -142,6 +222,7 @@ private:
         return padded_a;
     }
 };
+
 
 // Configuración del servidor gRPC
 void RunServer() {
