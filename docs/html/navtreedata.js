@@ -37,6 +37,24 @@ var NAVTREE =
       [ "Arquitectura 🌉", "index.html#autotoc_md8", null ]
     ] ],
     [ "readme", "md__home_andres_git_microservices_abfReader_readme.html", null ],
+    [ "Arquitectura", "Arquitectura.html", [
+      [ "Vista logica", "Arquitectura.html#logico", null ],
+      [ "Vista de procesos", "Arquitectura.html#procesos", null ],
+      [ "Vista de desarrollo", "Arquitectura.html#desarrollo", null ],
+      [ "Vista de despliegue", "Arquitectura.html#despliegue", null ]
+    ] ],
+    [ "Mircroservicios", "TableOFContents.html", [
+      [ "Wavelet transform", "TableOFContents.html#microservicioCWT", null ],
+      [ "Signals Average", "TableOFContents.html#microservicioAvergafe", null ],
+      [ "Fourier trasnform", "TableOFContents.html#microservicioFFT", null ],
+      [ "Inverser Fourier transform", "TableOFContents.html#microservicioIFFT", null ],
+      [ "Wavelet Descomposition", "TableOFContents.html#microservicioFWT", null ],
+      [ "Moving averge filter", "TableOFContents.html#microservicioMovingAverge", null ],
+      [ ".ABF reader", "TableOFContents.html#microservicioABF", null ],
+      [ ".Mat reader", "TableOFContents.html#microservicioMAT", null ],
+      [ "First difference", "TableOFContents.html#microservicioFirstDiff", null ],
+      [ "Running Sum", "TableOFContents.html#microservicioRunnSum", null ]
+    ] ],
     [ "readme", "md__home_andres_git_microservices_matReader_readme.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
@@ -53,7 +71,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"Arquitectura.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

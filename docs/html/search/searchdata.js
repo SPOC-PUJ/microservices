@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "ams",
   2: "_cfgmrsz",
   3: "ms",
-  4: "rs"
+  4: "amrs"
 };
 
 var indexSectionNames =

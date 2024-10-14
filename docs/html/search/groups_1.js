@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['signals_20average_20microservice_41',['Signals Average Microservice',['../group__Signals__Average.html',1,'']]]
+  ['signals_20average_20microservice_43',['Signals Average Microservice',['../group__Signals__Average.html',1,'']]]
 ];
