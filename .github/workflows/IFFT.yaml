@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'IFFT/**'
+    if: '!contains(github.event.head_commit.message, "[skip ci]")'
 
 jobs:
   build-and-push:
@@ -45,7 +46,7 @@ jobs:
           ls
           sed -i "s+ghcr.io/spoc-puj/ifft:.*+ghcr.io/spoc-puj/ifft:5001-${{ github.run_number }}+g" IfftBack.yaml
           git add .
-          git commit -m "Update Deployment with image version ${{ github.run_number }}"
+          git commit -m "Update Deployment with image version ${{ github.run_number }} [skip ci]"
           git push origin main --force
         env:
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}

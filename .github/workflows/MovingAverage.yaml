@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'Moving_Average/**'
+    if: '!contains(github.event.head_commit.message, "[skip ci]")'
 
 jobs:
   build-and-push:
@@ -48,7 +49,7 @@ jobs:
           ls
           sed -i "s+ghcr.io/spoc-puj/moving_average:.*+ghcr.io/spoc-puj/moving_average:5001-${{ github.run_number }}+g" MovingAverageBack.yaml
           git add .
-          git commit -m "Update Deployment with image version ${{ github.run_number }}"
+          git commit -m "Update Deployment with image version ${{ github.run_number }} [skip ci]"
           git push origin main --force
         env:
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
