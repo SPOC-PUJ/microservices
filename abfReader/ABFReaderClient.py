@@ -15,7 +15,7 @@ def run():
         # Leer el archivo ABF como bytes
         with open("11361009.ABF", "rb") as f:
             file_content = f.read()
-        
+        print(file_content[:10])
         # Enviar el archivo al servidor
         response = stub.readAbf(abf_service_pb2.ABFRequest(file_content=file_content))
         

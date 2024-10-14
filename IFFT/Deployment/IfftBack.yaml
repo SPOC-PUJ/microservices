@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ifftserver
+  labels:
+    app: ifftserver
+    service: ifftserver
+spec:
+  ports:
+  - port: 5001
+    name: grpc-web # Nombre para usar gRPC Web
+    targetPort: 5001
+  selector:
+    app: ifftserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ifftserver
+  labels:
+    app: ifftserver
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ifftserver
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: ifftserver
+        version: v1
+    spec:
+      containers:
+      - name: ifftserver
+        image: ghcr.io/spoc-puj/ifft:5001-latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5001
+        securityContext:
+          runAsUser: 1000
+      imagePullSecrets:
+      - name: dockerconfigjson-github-com

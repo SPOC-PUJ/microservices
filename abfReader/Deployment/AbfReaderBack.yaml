@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: abfreaderserver
+  labels:
+    app: abfreaderserver
+    service: abfreaderserver
+spec:
+  ports:
+  - port: 50051
+    name: grpc-web # este debe ser el nombre para poder utilizar grpc web
+    targetPort: 50051
+  selector:
+    app: abfreaderserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abfreaderserver
+  labels:
+    app: abfreaderserver
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abfreaderserver
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: abfreaderserver
+        version: v1
+    spec:
+      containers:
+      - name: abfreaderserver
+        image: ghcr.io/spoc-puj/abf_reader:50051-latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 50051
+        securityContext:
+          runAsUser: 1000
+      imagePullSecrets:
+      - name: dockerconfigjson-github-com

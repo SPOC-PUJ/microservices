@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cwtserver
+  labels:
+    app: cwtserver
+    service: cwtserver
+spec:
+  ports:
+  - port: 5001
+    name: grpc-web # este debe ser el nombre para poder utilizar grpc web
+    targetPort: 5001
+  selector:
+    app: cwtserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cwtserver
+  labels:
+    app: cwtserver
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cwtserver
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: cwtserver
+        version: v1
+    spec:
+      containers:
+      - name: cwtserver
+        image: ghcr.io/spoc-puj/cwt:5001-latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001
+        securityContext:
+          runAsUser: 1000
+      imagePullSecrets:
+      - name: dockerconfigjson-github-com

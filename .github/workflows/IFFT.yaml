@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
+        with:
+          repository: 'SPOC-PUJ/microservices'
+          token: ${{ secrets.GIT_PASSWORD }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -31,8 +34,23 @@ jobs:
           context: ./IFFT
           push: true
           tags: |
-            ghcr.io/spoc-puj/ifft:latest
-            ghcr.io/spoc-puj/ifft:5001-latest
+            ghcr.io/spoc-puj/ifft:${{ github.run_number }}
+            ghcr.io/spoc-puj/ifft:5001-${{ github.run_number }}
+      - name: Modify the deployment manifest
+        working-directory: ./IFFT/Deployment
+        run: |
+          git config user.email "${{ secrets.GIT_EMAIL }}"
+          git config user.name "${{ secrets.GIT_NAME }}"
+          pwd
+          ls
+          sed -i "s+ghcr.io/spoc-puj/ifft:.*+ghcr.io/spoc-puj/ifft:5001-${{ github.run_number }}+g" IfftBack.yaml
+          git add .
+          git commit -m "Update Deployment with image version ${{ github.run_number }}"
+          git push origin main
+        env:
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
+          RUN_NUMBER: ${{ github.run_number }}
   build-and-push-arm64:
     runs-on: ubuntu-latest
 

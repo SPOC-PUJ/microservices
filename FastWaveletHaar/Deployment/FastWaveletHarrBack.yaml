@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastwaveletharrserver
+  labels:
+    app: fastwaveletharrserver
+    service: fastwaveletharrserver
+spec:
+  ports:
+  - port: 5001
+    name: grpc-web # este debe ser el nombre para poder utilizar grpc web
+    targetPort: 5001
+  selector:
+    app: fastwaveletharrserver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastwaveletharrserver
+  labels:
+    app: fastwaveletharrserver
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastwaveletharrserver
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: fastwaveletharrserver
+        version: v1
+    spec:
+      containers:
+      - name: fastwaveletharrserver
+        image: ghcr.io/spoc-puj/fastwavelethaar:5001-latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5001
+        securityContext:
+          runAsUser: 1000
+      imagePullSecrets:
+      - name: dockerconfigjson-github-com
