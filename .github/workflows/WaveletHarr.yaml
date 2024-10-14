@@ -34,8 +34,8 @@ jobs:
           context: ./FastWaveletHaar
           push: true
           tags: |
-            ghcr.io/spoc-puj/fastwavelethaar:${{ github.run_number }
-            ghcr.io/spoc-puj/fastwavelethaar:5001-${{ github.run_number }
+            ghcr.io/spoc-puj/fastwavelethaar:${{ github.run_number }}
+            ghcr.io/spoc-puj/fastwavelethaar:5001-${{ github.run_number }}
       - name: Modify the deployment manifest
         working-directory: ./FastWaveletHaar/Deployment
         run: |
@@ -46,7 +46,7 @@ jobs:
           sed -i "s+ghcr.io/spoc-puj/fastwavelethaar:.*+ghcr.io/spoc-puj/fastwavelethaar:5001-${{ github.run_number }}+g" FastWaveletHarrBack.yaml
           git add .
           git commit -m "Update Deployment with image version ${{ github.run_number }}"
-          git push origin main
+          git push origin main --force
         env:
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
