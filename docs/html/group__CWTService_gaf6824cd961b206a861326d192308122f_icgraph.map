@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::CWTEigen" name="SignalServiceImpl::CWTEigen">
+<area shape="rect" id="node1" title="Calcula la CWT utilizando el Wavelet de Morlet." alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node2" href="$group__CWTService.html#ga1e5329c155b9d47991a044817fb52fe9" title="Computes the Continuous Wavelet Transform (CWT) for a given signal." alt="" coords="5,5,152,47"/>
+</map>

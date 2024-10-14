@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::FFTconvolveEigen" name="SignalServiceImpl::FFTconvolveEigen">
+<area shape="rect" id="node1" title="Realiza la convolución en el dominio de Fourier." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$group__CWTService.html#ga1c36f7121af3b08a5000e041699a876a" title="Zero&#45;pads a vector to a specified size." alt="" coords="200,5,347,47"/>
+</map>

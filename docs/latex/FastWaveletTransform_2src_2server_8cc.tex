@@ -1,0 +1,129 @@
+\hypertarget{FastWaveletTransform_2src_2server_8cc}{}\doxysection{server.\+cc File Reference}
+\label{FastWaveletTransform_2src_2server_8cc}\index{server.cc@{server.cc}}
+{\ttfamily \#include $<$grpcpp/grpcpp.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}proto/signal\+\_\+fast\+\_\+wavelet\+\_\+transform.\+grpc.\+pb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./\+Eigen/\+Dense\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./unsupported/\+Eigen/\+FFT\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+Include dependency graph for Fast\+Wavelet\+Transform/src/server.cc\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{FastWaveletTransform_2src_2server_8cc__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a952eac791b596a61bba0a133a3bb439f}{PI}} = acos(-\/1)
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a030708b875c6181e7ce9ab780fbf9fdb}{Db1\+Dec\+Low}} \{\{std\+::complex$<$double$>$(0.\+7071067812, 0.\+0), std\+::complex$<$double$>$(0.\+7071067812, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a525739630260a6fdc27758e23f381374}{Db1\+Dec\+High}} \{\{std\+::complex$<$double$>$(-\/0.\+7071067812, 0.\+0), std\+::complex$<$double$>$(0.\+7071067812, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a9586ace2a64cd0ca8a432a417e3e826d}{Db2\+Dec\+Low}} \{\{std\+::complex$<$double$>$(-\/0.\+1294095226, 0.\+0), std\+::complex$<$double$>$(0.\+2241438680, 0.\+0),std\+::complex$<$double$>$(0.\+8365163037, 0.\+0), std\+::complex$<$double$>$(0.\+4829629131, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_af6ca47b0ff2cf40d3bf99650b9140ba3}{Db2\+Dec\+High}} \{\{std\+::complex$<$double$>$(-\/0.\+4829629131, 0.\+0), std\+::complex$<$double$>$(0.\+8365163037, 0.\+0),std\+::complex$<$double$>$(-\/0.\+2241438680, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1294095226, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a48ab4c1691c98ce329ecec6c3140af35}{Db3\+Dec\+Low}} \{\{ std\+::complex$<$double$>$(0.\+0352262919, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0854412739, 0.\+0),std\+::complex$<$double$>$(-\/0.\+1350110200, 0.\+0), std\+::complex$<$double$>$(0.\+4598775021, 0.\+0),std\+::complex$<$double$>$(0.\+8068915093, 0.\+0), std\+::complex$<$double$>$(0.\+3326705530, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a8f1aafb035f625833dee454a816b6ec2}{Db3\+Dec\+High}} \{\{ std\+::complex$<$double$>$(-\/0.\+3326705530, 0.\+0), std\+::complex$<$double$>$(0.\+8068915093, 0.\+0),std\+::complex$<$double$>$(-\/0.\+4598775021, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1350110200, 0.\+0),std\+::complex$<$double$>$(0.\+0854412739, 0.\+0), std\+::complex$<$double$>$(0.\+0352262919, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a9223b1b516ddbd590f1e5dd507063b23}{Db4\+Dec\+Low}} \{\{std\+::complex$<$double$>$(-\/0.\+0105974018, 0.\+0), std\+::complex$<$double$>$(0.\+0328830117, 0.\+0),std\+::complex$<$double$>$(0.\+0308413818, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1870348117, 0.\+0),std\+::complex$<$double$>$(-\/0.\+0279837694, 0.\+0), std\+::complex$<$double$>$(0.\+6308807679, 0.\+0),std\+::complex$<$double$>$(0.\+7148465706, 0.\+0), std\+::complex$<$double$>$(0.\+2303778133, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a632a3effd868b730af341e8e0d186138}{Db4\+Dec\+High}} \{\{std\+::complex$<$double$>$(-\/0.\+2303778133, 0.\+0), std\+::complex$<$double$>$(0.\+7148465706, 0.\+0),std\+::complex$<$double$>$(-\/0.\+6308807679, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0279837694, 0.\+0),std\+::complex$<$double$>$(0.\+1870348117, 0.\+0), std\+::complex$<$double$>$(0.\+0308413818, 0.\+0),std\+::complex$<$double$>$(-\/0.\+0328830117, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0105974018, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a8045a9eb1fbcb53aae54fd48f4d42bd9}{Bio31\+Dec\+Low}} \{\{std\+::complex$<$double$>$(-\/0.\+3535533905932738, 0.\+0), std\+::complex$<$double$>$(1.\+0606601717798212, 0.\+0),std\+::complex$<$double$>$(1.\+0606601717798212, 0.\+0), std\+::complex$<$double$>$(-\/0.\+3535533905932738, 0.\+0)\}\}
+\item 
+const Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{FastWaveletTransform_2src_2server_8cc_a7ba5b663eb1b4526b1c8b239f38d8ba9}{Bio31\+Dec\+High}} \{\{std\+::complex$<$double$>$(-\/0.\+1767766952966369, 0.\+0), std\+::complex$<$double$>$(0.\+5303300858899106, 0.\+0),std\+::complex$<$double$>$(-\/0.\+5303300858899106, 0.\+0), std\+::complex$<$double$>$(0.\+1767766952966369, 0.\+0)\}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{FastWaveletTransform_2src_2server_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!main@{main}}
+\index{main@{main}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a7ba5b663eb1b4526b1c8b239f38d8ba9}\label{FastWaveletTransform_2src_2server_8cc_a7ba5b663eb1b4526b1c8b239f38d8ba9}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Bio31DecHigh@{Bio31DecHigh}}
+\index{Bio31DecHigh@{Bio31DecHigh}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Bio31DecHigh}{Bio31DecHigh}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Bio31\+Dec\+High \{\{std\+::complex$<$double$>$(-\/0.\+1767766952966369, 0.\+0), std\+::complex$<$double$>$(0.\+5303300858899106, 0.\+0),std\+::complex$<$double$>$(-\/0.\+5303300858899106, 0.\+0), std\+::complex$<$double$>$(0.\+1767766952966369, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a8045a9eb1fbcb53aae54fd48f4d42bd9}\label{FastWaveletTransform_2src_2server_8cc_a8045a9eb1fbcb53aae54fd48f4d42bd9}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Bio31DecLow@{Bio31DecLow}}
+\index{Bio31DecLow@{Bio31DecLow}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Bio31DecLow}{Bio31DecLow}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Bio31\+Dec\+Low \{\{std\+::complex$<$double$>$(-\/0.\+3535533905932738, 0.\+0), std\+::complex$<$double$>$(1.\+0606601717798212, 0.\+0),std\+::complex$<$double$>$(1.\+0606601717798212, 0.\+0), std\+::complex$<$double$>$(-\/0.\+3535533905932738, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a525739630260a6fdc27758e23f381374}\label{FastWaveletTransform_2src_2server_8cc_a525739630260a6fdc27758e23f381374}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db1DecHigh@{Db1DecHigh}}
+\index{Db1DecHigh@{Db1DecHigh}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db1DecHigh}{Db1DecHigh}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db1\+Dec\+High \{\{std\+::complex$<$double$>$(-\/0.\+7071067812, 0.\+0), std\+::complex$<$double$>$(0.\+7071067812, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a030708b875c6181e7ce9ab780fbf9fdb}\label{FastWaveletTransform_2src_2server_8cc_a030708b875c6181e7ce9ab780fbf9fdb}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db1DecLow@{Db1DecLow}}
+\index{Db1DecLow@{Db1DecLow}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db1DecLow}{Db1DecLow}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db1\+Dec\+Low \{\{std\+::complex$<$double$>$(0.\+7071067812, 0.\+0), std\+::complex$<$double$>$(0.\+7071067812, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_af6ca47b0ff2cf40d3bf99650b9140ba3}\label{FastWaveletTransform_2src_2server_8cc_af6ca47b0ff2cf40d3bf99650b9140ba3}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db2DecHigh@{Db2DecHigh}}
+\index{Db2DecHigh@{Db2DecHigh}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db2DecHigh}{Db2DecHigh}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db2\+Dec\+High \{\{std\+::complex$<$double$>$(-\/0.\+4829629131, 0.\+0), std\+::complex$<$double$>$(0.\+8365163037, 0.\+0),std\+::complex$<$double$>$(-\/0.\+2241438680, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1294095226, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a9586ace2a64cd0ca8a432a417e3e826d}\label{FastWaveletTransform_2src_2server_8cc_a9586ace2a64cd0ca8a432a417e3e826d}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db2DecLow@{Db2DecLow}}
+\index{Db2DecLow@{Db2DecLow}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db2DecLow}{Db2DecLow}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db2\+Dec\+Low \{\{std\+::complex$<$double$>$(-\/0.\+1294095226, 0.\+0), std\+::complex$<$double$>$(0.\+2241438680, 0.\+0),std\+::complex$<$double$>$(0.\+8365163037, 0.\+0), std\+::complex$<$double$>$(0.\+4829629131, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a8f1aafb035f625833dee454a816b6ec2}\label{FastWaveletTransform_2src_2server_8cc_a8f1aafb035f625833dee454a816b6ec2}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db3DecHigh@{Db3DecHigh}}
+\index{Db3DecHigh@{Db3DecHigh}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db3DecHigh}{Db3DecHigh}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db3\+Dec\+High \{\{ std\+::complex$<$double$>$(-\/0.\+3326705530, 0.\+0), std\+::complex$<$double$>$(0.\+8068915093, 0.\+0),std\+::complex$<$double$>$(-\/0.\+4598775021, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1350110200, 0.\+0),std\+::complex$<$double$>$(0.\+0854412739, 0.\+0), std\+::complex$<$double$>$(0.\+0352262919, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a48ab4c1691c98ce329ecec6c3140af35}\label{FastWaveletTransform_2src_2server_8cc_a48ab4c1691c98ce329ecec6c3140af35}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db3DecLow@{Db3DecLow}}
+\index{Db3DecLow@{Db3DecLow}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db3DecLow}{Db3DecLow}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db3\+Dec\+Low \{\{ std\+::complex$<$double$>$(0.\+0352262919, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0854412739, 0.\+0),std\+::complex$<$double$>$(-\/0.\+1350110200, 0.\+0), std\+::complex$<$double$>$(0.\+4598775021, 0.\+0),std\+::complex$<$double$>$(0.\+8068915093, 0.\+0), std\+::complex$<$double$>$(0.\+3326705530, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a632a3effd868b730af341e8e0d186138}\label{FastWaveletTransform_2src_2server_8cc_a632a3effd868b730af341e8e0d186138}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db4DecHigh@{Db4DecHigh}}
+\index{Db4DecHigh@{Db4DecHigh}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db4DecHigh}{Db4DecHigh}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db4\+Dec\+High \{\{std\+::complex$<$double$>$(-\/0.\+2303778133, 0.\+0), std\+::complex$<$double$>$(0.\+7148465706, 0.\+0),std\+::complex$<$double$>$(-\/0.\+6308807679, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0279837694, 0.\+0),std\+::complex$<$double$>$(0.\+1870348117, 0.\+0), std\+::complex$<$double$>$(0.\+0308413818, 0.\+0),std\+::complex$<$double$>$(-\/0.\+0328830117, 0.\+0), std\+::complex$<$double$>$(-\/0.\+0105974018, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a9223b1b516ddbd590f1e5dd507063b23}\label{FastWaveletTransform_2src_2server_8cc_a9223b1b516ddbd590f1e5dd507063b23}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!Db4DecLow@{Db4DecLow}}
+\index{Db4DecLow@{Db4DecLow}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{Db4DecLow}{Db4DecLow}}
+{\footnotesize\ttfamily const Eigen\+::\+Vector\+Xcd Db4\+Dec\+Low \{\{std\+::complex$<$double$>$(-\/0.\+0105974018, 0.\+0), std\+::complex$<$double$>$(0.\+0328830117, 0.\+0),std\+::complex$<$double$>$(0.\+0308413818, 0.\+0), std\+::complex$<$double$>$(-\/0.\+1870348117, 0.\+0),std\+::complex$<$double$>$(-\/0.\+0279837694, 0.\+0), std\+::complex$<$double$>$(0.\+6308807679, 0.\+0),std\+::complex$<$double$>$(0.\+7148465706, 0.\+0), std\+::complex$<$double$>$(0.\+2303778133, 0.\+0)\}\}}
+
+\mbox{\Hypertarget{FastWaveletTransform_2src_2server_8cc_a952eac791b596a61bba0a133a3bb439f}\label{FastWaveletTransform_2src_2server_8cc_a952eac791b596a61bba0a133a3bb439f}} 
+\index{FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}!PI@{PI}}
+\index{PI@{PI}!FastWaveletTransform/src/server.cc@{FastWaveletTransform/src/server.cc}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily const double PI = acos(-\/1)}
+

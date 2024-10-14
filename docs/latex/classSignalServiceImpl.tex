@@ -1,0 +1,121 @@
+\hypertarget{classSignalServiceImpl}{}\doxysection{Signal\+Service\+Impl Class Reference}
+\label{classSignalServiceImpl}\index{SignalServiceImpl@{SignalServiceImpl}}
+
+
+Clase que implementa el servicio de CWT.  
+
+
+
+
+Inheritance diagram for Signal\+Service\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classSignalServiceImpl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Signal\+Service\+Impl\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classSignalServiceImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__CWTService_ga1e5329c155b9d47991a044817fb52fe9}{Compute\+CWT}} (Server\+Context $\ast$context, const CWTRequest $\ast$request, CWTResponse $\ast$response) override
+\begin{DoxyCompactList}\small\item\em Computes the Continuous Wavelet Transform (CWT) for a given signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a87fc4daf0c5a2ae37fc5bedce53c8b24}\label{classSignalServiceImpl_a87fc4daf0c5a2ae37fc5bedce53c8b24}} 
+Status {\bfseries Compute\+Fast\+Wavelet\+Haar} (Server\+Context $\ast$context, const Fast\+Wavelet\+Transform\+Haar\+Request $\ast$request, Fast\+Wavelet\+Transform\+Haar\+Response $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a929db30b6b54dbea6b82ef630f5607ca}\label{classSignalServiceImpl_a929db30b6b54dbea6b82ef630f5607ca}} 
+Status {\bfseries Compute\+Fast\+Wavelet\+Transform} (Server\+Context $\ast$context, const Fast\+Wavelet\+Transform\+Request $\ast$request, Fast\+Wavelet\+Transform\+Response $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ad2aa6384055d23df115c0615f104b354}\label{classSignalServiceImpl_ad2aa6384055d23df115c0615f104b354}} 
+Status {\bfseries Compute\+Fft\+Convolve} (Server\+Context $\ast$context, const Fft\+Convolve\+Request $\ast$request, Fft\+Convolve\+Response $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_af1970b5095f9468a1eec793f1567c828}\label{classSignalServiceImpl_af1970b5095f9468a1eec793f1567c828}} 
+Status {\bfseries Compute\+FFT} (Server\+Context $\ast$context, const FFTRequest $\ast$request, FFTResponse $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_aa4036373030aadd4b1165d4813fe0f95}\label{classSignalServiceImpl_aa4036373030aadd4b1165d4813fe0f95}} 
+Status {\bfseries Compute\+First\+Difference} (Server\+Context $\ast$context, const First\+Difference\+Request $\ast$request, First\+Difference\+Response $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a4f5ccdd68b901a2a3a04029805c61826}\label{classSignalServiceImpl_a4f5ccdd68b901a2a3a04029805c61826}} 
+Status {\bfseries Compute\+IFFT} (Server\+Context $\ast$context, const IFFTRequest $\ast$request, IFFTResponse $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ab3cf429707ffd802743c04c83e094f61}\label{classSignalServiceImpl_ab3cf429707ffd802743c04c83e094f61}} 
+Status {\bfseries Compute\+Moving\+Average} (Server\+Context $\ast$context, const Moving\+Average\+Request $\ast$request, Moving\+Average\+Response $\ast$reply) override
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ae36b740cc61d14cacdd7b985a745afc3}\label{classSignalServiceImpl_ae36b740cc61d14cacdd7b985a745afc3}} 
+Status {\bfseries Compute\+Runing\+Sum} (Server\+Context $\ast$context, const Runing\+Sum\+Request $\ast$request, Runing\+Sum\+Response $\ast$reply) override
+\item 
+Status \mbox{\hyperlink{group__Signals__Average_ga57e51c692bd48d7ea822f09210cf1e9a}{Compute\+Average}} (Server\+Context $\ast$context, const Average\+Request $\ast$request, Average\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the average of multiple signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__CWTService_ga17ddf0fb1642315e24e796a744120a14}{Generate\+Log\+Scales}} (double start, double end, int num\+Scales)
+\begin{DoxyCompactList}\small\item\em Genera escalas logarítmicas. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ \mbox{\hyperlink{group__CWTService_gaf6824cd961b206a861326d192308122f}{CWTEigen}} (const Eigen\+::\+Vector\+Xcd \&signal, const std\+::vector$<$ double $>$ \&scales)
+\begin{DoxyCompactList}\small\item\em Calcula la CWT utilizando el Wavelet de Morlet. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga88b1b30cfc2b63c49f5b82064747306c}{Morlet\+Wavelet}} (int N, double scale, double f0=1.\+0, double fb=1.\+0)
+\begin{DoxyCompactList}\small\item\em Genera el Wavelet de Morlet. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga89171d148b7d33b6e21d3a9b3ab62cc2}{FFTconvolve\+Eigen}} (const Eigen\+::\+Vector\+Xcd \&x, const Eigen\+::\+Vector\+Xcd \&h, bool shift)
+\begin{DoxyCompactList}\small\item\em Realiza la convolución en el dominio de Fourier. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga1c36f7121af3b08a5000e041699a876a}{Zero\+Pad\+Given\+Size}} (const Eigen\+::\+Vector\+Xcd \&a, int m)
+\begin{DoxyCompactList}\small\item\em Zero-\/pads a vector to a specified size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a7a8b0a0963fdbc3dfdbf4e3e25dbd9c8}\label{classSignalServiceImpl_a7a8b0a0963fdbc3dfdbf4e3e25dbd9c8}} 
+std\+::pair$<$ Eigen\+::\+Vector\+Xcd, Eigen\+::\+Vector\+Xcd $>$ {\bfseries Fast\+Wavelet\+Transform\+Haar} (const Eigen\+::\+Vector\+Xcd \&input)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a5b70077770f52f0013da247521bccb48}\label{classSignalServiceImpl_a5b70077770f52f0013da247521bccb48}} 
+std\+::pair$<$ std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$, std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ $>$ {\bfseries Fast\+Wavelet\+Transform} (const Eigen\+::\+Vector\+Xcd \&input, int Dec\+Level, std\+::string Wave\+Name)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_aa9149d330d8c8cd311a99b2ff670d6f3}\label{classSignalServiceImpl_aa9149d330d8c8cd311a99b2ff670d6f3}} 
+std\+::pair$<$ Eigen\+::\+Vector\+Xcd, Eigen\+::\+Vector\+Xcd $>$ {\bfseries Fast\+Wavelet\+Transform\+Aux} (const Eigen\+::\+Vector\+Xcd \&input, Eigen\+::\+Vector\+Xcd Lo\+\_\+d, Eigen\+::\+Vector\+Xcd Hi\+\_\+d)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ab74c1b2c069f82a65329fbffc0392855}\label{classSignalServiceImpl_ab74c1b2c069f82a65329fbffc0392855}} 
+Eigen\+::\+Vector\+Xcd {\bfseries FFTconvolve\+Eigen} (const Eigen\+::\+Vector\+Xcd \&x, const Eigen\+::\+Vector\+Xcd \&h, bool shift=false)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a1c36f7121af3b08a5000e041699a876a}\label{classSignalServiceImpl_a1c36f7121af3b08a5000e041699a876a}} 
+Eigen\+::\+Vector\+Xcd {\bfseries Zero\+Pad\+Given\+Size} (const Eigen\+::\+Vector\+Xcd \&a, int m)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a89171d148b7d33b6e21d3a9b3ab62cc2}\label{classSignalServiceImpl_a89171d148b7d33b6e21d3a9b3ab62cc2}} 
+Eigen\+::\+Vector\+Xcd {\bfseries FFTconvolve\+Eigen} (const Eigen\+::\+Vector\+Xcd \&x, const Eigen\+::\+Vector\+Xcd \&h, bool shift)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a9448386dedc831bff0ab6d640990262a}\label{classSignalServiceImpl_a9448386dedc831bff0ab6d640990262a}} 
+Eigen\+::\+Vector\+Xcd {\bfseries Zero\+Pad\+Given\+Size} (const Eigen\+::\+Vector\+Xcd \&h, int size)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_acfd724d18f210db051f6d9b085ada4f3}\label{classSignalServiceImpl_acfd724d18f210db051f6d9b085ada4f3}} 
+Eigen\+::\+Vector\+Xcd {\bfseries FFTEigen} (Eigen\+::\+Vector\+Xcd \&a)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ab6b672a6eefb72f9db2b33d962a7059a}\label{classSignalServiceImpl_ab6b672a6eefb72f9db2b33d962a7059a}} 
+Eigen\+::\+Vector\+Xcd {\bfseries First\+Difference} (const Eigen\+::\+Vector\+Xcd \&input)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_ab8a846c9b43777c1beab4084e5f9573f}\label{classSignalServiceImpl_ab8a846c9b43777c1beab4084e5f9573f}} 
+Eigen\+::\+Vector\+Xcd {\bfseries IFFTEigen} (Eigen\+::\+Vector\+Xcd \&a)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_af5b50ea29c2d4ce620938b0c3fc87fec}\label{classSignalServiceImpl_af5b50ea29c2d4ce620938b0c3fc87fec}} 
+Eigen\+::\+Vector\+Xcd {\bfseries Moving\+Average} (const Eigen\+::\+Vector\+Xcd \&a, int window\+\_\+size)
+\item 
+\mbox{\Hypertarget{classSignalServiceImpl_a67297de5412dc6374ae39e8ba6504291}\label{classSignalServiceImpl_a67297de5412dc6374ae39e8ba6504291}} 
+Eigen\+::\+Vector\+Xcd {\bfseries Runing\+Sum} (const Eigen\+::\+Vector\+Xcd \&Input)
+\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__Signals__Average_gadff95928a4047afd6604c28577b723b0}{Signals\+Averge}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Computes the average of a vector of Eigen\+::\+Vector\+Xcd signals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clase que implementa el servicio de CWT. 
+
+Implements the Signal\+Service for computing average signals.
+
+Esta clase proporciona el servicio de g\+RPC para calcular la Transformada Wavelet Continua a partir de una señal de entrada.
+
+This class provides the implementation of the Signal\+Service, specifically the Compute\+Average method, which takes multiple input signals, computes their average, and returns the result in the form of a complex vector. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+CWT/src/server.\+cc\end{DoxyCompactItemize}

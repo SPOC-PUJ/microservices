@@ -1,0 +1,4 @@
+<map id="Signals Average Microservice" name="Signals Average Microservice">
+<area shape="rect" id="node1" title="This microservice computes the average of multiple complex signals." alt="" coords="5,7,219,33"/>
+<area shape="rect" id="node2" href="$group__CWTService.html" title=" " alt="" coords="384,7,527,33"/>
+</map>

@@ -1,0 +1,219 @@
+\hypertarget{group__CWTService}{}\doxysection{Microservicio CWT}
+\label{group__CWTService}\index{Microservicio CWT@{Microservicio CWT}}
+Collaboration diagram for Microservicio CWT\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__CWTService}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__CWTService_ga1e5329c155b9d47991a044817fb52fe9}{Signal\+Service\+Impl\+::\+Compute\+CWT}} (Server\+Context $\ast$context, const CWTRequest $\ast$request, CWTResponse $\ast$response) override
+\begin{DoxyCompactList}\small\item\em Computes the Continuous Wavelet Transform (CWT) for a given signal. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{group__CWTService_ga17ddf0fb1642315e24e796a744120a14}{Signal\+Service\+Impl\+::\+Generate\+Log\+Scales}} (double start, double end, int num\+Scales)
+\begin{DoxyCompactList}\small\item\em Genera escalas logarítmicas. \end{DoxyCompactList}\item 
+std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ \mbox{\hyperlink{group__CWTService_gaf6824cd961b206a861326d192308122f}{Signal\+Service\+Impl\+::\+CWTEigen}} (const Eigen\+::\+Vector\+Xcd \&signal, const std\+::vector$<$ double $>$ \&scales)
+\begin{DoxyCompactList}\small\item\em Calcula la CWT utilizando el Wavelet de Morlet. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga88b1b30cfc2b63c49f5b82064747306c}{Signal\+Service\+Impl\+::\+Morlet\+Wavelet}} (int N, double scale, double f0=1.\+0, double fb=1.\+0)
+\begin{DoxyCompactList}\small\item\em Genera el Wavelet de Morlet. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga89171d148b7d33b6e21d3a9b3ab62cc2}{Signal\+Service\+Impl\+::\+FFTconvolve\+Eigen}} (const Eigen\+::\+Vector\+Xcd \&x, const Eigen\+::\+Vector\+Xcd \&h, bool shift)
+\begin{DoxyCompactList}\small\item\em Realiza la convolución en el dominio de Fourier. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__CWTService_ga1c36f7121af3b08a5000e041699a876a}{Signal\+Service\+Impl\+::\+Zero\+Pad\+Given\+Size}} (const Eigen\+::\+Vector\+Xcd \&a, int m)
+\begin{DoxyCompactList}\small\item\em Zero-\/pads a vector to a specified size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__CWTService_gafec70f4aa13559a9e64d869bb52e2b2f}\label{group__CWTService_gafec70f4aa13559a9e64d869bb52e2b2f}} 
+void {\bfseries Run\+Server} ()
+\item 
+\mbox{\Hypertarget{group__CWTService_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__CWTService_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Este grupo contiene la implementación del microservicio para calcular la Transformada Wavelet Continua (CWT) utilizando g\+RPC. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__CWTService_ga1e5329c155b9d47991a044817fb52fe9}\label{group__CWTService_ga1e5329c155b9d47991a044817fb52fe9}} 
+\index{Microservicio CWT@{Microservicio CWT}!ComputeCWT@{ComputeCWT}}
+\index{ComputeCWT@{ComputeCWT}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{ComputeCWT()}{ComputeCWT()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+CWT (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const CWTRequest $\ast$}]{request,  }\item[{CWTResponse $\ast$}]{response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the Continuous Wavelet Transform (CWT) for a given signal. 
+
+This function receives a signal in the form of complex numbers, computes the CWT using a set of specified scales, and returns the coefficients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & Server context for handling requests. \\
+\hline
+{\em request} & The request containing the signal and scale parameters. \\
+\hline
+{\em response} & The response object where the CWT coefficients will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+g\+RPC status indicating success or failure of the operation. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__CWTService_ga1e5329c155b9d47991a044817fb52fe9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__CWTService_gaf6824cd961b206a861326d192308122f}\label{group__CWTService_gaf6824cd961b206a861326d192308122f}} 
+\index{Microservicio CWT@{Microservicio CWT}!CWTEigen@{CWTEigen}}
+\index{CWTEigen@{CWTEigen}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{CWTEigen()}{CWTEigen()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Vector\+Xcd$>$ Signal\+Service\+Impl\+::\+CWTEigen (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{signal,  }\item[{const std\+::vector$<$ double $>$ \&}]{scales }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calcula la CWT utilizando el Wavelet de Morlet. 
+
+Esta función calcula la Transformada Wavelet Continua para la señal proporcionada utilizando un conjunto de escalas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em signal} & La señal de entrada representada como un vector de números complejos. \\
+\hline
+{\em scales} & Un vector de escalas a utilizar para el cálculo de la CWT. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un vector de vectores complejos que representan los coeficientes de la CWT. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__CWTService_gaf6824cd961b206a861326d192308122f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__CWTService_ga89171d148b7d33b6e21d3a9b3ab62cc2}\label{group__CWTService_ga89171d148b7d33b6e21d3a9b3ab62cc2}} 
+\index{Microservicio CWT@{Microservicio CWT}!FFTconvolveEigen@{FFTconvolveEigen}}
+\index{FFTconvolveEigen@{FFTconvolveEigen}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{FFTconvolveEigen()}{FFTconvolveEigen()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+FFTconvolve\+Eigen (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{x,  }\item[{const Eigen\+::\+Vector\+Xcd \&}]{h,  }\item[{bool}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Realiza la convolución en el dominio de Fourier. 
+
+Esta función utiliza la transformada de Fourier para realizar la convolución de dos señales en el dominio de Fourier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & La señal de entrada. \\
+\hline
+{\em h} & El kernel de convolución. \\
+\hline
+{\em shift} & Indica si se debe realizar un desplazamiento en el dominio de la frecuencia. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resultado de la convolución. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__CWTService_ga89171d148b7d33b6e21d3a9b3ab62cc2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__CWTService_ga17ddf0fb1642315e24e796a744120a14}\label{group__CWTService_ga17ddf0fb1642315e24e796a744120a14}} 
+\index{Microservicio CWT@{Microservicio CWT}!GenerateLogScales@{GenerateLogScales}}
+\index{GenerateLogScales@{GenerateLogScales}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{GenerateLogScales()}{GenerateLogScales()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Signal\+Service\+Impl\+::\+Generate\+Log\+Scales (\begin{DoxyParamCaption}\item[{double}]{start,  }\item[{double}]{end,  }\item[{int}]{num\+Scales }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Genera escalas logarítmicas. 
+
+Esta función genera una serie de escalas logarítmicas entre un rango especificado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Escala inicial. \\
+\hline
+{\em end} & Escala final. \\
+\hline
+{\em num\+Scales} & Número de escalas a generar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector de escalas generadas. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__CWTService_ga17ddf0fb1642315e24e796a744120a14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__CWTService_ga88b1b30cfc2b63c49f5b82064747306c}\label{group__CWTService_ga88b1b30cfc2b63c49f5b82064747306c}} 
+\index{Microservicio CWT@{Microservicio CWT}!MorletWavelet@{MorletWavelet}}
+\index{MorletWavelet@{MorletWavelet}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{MorletWavelet()}{MorletWavelet()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Morlet\+Wavelet (\begin{DoxyParamCaption}\item[{int}]{N,  }\item[{double}]{scale,  }\item[{double}]{f0 = {\ttfamily 1.0},  }\item[{double}]{fb = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Genera el Wavelet de Morlet. 
+
+Esta función genera un vector que representa el Wavelet de Morlet para un tamaño dado y una escala especificada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Tamaño del wavelet. \\
+\hline
+{\em scale} & Escala del wavelet. \\
+\hline
+{\em f0} & Frecuencia central (por defecto 1.\+0). \\
+\hline
+{\em fb} & Ancho de banda (por defecto 1.\+0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector de números complejos que representa el Wavelet de Morlet. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__CWTService_ga1c36f7121af3b08a5000e041699a876a}\label{group__CWTService_ga1c36f7121af3b08a5000e041699a876a}} 
+\index{Microservicio CWT@{Microservicio CWT}!ZeroPadGivenSize@{ZeroPadGivenSize}}
+\index{ZeroPadGivenSize@{ZeroPadGivenSize}!Microservicio CWT@{Microservicio CWT}}
+\doxysubsubsection{\texorpdfstring{ZeroPadGivenSize()}{ZeroPadGivenSize()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Zero\+Pad\+Given\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{a,  }\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Zero-\/pads a vector to a specified size. 
+
+Esta función rellena el vector de entrada con ceros para asegurar que su tamaño coincida con el tamaño objetivo especificado. Si el vector de entrada ya tiene el tamaño objetivo, se devuelve sin cambios.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & El vector de entrada a rellenar. \\
+\hline
+{\em m} & El tamaño objetivo para el vector rellenado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un vector relleno con ceros de tamaño m. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__CWTService_ga1c36f7121af3b08a5000e041699a876a_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,103 @@
+\hypertarget{group__Signals__Average}{}\doxysection{Signals Average Microservice}
+\label{group__Signals__Average}\index{Signals Average Microservice@{Signals Average Microservice}}
+
+
+This microservice computes the average of multiple complex signals.  
+
+
+Collaboration diagram for Signals Average Microservice\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__Signals__Average}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__Signals__Average_ga57e51c692bd48d7ea822f09210cf1e9a}{Signal\+Service\+Impl\+::\+Compute\+Average}} (Server\+Context $\ast$context, const Average\+Request $\ast$request, Average\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the average of multiple signals. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__Signals__Average_gadff95928a4047afd6604c28577b723b0}{Signal\+Service\+Impl\+::\+Signals\+Averge}} (const std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Computes the average of a vector of Eigen\+::\+Vector\+Xcd signals. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__Signals__Average_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__Signals__Average_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the average of multiple complex signals. 
+
+The Signals\+\_\+\+Average microservice is implemented using g\+RPC and Eigen, allowing it to handle complex-\/valued signals and compute their averages efficiently. The service accepts input signals as complex vectors and returns the averaged signal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__Signals__Average_ga57e51c692bd48d7ea822f09210cf1e9a}\label{group__Signals__Average_ga57e51c692bd48d7ea822f09210cf1e9a}} 
+\index{Signals Average Microservice@{Signals Average Microservice}!ComputeAverage@{ComputeAverage}}
+\index{ComputeAverage@{ComputeAverage}!Signals Average Microservice@{Signals Average Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeAverage()}{ComputeAverage()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+Average (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const Average\+Request $\ast$}]{request,  }\item[{Average\+Response $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the average of multiple signals. 
+
+This function receives a g\+RPC request containing multiple signals, processes each signal into an Eigen vector, calculates the average using the Signals\+Averge method, and sends the averaged result back in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing multiple signals. \\
+\hline
+{\em reply} & The response containing the averaged signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__Signals__Average_ga57e51c692bd48d7ea822f09210cf1e9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__Signals__Average_gadff95928a4047afd6604c28577b723b0}\label{group__Signals__Average_gadff95928a4047afd6604c28577b723b0}} 
+\index{Signals Average Microservice@{Signals Average Microservice}!SignalsAverge@{SignalsAverge}}
+\index{SignalsAverge@{SignalsAverge}!Signals Average Microservice@{Signals Average Microservice}}
+\doxysubsubsection{\texorpdfstring{SignalsAverge()}{SignalsAverge()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Signals\+Averge (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ \&}]{Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Computes the average of a vector of Eigen\+::\+Vector\+Xcd signals. 
+
+This function takes a collection of complex-\/valued signals (Eigen vectors), ensures they are of the same size, and computes their element-\/wise average.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & A vector of Eigen\+::\+Vector\+Xcd containing the input signals. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The averaged signal as an Eigen\+::\+Vector\+Xcd.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the input vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__Signals__Average_gadff95928a4047afd6604c28577b723b0_icgraph}
+\end{center}
+\end{figure}

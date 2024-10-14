@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::ComputeAverage" name="SignalServiceImpl::ComputeAverage">
+<area shape="rect" id="node1" title="Computes the average of multiple signals." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0" title="Computes the average of a vector of Eigen::VectorXcd signals." alt="" coords="200,5,347,47"/>
+</map>
