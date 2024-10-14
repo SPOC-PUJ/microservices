@@ -34,8 +34,8 @@ jobs:
           context: ./matReader
           push: true
           tags: |
-            ghcr.io/spoc-puj/mat_reader:${{ github.run_number }
-            ghcr.io/spoc-puj/mat_reader:50052-${{ github.run_number }
+            ghcr.io/spoc-puj/mat_reader:${{ github.run_number }}
+            ghcr.io/spoc-puj/mat_reader:50052-${{ github.run_number }}
       - name: Modify the deployment manifest
         working-directory: ./matReader/Deployment
         run: |

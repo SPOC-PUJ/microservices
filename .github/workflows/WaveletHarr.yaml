@@ -34,8 +34,8 @@ jobs:
           context: ./FastWaveletHaar
           push: true
           tags: |
-            ghcr.io/spoc-puj/fastwavelethaar:${{ github.run_number }
-            ghcr.io/spoc-puj/fastwavelethaar:5001-${{ github.run_number }
+            ghcr.io/spoc-puj/fastwavelethaar:${{ github.run_number }}
+            ghcr.io/spoc-puj/fastwavelethaar:5001-${{ github.run_number }}
       - name: Modify the deployment manifest
         working-directory: ./FastWaveletHaar/Deployment
         run: |
