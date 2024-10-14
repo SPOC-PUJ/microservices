@@ -42,3 +42,4 @@ spec:
           runAsUser: 1000
       imagePullSecrets:
       - name: dockerconfigjson-github-com
+      

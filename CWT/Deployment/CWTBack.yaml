@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: cwtserver
-        image: ghcr.io/spoc-puj/cwt:5001-latest
+        image: ghcr.io/spoc-puj/cwt:5001-6
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
@@ -42,3 +42,4 @@ spec:
           runAsUser: 1000
       imagePullSecrets:
       - name: dockerconfigjson-github-com
+      
