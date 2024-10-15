@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::ComputeFFT" name="SignalServiceImpl::ComputeFFT">
+<area shape="rect" id="node1" title="Computes the FFT of a signal." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$group__FFT.html#gacfd724d18f210db051f6d9b085ada4f3" title="Performs the Fast Fourier Transform (FFT) on a complex signal." alt="" coords="200,5,347,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::FFTEigen" name="SignalServiceImpl::FFTEigen">
+<area shape="rect" id="node1" title="Performs the Fast Fourier Transform (FFT) on a complex signal." alt="" coords="200,5,347,47"/>
+<area shape="rect" id="node2" href="$group__FFT.html#gaf1970b5095f9468a1eec793f1567c828" title="Computes the FFT of a signal." alt="" coords="5,5,152,47"/>
+</map>

@@ -1,0 +1,95 @@
+\hypertarget{group__FFT}{}\doxysection{Fourier Transform Microservice}
+\label{group__FFT}\index{Fourier Transform Microservice@{Fourier Transform Microservice}}
+
+
+This microservice computes the Fast Fourier Transform (FFT) of complex signals.  
+
+
+Collaboration diagram for Fourier Transform Microservice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FFT}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__FFT_gaf1970b5095f9468a1eec793f1567c828}{Signal\+Service\+Impl\+::\+Compute\+FFT}} (Server\+Context $\ast$context, const FFTRequest $\ast$request, FFTResponse $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the FFT of a signal. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__FFT_gacfd724d18f210db051f6d9b085ada4f3}{Signal\+Service\+Impl\+::\+FFTEigen}} (Eigen\+::\+Vector\+Xcd \&a)
+\begin{DoxyCompactList}\small\item\em Performs the Fast Fourier Transform (FFT) on a complex signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__FFT_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__FFT_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the Fast Fourier Transform (FFT) of complex signals. 
+
+The FFT microservice is implemented using g\+RPC and Eigen, handling complex-\/valued signals and applying the Fast Fourier Transform (FFT) to convert them from the time domain to the frequency domain. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__FFT_gaf1970b5095f9468a1eec793f1567c828}\label{group__FFT_gaf1970b5095f9468a1eec793f1567c828}} 
+\index{Fourier Transform Microservice@{Fourier Transform Microservice}!ComputeFFT@{ComputeFFT}}
+\index{ComputeFFT@{ComputeFFT}!Fourier Transform Microservice@{Fourier Transform Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeFFT()}{ComputeFFT()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+FFT (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const FFTRequest $\ast$}]{request,  }\item[{FFTResponse $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the FFT of a signal. 
+
+This method processes the incoming request by extracting the complex signal from the g\+RPC request, converts it to an Eigen vector, applies the Fast Fourier Transform (FFT), and sends the result back in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing the input signal. \\
+\hline
+{\em reply} & The response containing the FFT-\/transformed signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__FFT_gaf1970b5095f9468a1eec793f1567c828_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FFT_gacfd724d18f210db051f6d9b085ada4f3}\label{group__FFT_gacfd724d18f210db051f6d9b085ada4f3}} 
+\index{Fourier Transform Microservice@{Fourier Transform Microservice}!FFTEigen@{FFTEigen}}
+\index{FFTEigen@{FFTEigen}!Fourier Transform Microservice@{Fourier Transform Microservice}}
+\doxysubsubsection{\texorpdfstring{FFTEigen()}{FFTEigen()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+FFTEigen (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xcd \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Performs the Fast Fourier Transform (FFT) on a complex signal. 
+
+This function uses Eigen\textquotesingle{}s FFT functionality to compute the forward FFT of the input complex signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input signal as an Eigen\+::\+Vector\+Xcd (complex vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The FFT-\/transformed signal as an Eigen\+::\+Vector\+Xcd. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__FFT_gacfd724d18f210db051f6d9b085ada4f3_icgraph}
+\end{center}
+\end{figure}

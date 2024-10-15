@@ -1,4 +1,4 @@
-@page TableOFContents Mircroservicios
+@page TableOFContents Microservicios
 @tableofcontents
 
 @section microservicioCWT Wavelet transform
@@ -8,13 +8,13 @@
 @ref Signals_Average
 
 @section microservicioFFT Fourier trasnform
-@ref CWTService
+@ref FFT
 
 @section microservicioIFFT Inverser Fourier transform
-@ref CWTService
+@ref IFFT
 
 @section microservicioFWT Wavelet Descomposition
-@ref CWTService
+@ref FWT
 
 @section microservicioMovingAverge Moving averge filter
 @ref CWTService

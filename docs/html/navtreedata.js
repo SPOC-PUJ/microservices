@@ -38,12 +38,12 @@ var NAVTREE =
     ] ],
     [ "readme", "md__home_andres_git_microservices_abfReader_readme.html", null ],
     [ "Arquitectura", "Arquitectura.html", [
-      [ "Vista logica", "Arquitectura.html#logico", null ],
+      [ "Vista lógica", "Arquitectura.html#logico", null ],
       [ "Vista de procesos", "Arquitectura.html#procesos", null ],
       [ "Vista de desarrollo", "Arquitectura.html#desarrollo", null ],
       [ "Vista de despliegue", "Arquitectura.html#despliegue", null ]
     ] ],
-    [ "Mircroservicios", "TableOFContents.html", [
+    [ "Microservicios", "TableOFContents.html", [
       [ "Wavelet transform", "TableOFContents.html#microservicioCWT", null ],
       [ "Signals Average", "TableOFContents.html#microservicioAvergafe", null ],
       [ "Fourier trasnform", "TableOFContents.html#microservicioFFT", null ],

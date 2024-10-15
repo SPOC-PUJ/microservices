@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['morletwavelet_37',['MorletWavelet',['../group__CWTService.html#ga88b1b30cfc2b63c49f5b82064747306c',1,'SignalServiceImpl']]]
+  ['iffteigen_53',['IFFTEigen',['../group__IFFT.html#gab8a846c9b43777c1beab4084e5f9573f',1,'SignalServiceImpl']]]
 ];

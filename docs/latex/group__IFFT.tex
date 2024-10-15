@@ -1,0 +1,95 @@
+\hypertarget{group__IFFT}{}\doxysection{Inverse Fourier Transform Microservice}
+\label{group__IFFT}\index{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}}
+
+
+This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals.  
+
+
+Collaboration diagram for Inverse Fourier Transform Microservice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__IFFT}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__IFFT_ga4f5ccdd68b901a2a3a04029805c61826}{Signal\+Service\+Impl\+::\+Compute\+IFFT}} (Server\+Context $\ast$context, const IFFTRequest $\ast$request, IFFTResponse $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the Inverse Fast Fourier Transform (IFFT) of a signal. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__IFFT_gab8a846c9b43777c1beab4084e5f9573f}{Signal\+Service\+Impl\+::\+IFFTEigen}} (Eigen\+::\+Vector\+Xcd \&a)
+\begin{DoxyCompactList}\small\item\em Performs the Inverse Fast Fourier Transform (IFFT) on a complex signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__IFFT_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__IFFT_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals. 
+
+The IFFT microservice is implemented using g\+RPC and Eigen, handling complex-\/valued signals and applying the Inverse Fast Fourier Transform (IFFT) to convert signals from the frequency domain back to the time domain. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__IFFT_ga4f5ccdd68b901a2a3a04029805c61826}\label{group__IFFT_ga4f5ccdd68b901a2a3a04029805c61826}} 
+\index{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}!ComputeIFFT@{ComputeIFFT}}
+\index{ComputeIFFT@{ComputeIFFT}!Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeIFFT()}{ComputeIFFT()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+IFFT (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const IFFTRequest $\ast$}]{request,  }\item[{IFFTResponse $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the Inverse Fast Fourier Transform (IFFT) of a signal. 
+
+This method processes the incoming request by extracting the complex signal from the g\+RPC request, converting it to an Eigen vector, applying the Inverse Fast Fourier Transform (IFFT), and sending the result back in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing the input signal. \\
+\hline
+{\em reply} & The response containing the IFFT-\/transformed signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__IFFT_ga4f5ccdd68b901a2a3a04029805c61826_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__IFFT_gab8a846c9b43777c1beab4084e5f9573f}\label{group__IFFT_gab8a846c9b43777c1beab4084e5f9573f}} 
+\index{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}!IFFTEigen@{IFFTEigen}}
+\index{IFFTEigen@{IFFTEigen}!Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}}
+\doxysubsubsection{\texorpdfstring{IFFTEigen()}{IFFTEigen()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+IFFTEigen (\begin{DoxyParamCaption}\item[{Eigen\+::\+Vector\+Xcd \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Performs the Inverse Fast Fourier Transform (IFFT) on a complex signal. 
+
+This function uses Eigen\textquotesingle{}s FFT functionality to compute the inverse FFT of the input complex signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input signal as an Eigen\+::\+Vector\+Xcd (complex vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The IFFT-\/transformed signal as an Eigen\+::\+Vector\+Xcd. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__IFFT_gab8a846c9b43777c1beab4084e5f9573f_icgraph}
+\end{center}
+\end{figure}

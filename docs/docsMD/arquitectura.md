@@ -1,7 +1,7 @@
 @page Arquitectura Arquitectura
 @tableofcontents
 
-@section logico Vista logica
+@section logico Vista lógica
 \image html logico.svg
 @section procesos Vista de procesos
 \image html procesos.svg

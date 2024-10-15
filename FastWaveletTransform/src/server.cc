@@ -45,8 +45,43 @@ const double PI = acos(-1);
 
     const Eigen::VectorXcd Bio31DecHigh  {{std::complex<double>(-0.1767766952966369, 0.0), std::complex<double>(0.5303300858899106, 0.0),std::complex<double>(-0.5303300858899106, 0.0), std::complex<double>(0.1767766952966369, 0.0)}};
 
+
+
+/**
+ * @defgroup FWT Fast Wavelet Transform
+ * @brief This microservice computes the Fast Wavelet Transform (FWT)  of complex signals.
+ *
+ * This module implements a gRPC service for computing the Fast Wavelet Transform (FWT) of a signal.
+ * It leverages Eigen for matrix operations and convolution.
+ * @{
+ *
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing  Fast wavelet transform (FWT).
+ * 
+ * This class provides the implementation of the SignalService, specifically the ComputeFastWaveletTransform
+ * method, which takes a complex signal as input, applies FWT using the Eigen library, 
+ * and returns the result in the form of a vector of pairs of complex vector.
+ */
 class SignalServiceImpl final : public SignalService::Service {
 public:
+/**
+ * @brief Computes the Fast Wavelet Transform of the provided signal.
+ * 
+ * This function handles the gRPC request to compute the FWT, converting the incoming signal data 
+ * into an appropriate format for processing. It allows users to specify parameters for the transformation,
+ * such as the wavelet type and the number of decomposition levels. Upon completion, it returns the computed 
+ * approximation and detail coefficients.
+ *
+ * @param context gRPC server context, providing access to the server's state and functionalities.
+ * @param request Contains the signal data and parameters for the transform, including the wavelet name 
+ *        and desired decomposition levels.
+ * @param reply The response message containing the approximation and detail coefficients, structured as 
+ *        vectors for each decomposition level.
+ * @return Status indicating success or failure of the operation, providing feedback on the processing outcome.
+ */
     Status ComputeFastWaveletTransform(ServerContext* context, const FastWaveletTransformRequest* request,
                                         FastWaveletTransformResponse* reply) override {
         try {
@@ -93,11 +128,27 @@ public:
     }
 
 private:
-        
+/**
+ * @brief Performs the Fast Wavelet Transform.
+ * 
+ * This method executes the Fast Wavelet Transform on the provided input signal, allowing for multi-level 
+ * decomposition. The user can specify the wavelet type, which determines the filter coefficients used 
+ * during the transformation. The implementation adheres to the principles established by Mallat in 1988, 
+ * which emphasizes computational efficiency in wavelet analysis.
+ * 
+ * @param input The input signal as an Eigen::VectorXcd, representing complex signal data.
+ * @param DecLevel The number of decomposition levels to apply during the transformation, determining the 
+ *        granularity of the analysis.
+ * @param WaveName The name of the wavelet to be used, allowing flexibility in the choice of wavelet 
+ *        (e.g., Daubechies, Biorthogonal).
+ * @return A pair containing vectors of approximations and details for each decomposition level, enabling 
+ *         further analysis or reconstruction of the signal.
+ */
         std::pair< std::vector< Eigen::VectorXcd >, std::vector< Eigen::VectorXcd > > FastWaveletTransform(const Eigen::VectorXcd& input,int DecLevel,std::string WaveName){
 
         std::vector<Eigen::VectorXcd>Aproximations;
         std::vector<Eigen::VectorXcd>Details;
+        // Retrieve wavelet filters based on the provided name
         const auto getWaveletFilters = [](const std::string& waveName) -> std::pair<Eigen::VectorXcd, Eigen::VectorXcd> {
             if (waveName == "db1") {
                 return std::make_pair(Db1DecLow, Db1DecHigh);
@@ -137,7 +188,20 @@ private:
         
         return std::make_pair(Aproximations, Details);
     }
-
+/**
+ * @brief Performs auxiliary computations for the Fast Wavelet Transform.
+ * 
+ * This function applies convolution with specified low-pass and high-pass filters to the input signal, 
+ * facilitating the decomposition process inherent in the wavelet transform. By utilizing filter coefficients 
+ * corresponding to the selected wavelet, the function separates the signal into its approximation and detail 
+ * components.
+ * 
+ * @param input The input signal, which is subject to convolution for wavelet decomposition.
+ * @param Lo_d Low-pass filter coefficients for approximating the signal at each decomposition level.
+ * @param Hi_d High-pass filter coefficients for extracting the detail components from the signal.
+ * @return A pair of Eigen::VectorXcd representing the approximation and detail coefficients, allowing for 
+ *         further processing or analysis.
+ */
     std::pair<Eigen::VectorXcd,Eigen::VectorXcd> FastWaveletTransformAux(const Eigen::VectorXcd& input,Eigen::VectorXcd Lo_d , Eigen::VectorXcd Hi_d){
 
     // conseguir filtros segun el nombre
@@ -161,7 +225,19 @@ private:
 
         return std::make_pair(aproxi, detaili);
     }
-
+/**
+ * @brief Computes the convolution of two signals using FFT.
+ * 
+ * This function implements the convolution operation using the Fast Fourier Transform (FFT) for 
+ * computational efficiency. By transforming both the input signal and the filter into the frequency domain, 
+ * the convolution is computed as a simple multiplication, which is then transformed back to the time domain.
+ * 
+ * @param x The input signal, represented as an Eigen::VectorXcd, to which the convolution is applied.
+ * @param h The filter or kernel for convolution, which defines the characteristics of the transformation.
+ * @param shift Optional parameter for phase shifting, allowing for adjustments in the resulting signal 
+ *        phase as required for specific applications.
+ * @return The result of the convolution as an Eigen::VectorXcd, representing the processed signal post-convolution.
+ */
     Eigen::VectorXcd FFTconvolveEigen(const Eigen::VectorXcd& x, const Eigen::VectorXcd& h, bool shift = false) {
         int N = x.size();
         auto h_padded = ZeroPadGivenSize(h, N);
@@ -187,7 +263,17 @@ private:
         return convolutionResult.head(x.size());
     }
 
-
+/**
+ * @brief Zero-pads a vector to the specified size.
+ * 
+ * This function extends the input vector with zeros to reach a desired size. Zero-padding is crucial in 
+ * signal processing, especially when preparing data for FFT-based operations, as it helps maintain 
+ * consistent lengths for inputs and avoids boundary effects.
+ * 
+ * @param a The input vector to pad, which will be extended to the specified size.
+ * @param m The desired size for the padded vector, indicating how long the output vector should be.
+ * @return A zero-padded version of the input vector, ensuring it meets the specified size requirements.
+ */
     Eigen::VectorXcd ZeroPadGivenSize(const Eigen::VectorXcd &a,int m) {
         int n = a.size();
 

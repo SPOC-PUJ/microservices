@@ -15,9 +15,39 @@ using signal::SignalGrpc;
 using signal::SignalService;
 
 // Implementación del servicio SignalService
+/**
+ * @defgroup IFFT Inverse Fourier Transform Microservice
+ * @brief This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals.
+ * 
+ * The IFFT microservice is implemented using gRPC and Eigen, handling complex-valued signals
+ * and applying the Inverse Fast Fourier Transform (IFFT) to convert signals from the frequency domain back to the time domain.
+ * 
+ * @{
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing the Inverse Fast Fourier Transform (IFFT).
+ * 
+ * This class provides the implementation of the SignalService, specifically the ComputeIFFT
+ * method, which takes a complex signal as input, applies IFFT using the Eigen library, 
+ * and returns the result in the form of a complex vector.
+ */
 class SignalServiceImpl final : public SignalService::Service
 {
 public:
+      /**
+     * @brief Computes the Inverse Fast Fourier Transform (IFFT) of a signal.
+     * 
+     * This method processes the incoming request by extracting the complex signal from 
+     * the gRPC request, converting it to an Eigen vector, applying the Inverse Fast Fourier Transform (IFFT),
+     * and sending the result back in the response.
+     * 
+     * @param context The gRPC server context.
+     * @param request The request containing the input signal.
+     * @param reply The response containing the IFFT-transformed signal.
+     * @return A gRPC Status object indicating success or failure.
+     */
     Status ComputeIFFT(ServerContext* context, const IFFTRequest* request,
                        IFFTResponse* reply) override
     {
@@ -54,6 +84,15 @@ public:
 
 private:
     // Función para calcular el IFFT usando Eigen FFT
+      /**
+     * @brief Performs the Inverse Fast Fourier Transform (IFFT) on a complex signal.
+     * 
+     * This function uses Eigen's FFT functionality to compute the inverse FFT of 
+     * the input complex signal.
+     * 
+     * @param a The input signal as an Eigen::VectorXcd (complex vector).
+     * @return The IFFT-transformed signal as an Eigen::VectorXcd.
+     */
     Eigen::VectorXcd IFFTEigen(Eigen::VectorXcd& a)
     {
         Eigen::FFT<double> ft;

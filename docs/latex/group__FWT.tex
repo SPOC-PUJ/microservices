@@ -1,0 +1,203 @@
+\hypertarget{group__FWT}{}\doxysection{Fast Wavelet Transform}
+\label{group__FWT}\index{Fast Wavelet Transform@{Fast Wavelet Transform}}
+
+
+This microservice computes the Fast Wavelet Transform (FWT) of complex signals.  
+
+
+Collaboration diagram for Fast Wavelet Transform\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__FWT_ga929db30b6b54dbea6b82ef630f5607ca}{Signal\+Service\+Impl\+::\+Compute\+Fast\+Wavelet\+Transform}} (Server\+Context $\ast$context, const Fast\+Wavelet\+Transform\+Request $\ast$request, Fast\+Wavelet\+Transform\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the Fast Wavelet Transform of the provided signal. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$, std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ $>$ \mbox{\hyperlink{group__FWT_ga5b70077770f52f0013da247521bccb48}{Signal\+Service\+Impl\+::\+Fast\+Wavelet\+Transform}} (const Eigen\+::\+Vector\+Xcd \&input, int Dec\+Level, std\+::string Wave\+Name)
+\begin{DoxyCompactList}\small\item\em Performs the Fast Wavelet Transform. \end{DoxyCompactList}\item 
+std\+::pair$<$ Eigen\+::\+Vector\+Xcd, Eigen\+::\+Vector\+Xcd $>$ \mbox{\hyperlink{group__FWT_gaa9149d330d8c8cd311a99b2ff670d6f3}{Signal\+Service\+Impl\+::\+Fast\+Wavelet\+Transform\+Aux}} (const Eigen\+::\+Vector\+Xcd \&input, Eigen\+::\+Vector\+Xcd Lo\+\_\+d, Eigen\+::\+Vector\+Xcd Hi\+\_\+d)
+\begin{DoxyCompactList}\small\item\em Performs auxiliary computations for the Fast Wavelet Transform. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__FWT_gab74c1b2c069f82a65329fbffc0392855}{Signal\+Service\+Impl\+::\+FFTconvolve\+Eigen}} (const Eigen\+::\+Vector\+Xcd \&x, const Eigen\+::\+Vector\+Xcd \&h, bool shift=false)
+\begin{DoxyCompactList}\small\item\em Computes the convolution of two signals using FFT. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__FWT_ga1c36f7121af3b08a5000e041699a876a}{Signal\+Service\+Impl\+::\+Zero\+Pad\+Given\+Size}} (const Eigen\+::\+Vector\+Xcd \&a, int m)
+\begin{DoxyCompactList}\small\item\em Zero-\/pads a vector to the specified size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__FWT_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__FWT_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the Fast Wavelet Transform (FWT) of complex signals. 
+
+This module implements a g\+RPC service for computing the Fast Wavelet Transform (FWT) of a signal. It leverages Eigen for matrix operations and convolution. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__FWT_ga929db30b6b54dbea6b82ef630f5607ca}\label{group__FWT_ga929db30b6b54dbea6b82ef630f5607ca}} 
+\index{Fast Wavelet Transform@{Fast Wavelet Transform}!ComputeFastWaveletTransform@{ComputeFastWaveletTransform}}
+\index{ComputeFastWaveletTransform@{ComputeFastWaveletTransform}!Fast Wavelet Transform@{Fast Wavelet Transform}}
+\doxysubsubsection{\texorpdfstring{ComputeFastWaveletTransform()}{ComputeFastWaveletTransform()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+Fast\+Wavelet\+Transform (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const Fast\+Wavelet\+Transform\+Request $\ast$}]{request,  }\item[{Fast\+Wavelet\+Transform\+Response $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the Fast Wavelet Transform of the provided signal. 
+
+This function handles the g\+RPC request to compute the FWT, converting the incoming signal data into an appropriate format for processing. It allows users to specify parameters for the transformation, such as the wavelet type and the number of decomposition levels. Upon completion, it returns the computed approximation and detail coefficients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & g\+RPC server context, providing access to the server\textquotesingle{}s state and functionalities. \\
+\hline
+{\em request} & Contains the signal data and parameters for the transform, including the wavelet name and desired decomposition levels. \\
+\hline
+{\em reply} & The response message containing the approximation and detail coefficients, structured as vectors for each decomposition level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status indicating success or failure of the operation, providing feedback on the processing outcome. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT_ga929db30b6b54dbea6b82ef630f5607ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FWT_ga5b70077770f52f0013da247521bccb48}\label{group__FWT_ga5b70077770f52f0013da247521bccb48}} 
+\index{Fast Wavelet Transform@{Fast Wavelet Transform}!FastWaveletTransform@{FastWaveletTransform}}
+\index{FastWaveletTransform@{FastWaveletTransform}!Fast Wavelet Transform@{Fast Wavelet Transform}}
+\doxysubsubsection{\texorpdfstring{FastWaveletTransform()}{FastWaveletTransform()}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$, std\+::vector$<$ Eigen\+::\+Vector\+Xcd $>$ $>$ Signal\+Service\+Impl\+::\+Fast\+Wavelet\+Transform (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{input,  }\item[{int}]{Dec\+Level,  }\item[{std\+::string}]{Wave\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Performs the Fast Wavelet Transform. 
+
+This method executes the Fast Wavelet Transform on the provided input signal, allowing for multi-\/level decomposition. The user can specify the wavelet type, which determines the filter coefficients used during the transformation. The implementation adheres to the principles established by Mallat in 1988, which emphasizes computational efficiency in wavelet analysis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input signal as an Eigen\+::\+Vector\+Xcd, representing complex signal data. \\
+\hline
+{\em Dec\+Level} & The number of decomposition levels to apply during the transformation, determining the granularity of the analysis. \\
+\hline
+{\em Wave\+Name} & The name of the wavelet to be used, allowing flexibility in the choice of wavelet (e.\+g., Daubechies, Biorthogonal). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair containing vectors of approximations and details for each decomposition level, enabling further analysis or reconstruction of the signal. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT_ga5b70077770f52f0013da247521bccb48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT_ga5b70077770f52f0013da247521bccb48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FWT_gaa9149d330d8c8cd311a99b2ff670d6f3}\label{group__FWT_gaa9149d330d8c8cd311a99b2ff670d6f3}} 
+\index{Fast Wavelet Transform@{Fast Wavelet Transform}!FastWaveletTransformAux@{FastWaveletTransformAux}}
+\index{FastWaveletTransformAux@{FastWaveletTransformAux}!Fast Wavelet Transform@{Fast Wavelet Transform}}
+\doxysubsubsection{\texorpdfstring{FastWaveletTransformAux()}{FastWaveletTransformAux()}}
+{\footnotesize\ttfamily std\+::pair$<$Eigen\+::\+Vector\+Xcd,Eigen\+::\+Vector\+Xcd$>$ Signal\+Service\+Impl\+::\+Fast\+Wavelet\+Transform\+Aux (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{input,  }\item[{Eigen\+::\+Vector\+Xcd}]{Lo\+\_\+d,  }\item[{Eigen\+::\+Vector\+Xcd}]{Hi\+\_\+d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Performs auxiliary computations for the Fast Wavelet Transform. 
+
+This function applies convolution with specified low-\/pass and high-\/pass filters to the input signal, facilitating the decomposition process inherent in the wavelet transform. By utilizing filter coefficients corresponding to the selected wavelet, the function separates the signal into its approximation and detail components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input signal, which is subject to convolution for wavelet decomposition. \\
+\hline
+{\em Lo\+\_\+d} & Low-\/pass filter coefficients for approximating the signal at each decomposition level. \\
+\hline
+{\em Hi\+\_\+d} & High-\/pass filter coefficients for extracting the detail components from the signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair of Eigen\+::\+Vector\+Xcd representing the approximation and detail coefficients, allowing for further processing or analysis. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT_gaa9149d330d8c8cd311a99b2ff670d6f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FWT_gaa9149d330d8c8cd311a99b2ff670d6f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FWT_gab74c1b2c069f82a65329fbffc0392855}\label{group__FWT_gab74c1b2c069f82a65329fbffc0392855}} 
+\index{Fast Wavelet Transform@{Fast Wavelet Transform}!FFTconvolveEigen@{FFTconvolveEigen}}
+\index{FFTconvolveEigen@{FFTconvolveEigen}!Fast Wavelet Transform@{Fast Wavelet Transform}}
+\doxysubsubsection{\texorpdfstring{FFTconvolveEigen()}{FFTconvolveEigen()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+FFTconvolve\+Eigen (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{x,  }\item[{const Eigen\+::\+Vector\+Xcd \&}]{h,  }\item[{bool}]{shift = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Computes the convolution of two signals using FFT. 
+
+This function implements the convolution operation using the Fast Fourier Transform (FFT) for computational efficiency. By transforming both the input signal and the filter into the frequency domain, the convolution is computed as a simple multiplication, which is then transformed back to the time domain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input signal, represented as an Eigen\+::\+Vector\+Xcd, to which the convolution is applied. \\
+\hline
+{\em h} & The filter or kernel for convolution, which defines the characteristics of the transformation. \\
+\hline
+{\em shift} & Optional parameter for phase shifting, allowing for adjustments in the resulting signal phase as required for specific applications. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the convolution as an Eigen\+::\+Vector\+Xcd, representing the processed signal post-\/convolution. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{group__FWT_gab74c1b2c069f82a65329fbffc0392855_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FWT_ga1c36f7121af3b08a5000e041699a876a}\label{group__FWT_ga1c36f7121af3b08a5000e041699a876a}} 
+\index{Fast Wavelet Transform@{Fast Wavelet Transform}!ZeroPadGivenSize@{ZeroPadGivenSize}}
+\index{ZeroPadGivenSize@{ZeroPadGivenSize}!Fast Wavelet Transform@{Fast Wavelet Transform}}
+\doxysubsubsection{\texorpdfstring{ZeroPadGivenSize()}{ZeroPadGivenSize()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Zero\+Pad\+Given\+Size (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{a,  }\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Zero-\/pads a vector to the specified size. 
+
+This function extends the input vector with zeros to reach a desired size. Zero-\/padding is crucial in signal processing, especially when preparing data for FFT-\/based operations, as it helps maintain consistent lengths for inputs and avoids boundary effects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input vector to pad, which will be extended to the specified size. \\
+\hline
+{\em m} & The desired size for the padded vector, indicating how long the output vector should be. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A zero-\/padded version of the input vector, ensuring it meets the specified size requirements. 
+\end{DoxyReturn}

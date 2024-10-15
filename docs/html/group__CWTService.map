@@ -1,4 +1,7 @@
 <map id="Microservicio CWT" name="Microservicio CWT">
-<area shape="rect" id="node1" href="$group__Signals__Average.html" title="This microservice computes the average of multiple complex signals." alt="" coords="313,7,527,33"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,7,148,33"/>
+<area shape="rect" id="node1" href="$group__Signals__Average.html" title="This microservice computes the average of multiple complex signals." alt="" coords="318,5,531,31"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,84,148,109"/>
+<area shape="rect" id="node3" href="$group__FWT.html" title="This microservice computes the Fast Wavelet Transform (FWT) of complex signals." alt="" coords="337,55,512,80"/>
+<area shape="rect" id="node4" href="$group__IFFT.html" title="This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals." alt="" coords="331,105,519,145"/>
+<area shape="rect" id="node5" href="$group__FFT.html" title="This microservice computes the Fast Fourier Transform (FFT) of complex signals." alt="" coords="313,169,536,195"/>
 </map>
