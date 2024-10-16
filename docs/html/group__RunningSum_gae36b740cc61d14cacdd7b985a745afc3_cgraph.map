@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::ComputeRuningSum" name="SignalServiceImpl::ComputeRuningSum">
+<area shape="rect" id="node1" title="Computes the running sum of a signal." alt="" coords="5,5,160,47"/>
+<area shape="rect" id="node2" href="$group__RunningSum.html#ga67297de5412dc6374ae39e8ba6504291" title="Calculates the running sum of a complex signal." alt="" coords="208,5,355,47"/>
+</map>

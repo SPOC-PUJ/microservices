@@ -1,8 +1,10 @@
 <map id="Microservicio CWT" name="Microservicio CWT">
 <area shape="rect" id="node1" href="$group__Signals__Average.html" title="This microservice computes the average of multiple complex signals." alt="" coords="318,5,531,31"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,104,148,129"/>
-<area shape="rect" id="node3" href="$group__FWT.html" title="This microservice computes the Fast Wavelet Transform (FWT) of complex signals." alt="" coords="337,55,512,80"/>
-<area shape="rect" id="node4" href="$group__MovingAverage.html" title="This microservice computes the moving average of a complex signal." alt="" coords="317,104,532,129"/>
-<area shape="rect" id="node5" href="$group__IFFT.html" title="This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals." alt="" coords="331,154,519,194"/>
-<area shape="rect" id="node6" href="$group__FFT.html" title="This microservice computes the Fast Fourier Transform (FFT) of complex signals." alt="" coords="313,219,536,244"/>
+<area shape="rect" id="node2" href="$group__FirstDifference.html" title="This microservice computes the first difference of a complex signal." alt="" coords="321,55,529,80"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,153,148,179"/>
+<area shape="rect" id="node4" href="$group__FWT.html" title="This microservice computes the Fast Wavelet Transform (FWT) of complex signals." alt="" coords="337,104,512,129"/>
+<area shape="rect" id="node5" href="$group__MovingAverage.html" title="This microservice computes the moving average of a complex signal." alt="" coords="317,153,532,179"/>
+<area shape="rect" id="node6" href="$group__IFFT.html" title="This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals." alt="" coords="331,203,519,243"/>
+<area shape="rect" id="node7" href="$group__RunningSum.html" title="This microservice computes the running sum of a complex signal." alt="" coords="327,268,522,293"/>
+<area shape="rect" id="node8" href="$group__FFT.html" title="This microservice computes the Fast Fourier Transform (FFT) of complex signals." alt="" coords="313,317,536,343"/>
 </map>

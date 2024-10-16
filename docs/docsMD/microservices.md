@@ -26,9 +26,8 @@
 @ref MAT
 
 @section microservicioFirstDiff First difference
-@ref CWTService
+@ref FirstDifference
 
 @section microservicioRunnSum Running Sum
-@ref CWTService
-
+@ref RunningSum
 

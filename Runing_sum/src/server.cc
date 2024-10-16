@@ -14,9 +14,38 @@ using signal::RuningSumResponse;
 using signal::SignalGrpc;
 using signal::SignalService;
 
+
+/**
+ * @defgroup RunningSum Running Sum Microservice
+ * @brief This microservice computes the running sum of a complex signal.
+ * 
+ * The Running Sum microservice is implemented using gRPC and Eigen, processing complex-valued signals
+ * and calculating their cumulative sum.
+ * 
+ * @{
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing the running sum of complex signals.
+ * 
+ * This class provides the implementation of the SignalService, specifically the ComputeRuningSum method,
+ * which processes complex signals, calculates their running sum, and returns the result.
+ */
 class SignalServiceImpl final : public SignalService::Service
 {
 public:
+      /**
+     * @brief Computes the running sum of a signal.
+     * 
+     * This method receives the complex signal from the gRPC request, calculates the running sum
+     * of the input signal, and sends the result in the response.
+     * 
+     * @param context The gRPC server context.
+     * @param request The request containing the input signal.
+     * @param reply The response containing the cumulative sum of the signal.
+     * @return A gRPC Status object indicating success or failure.
+     */
     Status ComputeRuningSum(ServerContext* context, const RuningSumRequest* request,
                             RuningSumResponse* reply) override
     {
@@ -53,6 +82,14 @@ public:
     }
 
 private:
+      /**
+     * @brief Calculates the running sum of a complex signal.
+     * 
+     * This function computes the cumulative sum of the input complex signal using Eigen's complex vector.
+     * 
+     * @param Input The input signal as an Eigen::VectorXcd (complex vector).
+     * @return The running sum of the signal as an Eigen::VectorXcd.
+     */
     Eigen::VectorXcd RuningSum(const Eigen::VectorXcd& Input)
     {
         int Size = Input.size();

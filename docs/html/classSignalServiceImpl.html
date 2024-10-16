@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('classSignalServiceImpl.html',''); init
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classSignalServiceImpl-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SignalServiceImpl Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__CWTService.html">Microservicio CWT</a> &#124; <a class="el" href="group__FWT.html">Fast Wavelet Transform</a> &#124; <a class="el" href="group__FFT.html">Fourier Transform Microservice</a> &#124; <a class="el" href="group__IFFT.html">Inverse Fourier Transform Microservice</a> &#124; <a class="el" href="group__MovingAverage.html">Moving Average Microservice</a> &#124; <a class="el" href="group__Signals__Average.html">Signals Average Microservice</a></div></div>  </div>
+<div class="title">SignalServiceImpl Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__CWTService.html">Microservicio CWT</a> &#124; <a class="el" href="group__FWT.html">Fast Wavelet Transform</a> &#124; <a class="el" href="group__FFT.html">Fourier Transform Microservice</a> &#124; <a class="el" href="group__FirstDifference.html">First Difference Microservice</a> &#124; <a class="el" href="group__IFFT.html">Inverse Fourier Transform Microservice</a> &#124; <a class="el" href="group__MovingAverage.html">Moving Average Microservice</a> &#124; <a class="el" href="group__RunningSum.html">Running Sum Microservice</a> &#124; <a class="el" href="group__Signals__Average.html">Signals Average Microservice</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -132,18 +132,18 @@ Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFftConvolve<
 <tr class="memitem:gaf1970b5095f9468a1eec793f1567c828"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FFT.html#gaf1970b5095f9468a1eec793f1567c828">ComputeFFT</a> (ServerContext *context, const FFTRequest *request, FFTResponse *reply) override</td></tr>
 <tr class="memdesc:gaf1970b5095f9468a1eec793f1567c828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the FFT of a signal.  <a href="group__FFT.html#gaf1970b5095f9468a1eec793f1567c828">More...</a><br /></td></tr>
 <tr class="separator:gaf1970b5095f9468a1eec793f1567c828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4036373030aadd4b1165d4813fe0f95"><td class="memItemLeft" align="right" valign="top"><a id="aa4036373030aadd4b1165d4813fe0f95"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFirstDifference</b> (ServerContext *context, const FirstDifferenceRequest *request, FirstDifferenceResponse *reply) override</td></tr>
-<tr class="separator:aa4036373030aadd4b1165d4813fe0f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4036373030aadd4b1165d4813fe0f95"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FirstDifference.html#gaa4036373030aadd4b1165d4813fe0f95">ComputeFirstDifference</a> (ServerContext *context, const FirstDifferenceRequest *request, FirstDifferenceResponse *reply) override</td></tr>
+<tr class="memdesc:gaa4036373030aadd4b1165d4813fe0f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the first difference of a signal.  <a href="group__FirstDifference.html#gaa4036373030aadd4b1165d4813fe0f95">More...</a><br /></td></tr>
+<tr class="separator:gaa4036373030aadd4b1165d4813fe0f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4f5ccdd68b901a2a3a04029805c61826"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IFFT.html#ga4f5ccdd68b901a2a3a04029805c61826">ComputeIFFT</a> (ServerContext *context, const IFFTRequest *request, IFFTResponse *reply) override</td></tr>
 <tr class="memdesc:ga4f5ccdd68b901a2a3a04029805c61826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Inverse Fast Fourier Transform (IFFT) of a signal.  <a href="group__IFFT.html#ga4f5ccdd68b901a2a3a04029805c61826">More...</a><br /></td></tr>
 <tr class="separator:ga4f5ccdd68b901a2a3a04029805c61826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab3cf429707ffd802743c04c83e094f61"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61">ComputeMovingAverage</a> (ServerContext *context, const MovingAverageRequest *request, MovingAverageResponse *reply) override</td></tr>
 <tr class="memdesc:gab3cf429707ffd802743c04c83e094f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the moving average of a signal.  <a href="group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61">More...</a><br /></td></tr>
 <tr class="separator:gab3cf429707ffd802743c04c83e094f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae36b740cc61d14cacdd7b985a745afc3"><td class="memItemLeft" align="right" valign="top"><a id="ae36b740cc61d14cacdd7b985a745afc3"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeRuningSum</b> (ServerContext *context, const RuningSumRequest *request, RuningSumResponse *reply) override</td></tr>
-<tr class="separator:ae36b740cc61d14cacdd7b985a745afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae36b740cc61d14cacdd7b985a745afc3"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RunningSum.html#gae36b740cc61d14cacdd7b985a745afc3">ComputeRuningSum</a> (ServerContext *context, const RuningSumRequest *request, RuningSumResponse *reply) override</td></tr>
+<tr class="memdesc:gae36b740cc61d14cacdd7b985a745afc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the running sum of a signal.  <a href="group__RunningSum.html#gae36b740cc61d14cacdd7b985a745afc3">More...</a><br /></td></tr>
+<tr class="separator:gae36b740cc61d14cacdd7b985a745afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Signals__Average.html#ga57e51c692bd48d7ea822f09210cf1e9a">ComputeAverage</a> (ServerContext *context, const AverageRequest *request, AverageResponse *reply) override</td></tr>
 <tr class="memdesc:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of multiple signals.  <a href="group__Signals__Average.html#ga57e51c692bd48d7ea822f09210cf1e9a">More...</a><br /></td></tr>
 <tr class="separator:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,18 +189,18 @@ Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>ZeroPadGi
 <tr class="memitem:gacfd724d18f210db051f6d9b085ada4f3"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FFT.html#gacfd724d18f210db051f6d9b085ada4f3">FFTEigen</a> (Eigen::VectorXcd &amp;a)</td></tr>
 <tr class="memdesc:gacfd724d18f210db051f6d9b085ada4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Fast Fourier Transform (FFT) on a complex signal.  <a href="group__FFT.html#gacfd724d18f210db051f6d9b085ada4f3">More...</a><br /></td></tr>
 <tr class="separator:gacfd724d18f210db051f6d9b085ada4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6b672a6eefb72f9db2b33d962a7059a"><td class="memItemLeft" align="right" valign="top"><a id="ab6b672a6eefb72f9db2b33d962a7059a"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>FirstDifference</b> (const Eigen::VectorXcd &amp;input)</td></tr>
-<tr class="separator:ab6b672a6eefb72f9db2b33d962a7059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6b672a6eefb72f9db2b33d962a7059a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FirstDifference.html#gab6b672a6eefb72f9db2b33d962a7059a">FirstDifference</a> (const Eigen::VectorXcd &amp;input)</td></tr>
+<tr class="memdesc:gab6b672a6eefb72f9db2b33d962a7059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the first difference of a complex signal.  <a href="group__FirstDifference.html#gab6b672a6eefb72f9db2b33d962a7059a">More...</a><br /></td></tr>
+<tr class="separator:gab6b672a6eefb72f9db2b33d962a7059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab8a846c9b43777c1beab4084e5f9573f"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IFFT.html#gab8a846c9b43777c1beab4084e5f9573f">IFFTEigen</a> (Eigen::VectorXcd &amp;a)</td></tr>
 <tr class="memdesc:gab8a846c9b43777c1beab4084e5f9573f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Inverse Fast Fourier Transform (IFFT) on a complex signal.  <a href="group__IFFT.html#gab8a846c9b43777c1beab4084e5f9573f">More...</a><br /></td></tr>
 <tr class="separator:gab8a846c9b43777c1beab4084e5f9573f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MovingAverage.html#gaf5b50ea29c2d4ce620938b0c3fc87fec">MovingAverage</a> (const Eigen::VectorXcd &amp;a, int window_size)</td></tr>
 <tr class="memdesc:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a moving average filter to a complex signal.  <a href="group__MovingAverage.html#gaf5b50ea29c2d4ce620938b0c3fc87fec">More...</a><br /></td></tr>
 <tr class="separator:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67297de5412dc6374ae39e8ba6504291"><td class="memItemLeft" align="right" valign="top"><a id="a67297de5412dc6374ae39e8ba6504291"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>RuningSum</b> (const Eigen::VectorXcd &amp;Input)</td></tr>
-<tr class="separator:a67297de5412dc6374ae39e8ba6504291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67297de5412dc6374ae39e8ba6504291"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RunningSum.html#ga67297de5412dc6374ae39e8ba6504291">RuningSum</a> (const Eigen::VectorXcd &amp;Input)</td></tr>
+<tr class="memdesc:ga67297de5412dc6374ae39e8ba6504291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the running sum of a complex signal.  <a href="group__RunningSum.html#ga67297de5412dc6374ae39e8ba6504291">More...</a><br /></td></tr>
+<tr class="separator:ga67297de5412dc6374ae39e8ba6504291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadff95928a4047afd6604c28577b723b0"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0">SignalsAverge</a> (const std::vector&lt; Eigen::VectorXcd &gt; &amp;Input)</td></tr>
 <tr class="memdesc:gadff95928a4047afd6604c28577b723b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a vector of Eigen::VectorXcd signals.  <a href="group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0">More...</a><br /></td></tr>
 <tr class="separator:gadff95928a4047afd6604c28577b723b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,15 +208,19 @@ Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>RuningSum
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clase que implementa el servicio de CWT. </p>
 <p>Implements the SignalService for computing average signals.</p>
+<p>Implements the SignalService for computing the running sum of complex signals.</p>
 <p>Implements the SignalService for computing the moving average of complex signals.</p>
 <p>Implements the SignalService for computing the Inverse Fast Fourier Transform (IFFT).</p>
+<p>Implements the SignalService for computing the first difference of complex signals.</p>
 <p>Implements the SignalService for computing the Fast Fourier Transform (FFT).</p>
 <p>Implements the SignalService for computing Fast wavelet transform (FWT).</p>
 <p>Esta clase proporciona el servicio de gRPC para calcular la Transformada Wavelet Continua a partir de una señal de entrada.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeFastWaveletTransform method, which takes a complex signal as input, applies FWT using the Eigen library, and returns the result in the form of a vector of pairs of complex vector.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeFFT method, which takes a complex signal as input, applies FFT using the Eigen library, and returns the result in the form of a complex vector.</p>
+<p>This class provides the implementation of the SignalService, specifically the <code>ComputeFirstDifference</code> method, which processes a signal, calculates its first difference (i.e., the difference between consecutive elements), and returns the result.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeIFFT method, which takes a complex signal as input, applies IFFT using the Eigen library, and returns the result in the form of a complex vector.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeMovingAverage method, which processes complex signals, applies a moving average filter, and returns the result.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeRuningSum method, which processes complex signals, calculates their running sum, and returns the result.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeAverage method, which takes multiple input signals, computes their average, and returns the result in the form of a complex vector. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>CWT/src/server.cc</li>

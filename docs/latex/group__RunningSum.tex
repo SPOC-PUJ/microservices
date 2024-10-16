@@ -1,0 +1,96 @@
+\hypertarget{group__RunningSum}{}\doxysection{Running Sum Microservice}
+\label{group__RunningSum}\index{Running Sum Microservice@{Running Sum Microservice}}
+
+
+This microservice computes the running sum of a complex signal.  
+
+
+Collaboration diagram for Running Sum Microservice\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RunningSum}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__RunningSum_gae36b740cc61d14cacdd7b985a745afc3}{Signal\+Service\+Impl\+::\+Compute\+Runing\+Sum}} (Server\+Context $\ast$context, const Runing\+Sum\+Request $\ast$request, Runing\+Sum\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the running sum of a signal. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__RunningSum_ga67297de5412dc6374ae39e8ba6504291}{Signal\+Service\+Impl\+::\+Runing\+Sum}} (const Eigen\+::\+Vector\+Xcd \&Input)
+\begin{DoxyCompactList}\small\item\em Calculates the running sum of a complex signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__RunningSum_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__RunningSum_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the running sum of a complex signal. 
+
+The Running Sum microservice is implemented using g\+RPC and Eigen, processing complex-\/valued signals and calculating their cumulative sum. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__RunningSum_gae36b740cc61d14cacdd7b985a745afc3}\label{group__RunningSum_gae36b740cc61d14cacdd7b985a745afc3}} 
+\index{Running Sum Microservice@{Running Sum Microservice}!ComputeRuningSum@{ComputeRuningSum}}
+\index{ComputeRuningSum@{ComputeRuningSum}!Running Sum Microservice@{Running Sum Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeRuningSum()}{ComputeRuningSum()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+Runing\+Sum (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const Runing\+Sum\+Request $\ast$}]{request,  }\item[{Runing\+Sum\+Response $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the running sum of a signal. 
+
+This method receives the complex signal from the g\+RPC request, calculates the running sum of the input signal, and sends the result in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing the input signal. \\
+\hline
+{\em reply} & The response containing the cumulative sum of the signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{group__RunningSum_gae36b740cc61d14cacdd7b985a745afc3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__RunningSum_ga67297de5412dc6374ae39e8ba6504291}\label{group__RunningSum_ga67297de5412dc6374ae39e8ba6504291}} 
+\index{Running Sum Microservice@{Running Sum Microservice}!RuningSum@{RuningSum}}
+\index{RuningSum@{RuningSum}!Running Sum Microservice@{Running Sum Microservice}}
+\doxysubsubsection{\texorpdfstring{RuningSum()}{RuningSum()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Runing\+Sum (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calculates the running sum of a complex signal. 
+
+This function computes the cumulative sum of the input complex signal using Eigen\textquotesingle{}s complex vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The input signal as an Eigen\+::\+Vector\+Xcd (complex vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The running sum of the signal as an Eigen\+::\+Vector\+Xcd. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{group__RunningSum_ga67297de5412dc6374ae39e8ba6504291_icgraph}
+\end{center}
+\end{figure}
