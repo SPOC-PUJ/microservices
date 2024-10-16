@@ -6,7 +6,7 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8080
+EXPOSE 50051
 
 ENTRYPOINT [ "python" ]
 
