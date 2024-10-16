@@ -1,0 +1,4 @@
+<map id="SignalServiceImpl::MovingAverage" name="SignalServiceImpl::MovingAverage">
+<area shape="rect" id="node1" title="Applies a moving average filter to a complex signal." alt="" coords="236,5,383,47"/>
+<area shape="rect" id="node2" href="$group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61" title="Computes the moving average of a signal." alt="" coords="5,5,188,47"/>
+</map>

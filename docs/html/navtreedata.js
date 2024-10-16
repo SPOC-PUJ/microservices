@@ -71,7 +71,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Arquitectura.html"
+"Arquitectura.html",
+"index.html#autotoc_md7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

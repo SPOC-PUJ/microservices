@@ -17,13 +17,13 @@
 @ref FWT
 
 @section microservicioMovingAverge Moving averge filter
-@ref CWTService
+@ref MovingAverage
 
 @section microservicioABF .ABF reader
-@ref CWTService
+@ref ABF
 
 @section microservicioMAT .Mat reader
-@ref CWTService
+@ref MAT
 
 @section microservicioFirstDiff First difference
 @ref CWTService

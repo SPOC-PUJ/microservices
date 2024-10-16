@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['inverse_20fourier_20transform_20microservice_61',['Inverse Fourier Transform Microservice',['../group__IFFT.html',1,'']]]
+  ['fast_20wavelet_20transform_67',['Fast Wavelet Transform',['../group__FWT.html',1,'']]],
+  ['fourier_20transform_20microservice_68',['Fourier Transform Microservice',['../group__FFT.html',1,'']]]
 ];

@@ -2,6 +2,11 @@
 \label{classMatReaderServer_1_1MatServiceServicer}\index{MatReaderServer.MatServiceServicer@{MatReaderServer.MatServiceServicer}}
 
 
+A g\+RPC service class that handles MAT file processing.  
+
+
+
+
 Inheritance diagram for Mat\+Reader\+Server.\+Mat\+Service\+Servicer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,30 +26,14 @@ Collaboration diagram for Mat\+Reader\+Server.\+Mat\+Service\+Servicer\+:\nopage
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classMatReaderServer_1_1MatServiceServicer_afdecd17118493d306842d4235d36bfff}{read\+Mat}} (self, request, context)
-\end{DoxyCompactItemize}
+def \mbox{\hyperlink{group__MAT_gafdecd17118493d306842d4235d36bfff}{read\+Mat}} (self, request, context)
+\begin{DoxyCompactList}\small\item\em Processes the MAT file received in the request and returns the data for the specified field. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classMatReaderServer_1_1MatServiceServicer_afdecd17118493d306842d4235d36bfff}\label{classMatReaderServer_1_1MatServiceServicer_afdecd17118493d306842d4235d36bfff}} 
-\index{MatReaderServer.MatServiceServicer@{MatReaderServer.MatServiceServicer}!readMat@{readMat}}
-\index{readMat@{readMat}!MatReaderServer.MatServiceServicer@{MatReaderServer.MatServiceServicer}}
-\doxysubsubsection{\texorpdfstring{readMat()}{readMat()}}
-{\footnotesize\ttfamily def Mat\+Reader\+Server.\+Mat\+Service\+Servicer.\+read\+Mat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request,  }\item[{}]{context }\end{DoxyParamCaption})}
+\doxysubsection{Detailed Description}
+A g\+RPC service class that handles MAT file processing. 
 
-\begin{DoxyVerb}Missing associated documentation comment in .proto file.\end{DoxyVerb}
- 
-
-Reimplemented from \mbox{\hyperlink{classmat__service__pb2__grpc_1_1MatServiceServicer_a2cb7bd6a01aa4c4b064dc1ab683e5e35}{mat\+\_\+service\+\_\+pb2\+\_\+grpc.\+Mat\+Service\+Servicer}}.
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classMatReaderServer_1_1MatServiceServicer_afdecd17118493d306842d4235d36bfff_icgraph}
-\end{center}
-\end{figure}
-
+The class receives MAT files via g\+RPC, processes them using scipy.\+io, and returns the requested data field as a matrix of vectors. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

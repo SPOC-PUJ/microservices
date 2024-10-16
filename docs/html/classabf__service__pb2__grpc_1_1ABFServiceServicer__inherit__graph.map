@@ -1,5 +1,5 @@
 <map id="abf_service_pb2_grpc.ABFServiceServicer" name="abf_service_pb2_grpc.ABFServiceServicer">
 <area shape="rect" id="node1" title=" " alt="" coords="5,80,245,121"/>
-<area shape="rect" id="node3" href="$classABFReaderServer_1_1ABFServiceServicer.html" title=" " alt="" coords="19,169,231,211"/>
+<area shape="rect" id="node3" href="$classABFReaderServer_1_1ABFServiceServicer.html" title="A gRPC service class that handles ABF file processing." alt="" coords="19,169,231,211"/>
 <area shape="rect" id="node2" title=" " alt="" coords="94,5,157,32"/>
 </map>

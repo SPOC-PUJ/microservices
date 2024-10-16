@@ -6,6 +6,6 @@
 <area shape="rect" id="node6" href="$classmat__service__pb2__grpc_1_1MatService.html" title=" " alt="" coords="152,174,349,215"/>
 <area shape="rect" id="node7" href="$classmat__service__pb2__grpc_1_1MatServiceServicer.html" title=" " alt="" coords="152,239,349,281"/>
 <area shape="rect" id="node9" href="$classmat__service__pb2__grpc_1_1MatServiceStub.html" title=" " alt="" coords="152,305,349,346"/>
-<area shape="rect" id="node4" href="$classABFReaderServer_1_1ABFServiceServicer.html" title=" " alt="" coords="433,57,645,98"/>
-<area shape="rect" id="node8" href="$classMatReaderServer_1_1MatServiceServicer.html" title=" " alt="" coords="434,239,645,281"/>
+<area shape="rect" id="node4" href="$classABFReaderServer_1_1ABFServiceServicer.html" title="A gRPC service class that handles ABF file processing." alt="" coords="433,57,645,98"/>
+<area shape="rect" id="node8" href="$classMatReaderServer_1_1MatServiceServicer.html" title="A gRPC service class that handles MAT file processing." alt="" coords="434,239,645,281"/>
 </map>

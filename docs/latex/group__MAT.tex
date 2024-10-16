@@ -1,0 +1,67 @@
+\hypertarget{group__MAT}{}\doxysection{MAT Reader}
+\label{group__MAT}\index{MAT Reader@{MAT Reader}}
+
+
+This module implements a g\+RPC service to read MAT files and return the data for a specified field.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMatReaderServer_1_1MatServiceServicer}{Mat\+Reader\+Server.\+Mat\+Service\+Servicer}}
+\begin{DoxyCompactList}\small\item\em A g\+RPC service class that handles MAT file processing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{group__MAT_gafdecd17118493d306842d4235d36bfff}{Mat\+Reader\+Server.\+Mat\+Service\+Servicer.\+read\+Mat}} (self, request, context)
+\begin{DoxyCompactList}\small\item\em Processes the MAT file received in the request and returns the data for the specified field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__MAT_gac9b07024890804ae1ed9477bb5ef1ee0}\label{group__MAT_gac9b07024890804ae1ed9477bb5ef1ee0}} 
+def {\bfseries Mat\+Reader\+Server.\+serve} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module implements a g\+RPC service to read MAT files and return the data for a specified field. 
+
+It uses the scipy.\+io library to read the MAT files. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__MAT_gafdecd17118493d306842d4235d36bfff}\label{group__MAT_gafdecd17118493d306842d4235d36bfff}} 
+\index{MAT Reader@{MAT Reader}!readMat@{readMat}}
+\index{readMat@{readMat}!MAT Reader@{MAT Reader}}
+\doxysubsubsection{\texorpdfstring{readMat()}{readMat()}}
+{\footnotesize\ttfamily def Mat\+Reader\+Server.\+Mat\+Service\+Servicer.\+read\+Mat (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+
+
+Processes the MAT file received in the request and returns the data for the specified field. 
+
+The method saves the received MAT file temporarily, processes it using scipy.\+io.\+loadmat, and extracts the matrix corresponding to the requested field. The matrix is then returned as a list of vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The g\+RPC request containing the MAT file (file\+\_\+content) and the field name to be extracted. \\
+\hline
+{\em context} & The g\+RPC context (used for error handling and metadata).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mat\+\_\+service\+\_\+pb2.\+Mat\+Response The response containing the extracted matrix or an error if the field is not found.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\+Not\+Found\+Error} & Raised if the specified field is not found in the MAT file. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classmat__service__pb2__grpc_1_1MatServiceServicer_a2cb7bd6a01aa4c4b064dc1ab683e5e35}{mat\+\_\+service\+\_\+pb2\+\_\+grpc.\+Mat\+Service\+Servicer}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__MAT_gafdecd17118493d306842d4235d36bfff_icgraph}
+\end{center}
+\end{figure}

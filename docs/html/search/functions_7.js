@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['signalsaverge_57',['SignalsAverge',['../group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0',1,'SignalServiceImpl']]]
+  ['signalsaverge_64',['SignalsAverge',['../group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0',1,'SignalServiceImpl']]]
 ];

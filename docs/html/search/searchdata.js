@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "_acfgimrsz",
   1: "ams",
   2: "_cfgimrsz",
-  3: "fims",
+  3: "afims",
   4: "amrs"
 };
 
