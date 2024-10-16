@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: firstdifferenceserver
-        image: ghcr.io/spoc-puj/first_difference:5001-latest
+        image: ghcr.io/spoc-puj/first_difference:5001-11
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5001
