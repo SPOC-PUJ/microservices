@@ -2,7 +2,6 @@
 FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 
 
-# Hacer git pull
 RUN cd /root/server
 
 # Copiar la carpeta Moving_Average al directorio de trabajo en el contenedor
