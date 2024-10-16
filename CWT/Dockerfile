@@ -1,7 +1,7 @@
 # Etapa 1: Construcción
 FROM ghcr.io/spoc-puj/mygrpc_image:latest AS builder
 
-# Hacer git pull
+
 RUN cd /root/server
 
 # Copiar la carpeta CWT al directorio de trabajo en el contenedor
