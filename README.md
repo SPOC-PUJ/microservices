@@ -2,12 +2,12 @@
 
 ## Descripción Breve 🤗
 
-SPOK es una aplicación web accesible, de código abierto, diseñada para el procesamiento de señales médicas, específicamente electroencefalografía (EEG). Acepta archivos en formatos `.abd`, `.edf` y `.mat`, ofreciendo herramientas similares a EEGLAB de manera gratuita. SPOK aprovecha la potencia de clústeres de Kubernetes para manejar procesos de alto costo computacional.
+SPOK es una aplicación web accesible, de código abierto, diseñada para el procesamiento de señales médicas, específicamente electroencefalografía (EEG). Acepta archivos en formatos `.abf`, `.edf` y `.mat`, ofreciendo herramientas similares a EEGLAB de manera gratuita. SPOK aprovecha la potencia de clústeres de Kubernetes para manejar procesos de alto costo computacional.
 
 ## Características 🧠
 
 - **Procesamiento de señales EEG**: Incluye funcionalidades como Convolución, Transformada rápida de Fourier (FFT), y Transformada Wavelet Continua (CWT).
-- **Formatos soportados**: `.abd`, `.edf`, `.mat`.
+- **Formatos soportados**: `.abf`, `.edf`, `.mat`.
 - **Escalabilidad**: Basado en microservicios desplegados en Kubernetes.
 - **Accesibilidad**: Compatible con navegadores como Chromium, Safari y Mozilla.
 - **Código abierto y gratuito**: No se almacena información identificable del usuario.
@@ -24,7 +24,7 @@ SPOK es una aplicación web accesible, de código abierto, diseñada para el pro
 
 ### 1. Subir un archivo EEG
 
-Desde la interfaz web, puedes subir un archivo en formato `.abd`, `.edf`, o `.mat` para comenzar el procesamiento.
+Desde la interfaz web, puedes subir un archivo en formato `.abf`, `.edf`, o `.mat` para comenzar el procesamiento.
 
 ### 2. Seleccionar un análisis
 

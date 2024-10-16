@@ -1,11 +1,11 @@
 \label{index_md__home_andres_git_microservices_README}%
 \Hypertarget{index_md__home_andres_git_microservices_README}%
  \hypertarget{index_autotoc_md1}{}\doxysection{Descripción Breve 🤗}\label{index_autotoc_md1}
-SPOK es una aplicación web accesible, de código abierto, diseñada para el procesamiento de señales médicas, específicamente electroencefalografía (EEG). Acepta archivos en formatos {\ttfamily .abd}, {\ttfamily .edf} y {\ttfamily .mat}, ofreciendo herramientas similares a EEGLAB de manera gratuita. SPOK aprovecha la potencia de clústeres de Kubernetes para manejar procesos de alto costo computacional.\hypertarget{index_autotoc_md2}{}\doxysection{Características 🧠}\label{index_autotoc_md2}
+SPOK es una aplicación web accesible, de código abierto, diseñada para el procesamiento de señales médicas, específicamente electroencefalografía (EEG). Acepta archivos en formatos {\ttfamily .abf}, {\ttfamily .edf} y {\ttfamily .mat}, ofreciendo herramientas similares a EEGLAB de manera gratuita. SPOK aprovecha la potencia de clústeres de Kubernetes para manejar procesos de alto costo computacional.\hypertarget{index_autotoc_md2}{}\doxysection{Características 🧠}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
 \item {\bfseries{Procesamiento de señales EEG}}\+: Incluye funcionalidades como Convolución, Transformada rápida de Fourier (FFT), y Transformada Wavelet Continua (CWT).
-\item {\bfseries{Formatos soportados}}\+: {\ttfamily .abd}, {\ttfamily .edf}, {\ttfamily .mat}.
+\item {\bfseries{Formatos soportados}}\+: {\ttfamily .abf}, {\ttfamily .edf}, {\ttfamily .mat}.
 \item {\bfseries{Escalabilidad}}\+: Basado en microservicios desplegados en Kubernetes.
 \item {\bfseries{Accesibilidad}}\+: Compatible con navegadores como Chromium, Safari y Mozilla.
 \item {\bfseries{Código abierto y gratuito}}\+: No se almacena información identificable del usuario.
@@ -18,7 +18,7 @@ SPOK es una aplicación web accesible, de código abierto, diseñada para el pro
 \item \href{\#contacto}{\texttt{ Contacto}}
 \end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{Uso 🔬}\label{index_autotoc_md4}
 \hypertarget{index_autotoc_md5}{}\doxysubsection{1. Subir un archivo EEG}\label{index_autotoc_md5}
-Desde la interfaz web, puedes subir un archivo en formato {\ttfamily .abd}, {\ttfamily .edf}, o {\ttfamily .mat} para comenzar el procesamiento.\hypertarget{index_autotoc_md6}{}\doxysubsection{2. Seleccionar un análisis}\label{index_autotoc_md6}
+Desde la interfaz web, puedes subir un archivo en formato {\ttfamily .abf}, {\ttfamily .edf}, o {\ttfamily .mat} para comenzar el procesamiento.\hypertarget{index_autotoc_md6}{}\doxysubsection{2. Seleccionar un análisis}\label{index_autotoc_md6}
 Elige entre las diferentes herramientas de procesamiento disponibles, como la Transformada rápida de Fourier (FFT) o la Transformada Wavelet Continua (CWT).\hypertarget{index_autotoc_md7}{}\doxysubsection{3. Visualizar los resultados}\label{index_autotoc_md7}
 Una vez procesada la señal, podrás visualizar los resultados en forma de gráficos interactivos y descargar los datos procesados.\hypertarget{index_autotoc_md8}{}\doxysection{Arquitectura 🌉}\label{index_autotoc_md8}
 SPOC está compuesto por múltiples microservicios, cada uno encargado de realizar un tipo específico de procesamiento de señal. Estos microservicios incluyen\+:
