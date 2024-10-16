@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: averageserver
-        image: ghcr.io/spoc-puj/signals_average:5001-latest
+        image: ghcr.io/spoc-puj/signals_average:5001-12
         imagePullPolicy: Always
         ports:
         - containerPort: 5001
