@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SPOK microservices: SPOK microservices Documentation</title>
+<title>SPOK microservices: readme</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md__home_aleyi_edf_microservices_abfReader_readme.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,52 +86,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">SPOK microservices Documentation </div>  </div>
+<div class="title">readme </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__home_aleyi_edf_microservices_README"></a> </p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Descripción Breve 🤗</h1>
-<p>SPOK es una aplicación web accesible, de código abierto, diseñada para el procesamiento de señales médicas, específicamente electroencefalografía (EEG). Acepta archivos en formatos <code>.abf</code>, <code>.edf</code> y <code>.mat</code>, ofreciendo herramientas similares a EEGLAB de manera gratuita. SPOK aprovecha la potencia de clústeres de Kubernetes para manejar procesos de alto costo computacional.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Características 🧠</h1>
-<ul>
-<li><b>Procesamiento de señales EEG</b>: Incluye funcionalidades como Convolución, Transformada rápida de Fourier (FFT), y Transformada Wavelet Continua (CWT).</li>
-<li><b>Formatos soportados</b>: <code>.abf</code>, <code>.edf</code>, <code>.mat</code>.</li>
-<li><b>Escalabilidad</b>: Basado en microservicios desplegados en Kubernetes.</li>
-<li><b>Accesibilidad</b>: Compatible con navegadores como Chromium, Safari y Mozilla.</li>
-<li><b>Código abierto y gratuito</b>: No se almacena información identificable del usuario.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Tabla de Contenidos 🧾</h1>
-<ul>
-<li><a href="#descripción-breve">Descripción</a></li>
-<li><a href="#uso">Uso</a></li>
-<li><a href="#arquitectura">Arquitectura</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Uso 🔬</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
-1. Subir un archivo EEG</h2>
-<p>Desde la interfaz web, puedes subir un archivo en formato <code>.abf</code>, <code>.edf</code>, o <code>.mat</code> para comenzar el procesamiento.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-2. Seleccionar un análisis</h2>
-<p>Elige entre las diferentes herramientas de procesamiento disponibles, como la Transformada rápida de Fourier (FFT) o la Transformada Wavelet Continua (CWT).</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-3. Visualizar los resultados</h2>
-<p>Una vez procesada la señal, podrás visualizar los resultados en forma de gráficos interactivos y descargar los datos procesados.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Arquitectura 🌉</h1>
-<p>SPOC está compuesto por múltiples microservicios, cada uno encargado de realizar un tipo específico de procesamiento de señal. Estos microservicios incluyen:</p>
-<ul>
-<li><b>FFT Service</b>: Realiza la transformada rápida de Fourier.</li>
-<li><b>CWT Service</b>: Implementa la transformada wavelet continua.</li>
-<li><b>Signals Averge</b> y otros microservicios especializados.</li>
-</ul>
-<p>Cada microservicio está desplegado en un clúster de Kubernetes, lo que permite una escalabilidad y manejo eficiente de las cargas computacionales. La comunicación entre los microservicios se realiza utilizando gRPC. </p>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><p>compile protobuf</p>
+<p><code>python -m grpc_tools.protoc -I. --python_out=../ --grpc_python_out=../ abf_service.proto</code> </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
