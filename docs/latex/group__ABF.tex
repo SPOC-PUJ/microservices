@@ -1,0 +1,66 @@
+\hypertarget{group__ABF}{}\doxysection{ABF Reader}
+\label{group__ABF}\index{ABF Reader@{ABF Reader}}
+
+
+This module implements a g\+RPC service to process ABF files.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classABFReaderServer_1_1ABFServiceServicer}{ABFReader\+Server.\+ABFService\+Servicer}}
+\begin{DoxyCompactList}\small\item\em A g\+RPC service class that handles ABF file processing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{group__ABF_gab9f9688e8dcecac4676abf2973c96aca}{ABFReader\+Server.\+ABFService\+Servicer.\+read\+Abf}} (self, request, context)
+\begin{DoxyCompactList}\small\item\em Processes the ABF file received in the request and returns its data and sampling rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__ABF_ga40af2f9a1ae95db7f76ba4d896b72307}\label{group__ABF_ga40af2f9a1ae95db7f76ba4d896b72307}} 
+def {\bfseries ABFReader\+Server.\+serve} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module implements a g\+RPC service to process ABF files. 
+
+It uses the py\+ABF library to read the file and extract the signal data and sample rate. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__ABF_gab9f9688e8dcecac4676abf2973c96aca}\label{group__ABF_gab9f9688e8dcecac4676abf2973c96aca}} 
+\index{ABF Reader@{ABF Reader}!readAbf@{readAbf}}
+\index{readAbf@{readAbf}!ABF Reader@{ABF Reader}}
+\doxysubsubsection{\texorpdfstring{readAbf()}{readAbf()}}
+{\footnotesize\ttfamily def ABFReader\+Server.\+ABFService\+Servicer.\+read\+Abf (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request,  }\item[{}]{context }\end{DoxyParamCaption})}
+
+
+
+Processes the ABF file received in the request and returns its data and sampling rate. 
+
+The method saves the received ABF file temporarily, processes it using py\+ABF, and extracts the signal data and sampling rate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The g\+RPC request containing the ABF file as bytes (file\+\_\+content). \\
+\hline
+{\em context} & The g\+RPC context (used for error handling and metadata).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+abf\+\_\+service\+\_\+pb2.\+ABFResponse The response containing the ABF data and sample rate.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOError} & Raised if an error occurs when reading or writing the file. \\
+\hline
+\end{DoxyExceptions}
+
+
+Reimplemented from \mbox{\hyperlink{classabf__service__pb2__grpc_1_1ABFServiceServicer_aaf3f544ae2726e4a88827feca81945a7}{abf\+\_\+service\+\_\+pb2\+\_\+grpc.\+ABFService\+Servicer}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__ABF_gab9f9688e8dcecac4676abf2973c96aca_icgraph}
+\end{center}
+\end{figure}

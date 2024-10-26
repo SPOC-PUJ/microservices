@@ -49,7 +49,7 @@ jobs:
           git config user.name "${{ secrets.GIT_NAME }}"
           pwd
           ls
-          sed -i "s+ghcr.io/spoc-puj/abf_reader:.*+ghcr.io/spoc-puj/abf_reader:5001-${{ github.run_number }}+g" AbfReaderBack.yaml
+          sed -i "s+ghcr.io/spoc-puj/abf_reader:.*+ghcr.io/spoc-puj/abf_reader:50051-${{ github.run_number }}+g" AbfReaderBack.yaml
           git add .
           git commit -m "Update Deployment with image version ${{ github.run_number }} [skip ci]"
           git push origin main --force

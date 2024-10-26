@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: abfreaderserver
-        image: ghcr.io/spoc-puj/abf_reader:5001-10
+        image: ghcr.io/spoc-puj/abf_reader:50051-15
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50051

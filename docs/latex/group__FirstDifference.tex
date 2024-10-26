@@ -1,0 +1,95 @@
+\hypertarget{group__FirstDifference}{}\doxysection{First Difference Microservice}
+\label{group__FirstDifference}\index{First Difference Microservice@{First Difference Microservice}}
+
+
+This microservice computes the first difference of a complex signal.  
+
+
+Collaboration diagram for First Difference Microservice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FirstDifference}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__FirstDifference_gaa4036373030aadd4b1165d4813fe0f95}{Signal\+Service\+Impl\+::\+Compute\+First\+Difference}} (Server\+Context $\ast$context, const First\+Difference\+Request $\ast$request, First\+Difference\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the first difference of a signal. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__FirstDifference_gab6b672a6eefb72f9db2b33d962a7059a}{Signal\+Service\+Impl\+::\+First\+Difference}} (const Eigen\+::\+Vector\+Xcd \&input)
+\begin{DoxyCompactList}\small\item\em Computes the first difference of a complex signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__FirstDifference_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__FirstDifference_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the first difference of a complex signal. 
+
+The First Difference microservice is built using g\+RPC and Eigen. It processes complex-\/valued signals and computes the first difference between consecutive elements of the signal. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__FirstDifference_gaa4036373030aadd4b1165d4813fe0f95}\label{group__FirstDifference_gaa4036373030aadd4b1165d4813fe0f95}} 
+\index{First Difference Microservice@{First Difference Microservice}!ComputeFirstDifference@{ComputeFirstDifference}}
+\index{ComputeFirstDifference@{ComputeFirstDifference}!First Difference Microservice@{First Difference Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeFirstDifference()}{ComputeFirstDifference()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+First\+Difference (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const First\+Difference\+Request $\ast$}]{request,  }\item[{First\+Difference\+Response $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the first difference of a signal. 
+
+This method receives the input signal as a g\+RPC request, processes it, computes the first difference between consecutive elements of the complex signal, and sends the result in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing the input complex signal. \\
+\hline
+{\em reply} & The response containing the computed first difference of the signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FirstDifference_gaa4036373030aadd4b1165d4813fe0f95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__FirstDifference_gab6b672a6eefb72f9db2b33d962a7059a}\label{group__FirstDifference_gab6b672a6eefb72f9db2b33d962a7059a}} 
+\index{First Difference Microservice@{First Difference Microservice}!FirstDifference@{FirstDifference}}
+\index{FirstDifference@{FirstDifference}!First Difference Microservice@{First Difference Microservice}}
+\doxysubsubsection{\texorpdfstring{FirstDifference()}{FirstDifference()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+First\+Difference (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Computes the first difference of a complex signal. 
+
+This function calculates the first difference of an input signal, where each element in the result is the difference between consecutive elements of the input signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input signal as an Eigen\+::\+Vector\+Xcd (complex vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The first difference of the signal as an Eigen\+::\+Vector\+Xcd. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__FirstDifference_gab6b672a6eefb72f9db2b33d962a7059a_icgraph}
+\end{center}
+\end{figure}

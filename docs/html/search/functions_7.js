@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zeropadgivensize_39',['ZeroPadGivenSize',['../group__CWTService.html#ga1c36f7121af3b08a5000e041699a876a',1,'SignalServiceImpl']]]
+  ['signalsaverge_74',['SignalsAverge',['../group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0',1,'SignalServiceImpl']]]
 ];

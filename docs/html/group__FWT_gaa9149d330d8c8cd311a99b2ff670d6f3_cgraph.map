@@ -1,0 +1,5 @@
+<map id="SignalServiceImpl::FastWaveletTransformAux" name="SignalServiceImpl::FastWaveletTransformAux">
+<area shape="rect" id="node1" title="Performs auxiliary computations for the Fast Wavelet Transform." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$group__CWTService.html#ga89171d148b7d33b6e21d3a9b3ab62cc2" title="Realiza la convolución en el dominio de Fourier." alt="" coords="244,5,391,47"/>
+<area shape="rect" id="node3" href="$group__CWTService.html#ga1c36f7121af3b08a5000e041699a876a" title="Zero&#45;pads a vector to a specified size." alt="" coords="439,5,585,47"/>
+</map>

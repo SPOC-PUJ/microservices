@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: fftconvolveserver
-        image: ghcr.io/spoc-puj/fft_colvolve:5001-latest
+        image: ghcr.io/spoc-puj/fft_colvolve:5001-10
         imagePullPolicy: Always
         ports:
         - containerPort: 5001

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pi_73',['PI',['../FastWaveletTransform_2src_2server_8cc.html#a952eac791b596a61bba0a133a3bb439f',1,'server.cc']]]
+  ['zeropadgivensize_44',['ZeroPadGivenSize',['../group__CWTService.html#ga1c36f7121af3b08a5000e041699a876a',1,'SignalServiceImpl::ZeroPadGivenSize(const Eigen::VectorXcd &amp;a, int m)'],['../group__FWT.html#ga1c36f7121af3b08a5000e041699a876a',1,'SignalServiceImpl::ZeroPadGivenSize(const Eigen::VectorXcd &amp;a, int m)']]]
 ];

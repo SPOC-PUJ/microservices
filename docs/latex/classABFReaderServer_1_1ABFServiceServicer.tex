@@ -2,6 +2,11 @@
 \label{classABFReaderServer_1_1ABFServiceServicer}\index{ABFReaderServer.ABFServiceServicer@{ABFReaderServer.ABFServiceServicer}}
 
 
+A g\+RPC service class that handles ABF file processing.  
+
+
+
+
 Inheritance diagram for ABFReader\+Server.\+ABFService\+Servicer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -21,30 +26,14 @@ Collaboration diagram for ABFReader\+Server.\+ABFService\+Servicer\+:\nopagebrea
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \mbox{\hyperlink{classABFReaderServer_1_1ABFServiceServicer_ab9f9688e8dcecac4676abf2973c96aca}{read\+Abf}} (self, request, context)
-\end{DoxyCompactItemize}
+def \mbox{\hyperlink{group__ABF_gab9f9688e8dcecac4676abf2973c96aca}{read\+Abf}} (self, request, context)
+\begin{DoxyCompactList}\small\item\em Processes the ABF file received in the request and returns its data and sampling rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classABFReaderServer_1_1ABFServiceServicer_ab9f9688e8dcecac4676abf2973c96aca}\label{classABFReaderServer_1_1ABFServiceServicer_ab9f9688e8dcecac4676abf2973c96aca}} 
-\index{ABFReaderServer.ABFServiceServicer@{ABFReaderServer.ABFServiceServicer}!readAbf@{readAbf}}
-\index{readAbf@{readAbf}!ABFReaderServer.ABFServiceServicer@{ABFReaderServer.ABFServiceServicer}}
-\doxysubsubsection{\texorpdfstring{readAbf()}{readAbf()}}
-{\footnotesize\ttfamily def ABFReader\+Server.\+ABFService\+Servicer.\+read\+Abf (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{request,  }\item[{}]{context }\end{DoxyParamCaption})}
+\doxysubsection{Detailed Description}
+A g\+RPC service class that handles ABF file processing. 
 
-\begin{DoxyVerb}Missing associated documentation comment in .proto file.\end{DoxyVerb}
- 
-
-Reimplemented from \mbox{\hyperlink{classabf__service__pb2__grpc_1_1ABFServiceServicer_aaf3f544ae2726e4a88827feca81945a7}{abf\+\_\+service\+\_\+pb2\+\_\+grpc.\+ABFService\+Servicer}}.
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classABFReaderServer_1_1ABFServiceServicer_ab9f9688e8dcecac4676abf2973c96aca_icgraph}
-\end{center}
-\end{figure}
-
+The class receives ABF files via g\+RPC, processes them using the py\+ABF library, and returns the extracted signal data and sample rate. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

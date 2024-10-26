@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -25,6 +30,7 @@
    <div id="projectname">SPOK microservices
    &#160;<span id="projectnumber">v 1.0</span>
    </div>
+   <div id="projectbrief">Singal Processing On Kubernetes</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classSignalServiceImpl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,14 +84,13 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classSignalServiceImpl-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SignalServiceImpl Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__CWTService.html">Microservicio CWT</a> &#124; <a class="el" href="group__Signals__Average.html">Signals Average Microservice</a></div></div>  </div>
+<div class="title">SignalServiceImpl Class Reference<span class="mlabels"><span class="mlabel">final</span></span><div class="ingroups"><a class="el" href="group__CWTService.html">Microservicio CWT</a> &#124; <a class="el" href="group__FWT.html">Fast Wavelet Transform</a> &#124; <a class="el" href="group__FFT.html">Fourier Transform Microservice</a> &#124; <a class="el" href="group__FirstDifference.html">First Difference Microservice</a> &#124; <a class="el" href="group__IFFT.html">Inverse Fourier Transform Microservice</a> &#124; <a class="el" href="group__MovingAverage.html">Moving Average Microservice</a> &#124; <a class="el" href="group__RunningSum.html">Running Sum Microservice</a> &#124; <a class="el" href="group__Signals__Average.html">Signals Average Microservice</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -82,7 +104,7 @@ Inheritance diagram for SignalServiceImpl:</div>
 <area shape="rect" title="Clase que implementa el servicio de CWT." alt="" coords="19,80,158,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,172,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for SignalServiceImpl:</div>
 <div class="dyncontent">
@@ -91,7 +113,7 @@ Collaboration diagram for SignalServiceImpl:</div>
 <area shape="rect" title="Clase que implementa el servicio de CWT." alt="" coords="19,80,158,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,172,32"/>
 </map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -101,27 +123,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a87fc4daf0c5a2ae37fc5bedce53c8b24"><td class="memItemLeft" align="right" valign="top"><a id="a87fc4daf0c5a2ae37fc5bedce53c8b24"></a>
 Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFastWaveletHaar</b> (ServerContext *context, const FastWaveletTransformHaarRequest *request, FastWaveletTransformHaarResponse *reply) override</td></tr>
 <tr class="separator:a87fc4daf0c5a2ae37fc5bedce53c8b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a929db30b6b54dbea6b82ef630f5607ca"><td class="memItemLeft" align="right" valign="top"><a id="a929db30b6b54dbea6b82ef630f5607ca"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFastWaveletTransform</b> (ServerContext *context, const FastWaveletTransformRequest *request, FastWaveletTransformResponse *reply) override</td></tr>
-<tr class="separator:a929db30b6b54dbea6b82ef630f5607ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga929db30b6b54dbea6b82ef630f5607ca"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FWT.html#ga929db30b6b54dbea6b82ef630f5607ca">ComputeFastWaveletTransform</a> (ServerContext *context, const FastWaveletTransformRequest *request, FastWaveletTransformResponse *reply) override</td></tr>
+<tr class="memdesc:ga929db30b6b54dbea6b82ef630f5607ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Fast Wavelet Transform of the provided signal.  <a href="group__FWT.html#ga929db30b6b54dbea6b82ef630f5607ca">More...</a><br /></td></tr>
+<tr class="separator:ga929db30b6b54dbea6b82ef630f5607ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2aa6384055d23df115c0615f104b354"><td class="memItemLeft" align="right" valign="top"><a id="ad2aa6384055d23df115c0615f104b354"></a>
 Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFftConvolve</b> (ServerContext *context, const FftConvolveRequest *request, FftConvolveResponse *reply) override</td></tr>
 <tr class="separator:ad2aa6384055d23df115c0615f104b354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1970b5095f9468a1eec793f1567c828"><td class="memItemLeft" align="right" valign="top"><a id="af1970b5095f9468a1eec793f1567c828"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFFT</b> (ServerContext *context, const FFTRequest *request, FFTResponse *reply) override</td></tr>
-<tr class="separator:af1970b5095f9468a1eec793f1567c828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4036373030aadd4b1165d4813fe0f95"><td class="memItemLeft" align="right" valign="top"><a id="aa4036373030aadd4b1165d4813fe0f95"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeFirstDifference</b> (ServerContext *context, const FirstDifferenceRequest *request, FirstDifferenceResponse *reply) override</td></tr>
-<tr class="separator:aa4036373030aadd4b1165d4813fe0f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f5ccdd68b901a2a3a04029805c61826"><td class="memItemLeft" align="right" valign="top"><a id="a4f5ccdd68b901a2a3a04029805c61826"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeIFFT</b> (ServerContext *context, const IFFTRequest *request, IFFTResponse *reply) override</td></tr>
-<tr class="separator:a4f5ccdd68b901a2a3a04029805c61826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3cf429707ffd802743c04c83e094f61"><td class="memItemLeft" align="right" valign="top"><a id="ab3cf429707ffd802743c04c83e094f61"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeMovingAverage</b> (ServerContext *context, const MovingAverageRequest *request, MovingAverageResponse *reply) override</td></tr>
-<tr class="separator:ab3cf429707ffd802743c04c83e094f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae36b740cc61d14cacdd7b985a745afc3"><td class="memItemLeft" align="right" valign="top"><a id="ae36b740cc61d14cacdd7b985a745afc3"></a>
-Status&#160;</td><td class="memItemRight" valign="bottom"><b>ComputeRuningSum</b> (ServerContext *context, const RuningSumRequest *request, RuningSumResponse *reply) override</td></tr>
-<tr class="separator:ae36b740cc61d14cacdd7b985a745afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1970b5095f9468a1eec793f1567c828"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FFT.html#gaf1970b5095f9468a1eec793f1567c828">ComputeFFT</a> (ServerContext *context, const FFTRequest *request, FFTResponse *reply) override</td></tr>
+<tr class="memdesc:gaf1970b5095f9468a1eec793f1567c828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the FFT of a signal.  <a href="group__FFT.html#gaf1970b5095f9468a1eec793f1567c828">More...</a><br /></td></tr>
+<tr class="separator:gaf1970b5095f9468a1eec793f1567c828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4036373030aadd4b1165d4813fe0f95"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FirstDifference.html#gaa4036373030aadd4b1165d4813fe0f95">ComputeFirstDifference</a> (ServerContext *context, const FirstDifferenceRequest *request, FirstDifferenceResponse *reply) override</td></tr>
+<tr class="memdesc:gaa4036373030aadd4b1165d4813fe0f95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the first difference of a signal.  <a href="group__FirstDifference.html#gaa4036373030aadd4b1165d4813fe0f95">More...</a><br /></td></tr>
+<tr class="separator:gaa4036373030aadd4b1165d4813fe0f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f5ccdd68b901a2a3a04029805c61826"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IFFT.html#ga4f5ccdd68b901a2a3a04029805c61826">ComputeIFFT</a> (ServerContext *context, const IFFTRequest *request, IFFTResponse *reply) override</td></tr>
+<tr class="memdesc:ga4f5ccdd68b901a2a3a04029805c61826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the Inverse Fast Fourier Transform (IFFT) of a signal.  <a href="group__IFFT.html#ga4f5ccdd68b901a2a3a04029805c61826">More...</a><br /></td></tr>
+<tr class="separator:ga4f5ccdd68b901a2a3a04029805c61826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3cf429707ffd802743c04c83e094f61"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61">ComputeMovingAverage</a> (ServerContext *context, const MovingAverageRequest *request, MovingAverageResponse *reply) override</td></tr>
+<tr class="memdesc:gab3cf429707ffd802743c04c83e094f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the moving average of a signal.  <a href="group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61">More...</a><br /></td></tr>
+<tr class="separator:gab3cf429707ffd802743c04c83e094f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae36b740cc61d14cacdd7b985a745afc3"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RunningSum.html#gae36b740cc61d14cacdd7b985a745afc3">ComputeRuningSum</a> (ServerContext *context, const RuningSumRequest *request, RuningSumResponse *reply) override</td></tr>
+<tr class="memdesc:gae36b740cc61d14cacdd7b985a745afc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the running sum of a signal.  <a href="group__RunningSum.html#gae36b740cc61d14cacdd7b985a745afc3">More...</a><br /></td></tr>
+<tr class="separator:gae36b740cc61d14cacdd7b985a745afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="memItemLeft" align="right" valign="top">Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Signals__Average.html#ga57e51c692bd48d7ea822f09210cf1e9a">ComputeAverage</a> (ServerContext *context, const AverageRequest *request, AverageResponse *reply) override</td></tr>
 <tr class="memdesc:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of multiple signals.  <a href="group__Signals__Average.html#ga57e51c692bd48d7ea822f09210cf1e9a">More...</a><br /></td></tr>
 <tr class="separator:ga57e51c692bd48d7ea822f09210cf1e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,39 +168,39 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a7a8b0a0963fdbc3dfdbf4e3e25dbd9c8"><td class="memItemLeft" align="right" valign="top"><a id="a7a8b0a0963fdbc3dfdbf4e3e25dbd9c8"></a>
 std::pair&lt; Eigen::VectorXcd, Eigen::VectorXcd &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FastWaveletTransformHaar</b> (const Eigen::VectorXcd &amp;input)</td></tr>
 <tr class="separator:a7a8b0a0963fdbc3dfdbf4e3e25dbd9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b70077770f52f0013da247521bccb48"><td class="memItemLeft" align="right" valign="top"><a id="a5b70077770f52f0013da247521bccb48"></a>
-std::pair&lt; std::vector&lt; Eigen::VectorXcd &gt;, std::vector&lt; Eigen::VectorXcd &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FastWaveletTransform</b> (const Eigen::VectorXcd &amp;input, int DecLevel, std::string WaveName)</td></tr>
-<tr class="separator:a5b70077770f52f0013da247521bccb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9149d330d8c8cd311a99b2ff670d6f3"><td class="memItemLeft" align="right" valign="top"><a id="aa9149d330d8c8cd311a99b2ff670d6f3"></a>
-std::pair&lt; Eigen::VectorXcd, Eigen::VectorXcd &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FastWaveletTransformAux</b> (const Eigen::VectorXcd &amp;input, Eigen::VectorXcd Lo_d, Eigen::VectorXcd Hi_d)</td></tr>
-<tr class="separator:aa9149d330d8c8cd311a99b2ff670d6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab74c1b2c069f82a65329fbffc0392855"><td class="memItemLeft" align="right" valign="top"><a id="ab74c1b2c069f82a65329fbffc0392855"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>FFTconvolveEigen</b> (const Eigen::VectorXcd &amp;x, const Eigen::VectorXcd &amp;h, bool shift=false)</td></tr>
-<tr class="separator:ab74c1b2c069f82a65329fbffc0392855"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c36f7121af3b08a5000e041699a876a"><td class="memItemLeft" align="right" valign="top"><a id="a1c36f7121af3b08a5000e041699a876a"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>ZeroPadGivenSize</b> (const Eigen::VectorXcd &amp;a, int m)</td></tr>
-<tr class="separator:a1c36f7121af3b08a5000e041699a876a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b70077770f52f0013da247521bccb48"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; Eigen::VectorXcd &gt;, std::vector&lt; Eigen::VectorXcd &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FWT.html#ga5b70077770f52f0013da247521bccb48">FastWaveletTransform</a> (const Eigen::VectorXcd &amp;input, int DecLevel, std::string WaveName)</td></tr>
+<tr class="memdesc:ga5b70077770f52f0013da247521bccb48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Fast Wavelet Transform.  <a href="group__FWT.html#ga5b70077770f52f0013da247521bccb48">More...</a><br /></td></tr>
+<tr class="separator:ga5b70077770f52f0013da247521bccb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9149d330d8c8cd311a99b2ff670d6f3"><td class="memItemLeft" align="right" valign="top">std::pair&lt; Eigen::VectorXcd, Eigen::VectorXcd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FWT.html#gaa9149d330d8c8cd311a99b2ff670d6f3">FastWaveletTransformAux</a> (const Eigen::VectorXcd &amp;input, Eigen::VectorXcd Lo_d, Eigen::VectorXcd Hi_d)</td></tr>
+<tr class="memdesc:gaa9149d330d8c8cd311a99b2ff670d6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs auxiliary computations for the Fast Wavelet Transform.  <a href="group__FWT.html#gaa9149d330d8c8cd311a99b2ff670d6f3">More...</a><br /></td></tr>
+<tr class="separator:gaa9149d330d8c8cd311a99b2ff670d6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab74c1b2c069f82a65329fbffc0392855"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FWT.html#gab74c1b2c069f82a65329fbffc0392855">FFTconvolveEigen</a> (const Eigen::VectorXcd &amp;x, const Eigen::VectorXcd &amp;h, bool shift=false)</td></tr>
+<tr class="memdesc:gab74c1b2c069f82a65329fbffc0392855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the convolution of two signals using FFT.  <a href="group__FWT.html#gab74c1b2c069f82a65329fbffc0392855">More...</a><br /></td></tr>
+<tr class="separator:gab74c1b2c069f82a65329fbffc0392855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c36f7121af3b08a5000e041699a876a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FWT.html#ga1c36f7121af3b08a5000e041699a876a">ZeroPadGivenSize</a> (const Eigen::VectorXcd &amp;a, int m)</td></tr>
+<tr class="memdesc:ga1c36f7121af3b08a5000e041699a876a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero-pads a vector to the specified size.  <a href="group__FWT.html#ga1c36f7121af3b08a5000e041699a876a">More...</a><br /></td></tr>
+<tr class="separator:ga1c36f7121af3b08a5000e041699a876a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89171d148b7d33b6e21d3a9b3ab62cc2"><td class="memItemLeft" align="right" valign="top"><a id="a89171d148b7d33b6e21d3a9b3ab62cc2"></a>
 Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>FFTconvolveEigen</b> (const Eigen::VectorXcd &amp;x, const Eigen::VectorXcd &amp;h, bool shift)</td></tr>
 <tr class="separator:a89171d148b7d33b6e21d3a9b3ab62cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9448386dedc831bff0ab6d640990262a"><td class="memItemLeft" align="right" valign="top"><a id="a9448386dedc831bff0ab6d640990262a"></a>
 Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>ZeroPadGivenSize</b> (const Eigen::VectorXcd &amp;h, int size)</td></tr>
 <tr class="separator:a9448386dedc831bff0ab6d640990262a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfd724d18f210db051f6d9b085ada4f3"><td class="memItemLeft" align="right" valign="top"><a id="acfd724d18f210db051f6d9b085ada4f3"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>FFTEigen</b> (Eigen::VectorXcd &amp;a)</td></tr>
-<tr class="separator:acfd724d18f210db051f6d9b085ada4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6b672a6eefb72f9db2b33d962a7059a"><td class="memItemLeft" align="right" valign="top"><a id="ab6b672a6eefb72f9db2b33d962a7059a"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>FirstDifference</b> (const Eigen::VectorXcd &amp;input)</td></tr>
-<tr class="separator:ab6b672a6eefb72f9db2b33d962a7059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8a846c9b43777c1beab4084e5f9573f"><td class="memItemLeft" align="right" valign="top"><a id="ab8a846c9b43777c1beab4084e5f9573f"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>IFFTEigen</b> (Eigen::VectorXcd &amp;a)</td></tr>
-<tr class="separator:ab8a846c9b43777c1beab4084e5f9573f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5b50ea29c2d4ce620938b0c3fc87fec"><td class="memItemLeft" align="right" valign="top"><a id="af5b50ea29c2d4ce620938b0c3fc87fec"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>MovingAverage</b> (const Eigen::VectorXcd &amp;a, int window_size)</td></tr>
-<tr class="separator:af5b50ea29c2d4ce620938b0c3fc87fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67297de5412dc6374ae39e8ba6504291"><td class="memItemLeft" align="right" valign="top"><a id="a67297de5412dc6374ae39e8ba6504291"></a>
-Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>RuningSum</b> (const Eigen::VectorXcd &amp;Input)</td></tr>
-<tr class="separator:a67297de5412dc6374ae39e8ba6504291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfd724d18f210db051f6d9b085ada4f3"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FFT.html#gacfd724d18f210db051f6d9b085ada4f3">FFTEigen</a> (Eigen::VectorXcd &amp;a)</td></tr>
+<tr class="memdesc:gacfd724d18f210db051f6d9b085ada4f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Fast Fourier Transform (FFT) on a complex signal.  <a href="group__FFT.html#gacfd724d18f210db051f6d9b085ada4f3">More...</a><br /></td></tr>
+<tr class="separator:gacfd724d18f210db051f6d9b085ada4f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6b672a6eefb72f9db2b33d962a7059a"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__FirstDifference.html#gab6b672a6eefb72f9db2b33d962a7059a">FirstDifference</a> (const Eigen::VectorXcd &amp;input)</td></tr>
+<tr class="memdesc:gab6b672a6eefb72f9db2b33d962a7059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the first difference of a complex signal.  <a href="group__FirstDifference.html#gab6b672a6eefb72f9db2b33d962a7059a">More...</a><br /></td></tr>
+<tr class="separator:gab6b672a6eefb72f9db2b33d962a7059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8a846c9b43777c1beab4084e5f9573f"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__IFFT.html#gab8a846c9b43777c1beab4084e5f9573f">IFFTEigen</a> (Eigen::VectorXcd &amp;a)</td></tr>
+<tr class="memdesc:gab8a846c9b43777c1beab4084e5f9573f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the Inverse Fast Fourier Transform (IFFT) on a complex signal.  <a href="group__IFFT.html#gab8a846c9b43777c1beab4084e5f9573f">More...</a><br /></td></tr>
+<tr class="separator:gab8a846c9b43777c1beab4084e5f9573f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__MovingAverage.html#gaf5b50ea29c2d4ce620938b0c3fc87fec">MovingAverage</a> (const Eigen::VectorXcd &amp;a, int window_size)</td></tr>
+<tr class="memdesc:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a moving average filter to a complex signal.  <a href="group__MovingAverage.html#gaf5b50ea29c2d4ce620938b0c3fc87fec">More...</a><br /></td></tr>
+<tr class="separator:gaf5b50ea29c2d4ce620938b0c3fc87fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67297de5412dc6374ae39e8ba6504291"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RunningSum.html#ga67297de5412dc6374ae39e8ba6504291">RuningSum</a> (const Eigen::VectorXcd &amp;Input)</td></tr>
+<tr class="memdesc:ga67297de5412dc6374ae39e8ba6504291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the running sum of a complex signal.  <a href="group__RunningSum.html#ga67297de5412dc6374ae39e8ba6504291">More...</a><br /></td></tr>
+<tr class="separator:ga67297de5412dc6374ae39e8ba6504291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadff95928a4047afd6604c28577b723b0"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0">SignalsAverge</a> (const std::vector&lt; Eigen::VectorXcd &gt; &amp;Input)</td></tr>
 <tr class="memdesc:gadff95928a4047afd6604c28577b723b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a vector of Eigen::VectorXcd signals.  <a href="group__Signals__Average.html#gadff95928a4047afd6604c28577b723b0">More...</a><br /></td></tr>
 <tr class="separator:gadff95928a4047afd6604c28577b723b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,15 +208,31 @@ Eigen::VectorXcd&#160;</td><td class="memItemRight" valign="bottom"><b>RuningSum
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Clase que implementa el servicio de CWT. </p>
 <p>Implements the SignalService for computing average signals.</p>
+<p>Implements the SignalService for computing the running sum of complex signals.</p>
+<p>Implements the SignalService for computing the moving average of complex signals.</p>
+<p>Implements the SignalService for computing the Inverse Fast Fourier Transform (IFFT).</p>
+<p>Implements the SignalService for computing the first difference of complex signals.</p>
+<p>Implements the SignalService for computing the Fast Fourier Transform (FFT).</p>
+<p>Implements the SignalService for computing Fast wavelet transform (FWT).</p>
 <p>Esta clase proporciona el servicio de gRPC para calcular la Transformada Wavelet Continua a partir de una señal de entrada.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeFastWaveletTransform method, which takes a complex signal as input, applies FWT using the Eigen library, and returns the result in the form of a vector of pairs of complex vector.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeFFT method, which takes a complex signal as input, applies FFT using the Eigen library, and returns the result in the form of a complex vector.</p>
+<p>This class provides the implementation of the SignalService, specifically the <code>ComputeFirstDifference</code> method, which processes a signal, calculates its first difference (i.e., the difference between consecutive elements), and returns the result.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeIFFT method, which takes a complex signal as input, applies IFFT using the Eigen library, and returns the result in the form of a complex vector.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeMovingAverage method, which processes complex signals, applies a moving average filter, and returns the result.</p>
+<p>This class provides the implementation of the SignalService, specifically the ComputeRuningSum method, which processes complex signals, calculates their running sum, and returns the result.</p>
 <p>This class provides the implementation of the SignalService, specifically the ComputeAverage method, which takes multiple input signals, computes their average, and returns the result in the form of a complex vector. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>CWT/src/server.cc</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classSignalServiceImpl.html">SignalServiceImpl</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

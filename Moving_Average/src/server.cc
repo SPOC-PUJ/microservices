@@ -14,9 +14,39 @@ using signal::MovingAverageResponse;
 using signal::SignalGrpc;
 using signal::SignalService;
 
+
+
+/**
+ * @defgroup MovingAverage Moving Average Microservice
+ * @brief This microservice computes the moving average of a complex signal.
+ * 
+ * The Moving Average microservice is implemented using gRPC and Eigen, handling complex-valued signals
+ * and applying a moving average filter with a specified window size.
+ * 
+ * @{
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing the moving average of complex signals.
+ * 
+ * This class provides the implementation of the SignalService, specifically the ComputeMovingAverage
+ * method, which processes complex signals, applies a moving average filter, and returns the result.
+ */
 class SignalServiceImpl final : public SignalService::Service
 {
 public:
+      /**
+     * @brief Computes the moving average of a signal.
+     * 
+     * This method takes the complex signal from the gRPC request, applies the moving average
+     * using the specified window size, and sends the result in the response.
+     * 
+     * @param context The gRPC server context.
+     * @param request The request containing the input signal and window size.
+     * @param reply The response containing the filtered signal.
+     * @return A gRPC Status object indicating success or failure.
+     */
     Status ComputeMovingAverage(ServerContext *context, const MovingAverageRequest *request,
                                 MovingAverageResponse *reply) override
     {
@@ -51,6 +81,18 @@ public:
     }
 
 private:
+      /**
+     * @brief Applies a moving average filter to a complex signal.
+     * 
+     * This function calculates the moving average of the input complex signal using a sliding window
+     * and returns the filtered signal.
+     * 
+     * @param a The input signal as an Eigen::VectorXcd (complex vector).
+     * @param window_size The size of the moving window.
+     * @return The filtered signal as an Eigen::VectorXcd.
+     * 
+     * @throw std::invalid_argument If the window size is less than 1 or greater than the signal size.
+     */
     Eigen::VectorXcd MovingAverage(const Eigen::VectorXcd &a, int window_size)
     {
         int n = a.size();

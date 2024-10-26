@@ -1,0 +1,10 @@
+<map id="Fourier Transform Microservice" name="Fourier Transform Microservice">
+<area shape="rect" id="node1" href="$group__Signals__Average.html" title="This microservice computes the average of multiple complex signals." alt="" coords="394,5,607,31"/>
+<area shape="rect" id="node2" href="$group__FirstDifference.html" title="This microservice computes the first difference of a complex signal." alt="" coords="397,55,605,80"/>
+<area shape="rect" id="node3" href="$group__CWTService.html" title=" " alt="" coords="429,104,572,129"/>
+<area shape="rect" id="node4" href="$group__FWT.html" title="This microservice computes the Fast Wavelet Transform (FWT) of complex signals." alt="" coords="413,153,588,179"/>
+<area shape="rect" id="node5" href="$group__MovingAverage.html" title="This microservice computes the moving average of a complex signal." alt="" coords="393,203,608,228"/>
+<area shape="rect" id="node6" href="$group__IFFT.html" title="This microservice computes the Inverse Fast Fourier Transform (IFFT) of complex signals." alt="" coords="407,253,595,293"/>
+<area shape="rect" id="node7" href="$group__RunningSum.html" title="This microservice computes the running sum of a complex signal." alt="" coords="403,317,598,343"/>
+<area shape="rect" id="node8" title="This microservice computes the Fast Fourier Transform (FFT) of complex signals." alt="" coords="5,153,228,179"/>
+</map>

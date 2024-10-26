@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: fastwaveletharrserver
-        image: ghcr.io/spoc-puj/fastwavelethaar:5001-latest
+        image: ghcr.io/spoc-puj/fastwavelethaar:5001-13
         imagePullPolicy: Always
         ports:
         - containerPort: 5001

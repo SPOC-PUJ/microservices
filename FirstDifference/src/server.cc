@@ -16,10 +16,38 @@ using signal::FirstDifferenceResponse;
 using signal::SignalGrpc;
 using signal::SignalService;
 
+/**
+ * @defgroup FirstDifference First Difference Microservice
+ * @brief This microservice computes the first difference of a complex signal.
+ * 
+ * The First Difference microservice is built using gRPC and Eigen. It processes complex-valued signals
+ * and computes the first difference between consecutive elements of the signal.
+ * 
+ * @{
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing the first difference of complex signals.
+ * 
+ * This class provides the implementation of the SignalService, specifically the `ComputeFirstDifference` method,
+ * which processes a signal, calculates its first difference (i.e., the difference between consecutive elements),
+ * and returns the result.
+ */
 
 class SignalServiceImpl final : public SignalService::Service {
 public:
-    
+        /**
+     * @brief Computes the first difference of a signal.
+     * 
+     * This method receives the input signal as a gRPC request, processes it, computes the first difference
+     * between consecutive elements of the complex signal, and sends the result in the response.
+     * 
+     * @param context The gRPC server context.
+     * @param request The request containing the input complex signal.
+     * @param reply The response containing the computed first difference of the signal.
+     * @return A gRPC Status object indicating success or failure.
+     */
     Status ComputeFirstDifference(ServerContext* context, const FirstDifferenceRequest* request,
                                   FirstDifferenceResponse* reply) override {
         try {
@@ -50,7 +78,15 @@ public:
     }
 
 private:
-    
+        /**
+     * @brief Computes the first difference of a complex signal.
+     * 
+     * This function calculates the first difference of an input signal, where each element in the result
+     * is the difference between consecutive elements of the input signal.
+     * 
+     * @param input The input signal as an Eigen::VectorXcd (complex vector).
+     * @return The first difference of the signal as an Eigen::VectorXcd.
+     */
     Eigen::VectorXcd FirstDifference(const Eigen::VectorXcd& input) {
         size_t size = input.size();
         Eigen::VectorXcd output(size);

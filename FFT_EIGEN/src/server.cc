@@ -14,10 +14,39 @@ using signal::FFTResponse;
 using signal::SignalService;
 using signal::SignalGrpc;
 
-// Implementación del servicio SignalService
+/**
+ * @defgroup FFT Fourier Transform Microservice
+ * @brief This microservice computes the Fast Fourier Transform (FFT) of complex signals.
+ * 
+ * The FFT microservice is implemented using gRPC and Eigen, handling complex-valued signals
+ * and applying the Fast Fourier Transform (FFT) to convert them from the time domain to the frequency domain.
+ * 
+ * @{
+ */
+
+/**
+ * @class SignalServiceImpl
+ * @brief Implements the SignalService for computing the Fast Fourier Transform (FFT).
+ * 
+ * This class provides the implementation of the SignalService, specifically the ComputeFFT
+ * method, which takes a complex signal as input, applies FFT using the Eigen library, 
+ * and returns the result in the form of a complex vector.
+ */
 class SignalServiceImpl final : public SignalService::Service
 {
 public:
+     /**
+     * @brief Computes the FFT of a signal.
+     * 
+     * This method processes the incoming request by extracting the complex signal from 
+     * the gRPC request, converts it to an Eigen vector, applies the Fast Fourier Transform (FFT),
+     * and sends the result back in the response.
+     * 
+     * @param context The gRPC server context.
+     * @param request The request containing the input signal.
+     * @param reply The response containing the FFT-transformed signal.
+     * @return A gRPC Status object indicating success or failure.
+     */
     Status ComputeFFT(ServerContext *context, const FFTRequest *request,
                       FFTResponse *reply) override
     {
@@ -53,6 +82,15 @@ public:
     }
 
 private:
+      /**
+     * @brief Performs the Fast Fourier Transform (FFT) on a complex signal.
+     * 
+     * This function uses Eigen's FFT functionality to compute the forward FFT of 
+     * the input complex signal.
+     * 
+     * @param a The input signal as an Eigen::VectorXcd (complex vector).
+     * @return The FFT-transformed signal as an Eigen::VectorXcd.
+     */
     Eigen::VectorXcd FFTEigen(Eigen::VectorXcd &a)
     {
 

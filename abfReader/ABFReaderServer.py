@@ -4,7 +4,29 @@ import abf_service_pb2
 import abf_service_pb2_grpc
 import pyabf  # Librería para procesar archivos ABF
 import os
+
+## @package abf_service
+#  @defgroup ABF ABF Reader
+#  This module implements a gRPC service to process ABF files.
+#  It uses the pyABF library to read the file and extract the signal data and sample rate.
+#  @{
+
+## A gRPC service class that handles ABF file processing.
+#
+#  The class receives ABF files via gRPC, processes them using the pyABF library, and returns the
+#  extracted signal data and sample rate.
 class ABFServiceServicer(abf_service_pb2_grpc.ABFServiceServicer):
+    ## Processes the ABF file received in the request and returns its data and sampling rate.
+    #
+    #  The method saves the received ABF file temporarily, processes it using pyABF, and extracts
+    #  the signal data and sampling rate.
+    #
+    #  @param request The gRPC request containing the ABF file as bytes (file_content).
+    #  @param context The gRPC context (used for error handling and metadata).
+    #
+    #  @return abf_service_pb2.ABFResponse The response containing the ABF data and sample rate.
+    #
+    #  @exception IOError Raised if an error occurs when reading or writing the file.
     def readAbf(self, request, context):
         # Guardar temporalmente el archivo ABF recibido
         print("mensaje recibido")

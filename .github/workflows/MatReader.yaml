@@ -48,7 +48,7 @@ jobs:
           git config user.name "${{ secrets.GIT_NAME }}"
           pwd
           ls
-          sed -i "s+ghcr.io/spoc-puj/mat_reader:.*+ghcr.io/spoc-puj/mat_reader:5001-${{ github.run_number }}+g" MatReaderBack.yaml
+          sed -i "s+ghcr.io/spoc-puj/mat_reader:.*+ghcr.io/spoc-puj/mat_reader:50052-${{ github.run_number }}+g" MatReaderBack.yaml
           git add .
           git commit -m "Update Deployment with image version ${{ github.run_number }} [skip ci]"
           git push origin main --force

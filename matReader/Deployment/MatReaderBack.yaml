@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: matreaderserver
-        image: ghcr.io/spoc-puj/mat_reader:5001-5
+        image: ghcr.io/spoc-puj/mat_reader:50052-8
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50052

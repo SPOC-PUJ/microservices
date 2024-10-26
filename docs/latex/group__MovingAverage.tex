@@ -1,0 +1,102 @@
+\hypertarget{group__MovingAverage}{}\doxysection{Moving Average Microservice}
+\label{group__MovingAverage}\index{Moving Average Microservice@{Moving Average Microservice}}
+
+
+This microservice computes the moving average of a complex signal.  
+
+
+Collaboration diagram for Moving Average Microservice\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__MovingAverage}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSignalServiceImpl}{Signal\+Service\+Impl}}
+\begin{DoxyCompactList}\small\item\em Clase que implementa el servicio de CWT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Status \mbox{\hyperlink{group__MovingAverage_gab3cf429707ffd802743c04c83e094f61}{Signal\+Service\+Impl\+::\+Compute\+Moving\+Average}} (Server\+Context $\ast$context, const Moving\+Average\+Request $\ast$request, Moving\+Average\+Response $\ast$reply) override
+\begin{DoxyCompactList}\small\item\em Computes the moving average of a signal. \end{DoxyCompactList}\item 
+Eigen\+::\+Vector\+Xcd \mbox{\hyperlink{group__MovingAverage_gaf5b50ea29c2d4ce620938b0c3fc87fec}{Signal\+Service\+Impl\+::\+Moving\+Average}} (const Eigen\+::\+Vector\+Xcd \&a, int window\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Applies a moving average filter to a complex signal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__MovingAverage_gae66f6b31b5ad750f1fe042a706a4e3d4}\label{group__MovingAverage_gae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This microservice computes the moving average of a complex signal. 
+
+The Moving Average microservice is implemented using g\+RPC and Eigen, handling complex-\/valued signals and applying a moving average filter with a specified window size. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__MovingAverage_gab3cf429707ffd802743c04c83e094f61}\label{group__MovingAverage_gab3cf429707ffd802743c04c83e094f61}} 
+\index{Moving Average Microservice@{Moving Average Microservice}!ComputeMovingAverage@{ComputeMovingAverage}}
+\index{ComputeMovingAverage@{ComputeMovingAverage}!Moving Average Microservice@{Moving Average Microservice}}
+\doxysubsubsection{\texorpdfstring{ComputeMovingAverage()}{ComputeMovingAverage()}}
+{\footnotesize\ttfamily Status Signal\+Service\+Impl\+::\+Compute\+Moving\+Average (\begin{DoxyParamCaption}\item[{Server\+Context $\ast$}]{context,  }\item[{const Moving\+Average\+Request $\ast$}]{request,  }\item[{Moving\+Average\+Response $\ast$}]{reply }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+Computes the moving average of a signal. 
+
+This method takes the complex signal from the g\+RPC request, applies the moving average using the specified window size, and sends the result in the response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The g\+RPC server context. \\
+\hline
+{\em request} & The request containing the input signal and window size. \\
+\hline
+{\em reply} & The response containing the filtered signal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A g\+RPC Status object indicating success or failure. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__MovingAverage_gab3cf429707ffd802743c04c83e094f61_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{group__MovingAverage_gaf5b50ea29c2d4ce620938b0c3fc87fec}\label{group__MovingAverage_gaf5b50ea29c2d4ce620938b0c3fc87fec}} 
+\index{Moving Average Microservice@{Moving Average Microservice}!MovingAverage@{MovingAverage}}
+\index{MovingAverage@{MovingAverage}!Moving Average Microservice@{Moving Average Microservice}}
+\doxysubsubsection{\texorpdfstring{MovingAverage()}{MovingAverage()}}
+{\footnotesize\ttfamily Eigen\+::\+Vector\+Xcd Signal\+Service\+Impl\+::\+Moving\+Average (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Vector\+Xcd \&}]{a,  }\item[{int}]{window\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Applies a moving average filter to a complex signal. 
+
+This function calculates the moving average of the input complex signal using a sliding window and returns the filtered signal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The input signal as an Eigen\+::\+Vector\+Xcd (complex vector). \\
+\hline
+{\em window\+\_\+size} & The size of the moving window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The filtered signal as an Eigen\+::\+Vector\+Xcd.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If the window size is less than 1 or greater than the signal size. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__MovingAverage_gaf5b50ea29c2d4ce620938b0c3fc87fec_icgraph}
+\end{center}
+\end{figure}
