@@ -17,6 +17,7 @@ using signal::CWTRequest;
 using signal::CWTResponse;
 using signal::SignalGrpc;
 using signal::SignalService;
+using signal::respcoeffs;
 
 /**
  * \defgroup CWTService Microservicio CWT
@@ -48,38 +49,37 @@ public:
      */
     Status ComputeCWT(ServerContext* context, const CWTRequest* request, CWTResponse* response) override {
         try {
-            // Acceder al mensaje SignalGrpc dentro de la solicitud
-            const SignalGrpc& grpc_signal = request->signal();
-            size_t n = grpc_signal.values_size();
-            Eigen::VectorXcd input_signal(n);
+        // Acceder al mensaje SignalGrpc dentro de la solicitud
+        const SignalGrpc& grpc_signal = request->signal();
+        //std::cout << grpc_signal.values(0).real() << std::endl;
+        size_t n = grpc_signal.values_size();
+        Eigen::VectorXcd input_signal(n);
 
-            for (size_t i = 0; i < n; ++i) {
-                const Complex& complex_msg = grpc_signal.values(i);
-                input_signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
-            }
-
-            // Generar las escalas logarítmicas
-            std::vector<double> scales = GenerateLogScales(request->start(), request->end(), request->numscales());
-
-            // Calcular la Transformada Wavelet Continua
-            std::vector<Eigen::VectorXcd> coeffs = CWTEigen(input_signal, scales);
-
-            // Convertir los resultados a CWTResponse
-            for (const auto& coeff : coeffs) {
-                SignalGrpc* signal_msg = response->add_coeffs();
-                for (int i = 0; i < coeff.size(); ++i) {
-                    Complex* complex_msg = signal_msg->add_values();
-                    complex_msg->set_real(coeff[i].real());
-                    complex_msg->set_imag(coeff[i].imag());
-                }
-            }
-
-            return Status::OK;
+        for (size_t i = 0; i < n; ++i) {
+            const Complex& complex_msg = grpc_signal.values(i);
+            input_signal[i] = std::complex<double>(complex_msg.real(), complex_msg.imag());
         }
-        catch (const std::exception& ex) {
-            std::cout << "Error: " << ex.what() << std::endl;
-            return Status(grpc::INVALID_ARGUMENT, ex.what());
+
+        // Generar las escalas logarítmicas
+        std::vector<double> scales = GenerateLogScales(request->start(), request->end(), request->numscales());
+        
+        // Calcular la Transformada Wavelet Continua
+        std::vector<Eigen::VectorXcd> coeffs = CWTEigen(input_signal, scales);
+        
+        // Convertir los resultados a CWTResponse
+        for (const auto& coeff : coeffs) {
+            respcoeffs* coeff_msg = response->add_coeffs();
+            for (int i = 0; i < coeff.size(); ++i) {
+                // Tomamos la magnitud de cada coeficiente complejo o cualquier otra representación real
+                coeff_msg->add_coe(std::abs(coeff[i]));
+            }
         }
+        
+        return Status::OK;
+    } catch (const std::exception& ex) {
+        std::cout << "Error: " << ex.what() << std::endl;
+        return Status(grpc::INVALID_ARGUMENT, ex.what());
+    }
     }
 
 private:
