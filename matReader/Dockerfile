@@ -8,6 +8,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 50052
 
+
 ENTRYPOINT [ "python" ]
 
 CMD [ "MatReaderServer.py" ]
