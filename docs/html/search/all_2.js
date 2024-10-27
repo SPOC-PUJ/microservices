@@ -8,5 +8,6 @@ var searchData=
   ['computeifft_11',['ComputeIFFT',['../group__IFFT.html#ga4f5ccdd68b901a2a3a04029805c61826',1,'SignalServiceImpl']]],
   ['computemovingaverage_12',['ComputeMovingAverage',['../group__MovingAverage.html#gab3cf429707ffd802743c04c83e094f61',1,'SignalServiceImpl']]],
   ['computeruningsum_13',['ComputeRuningSum',['../group__RunningSum.html#gae36b740cc61d14cacdd7b985a745afc3',1,'SignalServiceImpl']]],
-  ['cwteigen_14',['CWTEigen',['../group__CWTService.html#gaf6824cd961b206a861326d192308122f',1,'SignalServiceImpl']]]
+  ['configuración_20de_20kubernetes_20para_20la_20aplicación_20spok_14',['Configuración de Kubernetes para la aplicación SPOK',['../kubernetes.html',1,'']]],
+  ['cwteigen_15',['CWTEigen',['../group__CWTService.html#gaf6824cd961b206a861326d192308122f',1,'SignalServiceImpl']]]
 ];

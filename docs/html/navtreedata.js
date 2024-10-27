@@ -36,12 +36,19 @@ var NAVTREE =
       ] ],
       [ "Arquitectura 🌉", "index.html#autotoc_md8", null ]
     ] ],
-    [ "readme", "md__home_andres_git_microservices_abfReader_readme.html", null ],
+    [ "readme", "md__home_aleyi_edf_microservices_abfReader_readme.html", null ],
     [ "Arquitectura", "Arquitectura.html", [
       [ "Vista lógica", "Arquitectura.html#logico", null ],
       [ "Vista de procesos", "Arquitectura.html#procesos", null ],
       [ "Vista de desarrollo", "Arquitectura.html#desarrollo", null ],
       [ "Vista de despliegue", "Arquitectura.html#despliegue", null ]
+    ] ],
+    [ "Configuración de Kubernetes para la aplicación SPOK", "kubernetes.html", [
+      [ "Requisitos", "kubernetes.html#requisitos", null ],
+      [ "Instalación de Istio en el clúster", "kubernetes.html#istio", null ],
+      [ "Instalación de KEDA", "kubernetes.html#keda", null ],
+      [ "Despliegue de la Aplicación", "kubernetes.html#desplieguespok", null ],
+      [ "Configuración de Archivos", "kubernetes.html#clon", null ]
     ] ],
     [ "Microservicios", "TableOFContents.html", [
       [ "Wavelet transform", "TableOFContents.html#microservicioCWT", null ],
@@ -55,7 +62,7 @@ var NAVTREE =
       [ "First difference", "TableOFContents.html#microservicioFirstDiff", null ],
       [ "Running Sum", "TableOFContents.html#microservicioRunnSum", null ]
     ] ],
-    [ "readme", "md__home_andres_git_microservices_matReader_readme.html", null ],
+    [ "readme", "md__home_aleyi_edf_microservices_matReader_readme.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

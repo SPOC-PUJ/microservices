@@ -1,0 +1,21 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+ name: movingaverageserver
+ namespace: default
+spec:
+ scaleTargetRef:
+   kind: Deployment
+   name: movingaverageserver
+ minReplicaCount: 1
+ maxReplicaCount: 5
+ cooldownPeriod: 30
+ pollingInterval: 1
+ triggers:
+ - type: prometheus
+   metadata:
+     serverAddress: http://prometheus.istio-system.svc.cluster.local:9090
+     metricName: istio_requests_total_keda
+     query: |
+       sum(rate(istio_requests_total{destination_app="movingaverageserver", reporter="destination"}[2m]))
+     threshold: "0.13"
