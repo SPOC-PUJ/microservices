@@ -43,7 +43,8 @@ class MatServiceServicer(mat_service_pb2_grpc.MatServiceServicer):
                 return mat_service_pb2.MatResponse()
 
             data = mat_data[field]
-            print(data)
+            #print(data)
+            data = data.T
             matrix_list = data.tolist()
 
             vectors = [mat_service_pb2.Vector(numbers=row) for row in matrix_list]
