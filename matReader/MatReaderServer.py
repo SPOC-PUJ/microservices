@@ -29,7 +29,7 @@ class MatServiceServicer(mat_service_pb2_grpc.MatServiceServicer):
     #
     #  @exception FileNotFoundError Raised if the specified field is not found in the MAT file.
     def readMat(self, request, context):
-        temp_file = "temp.mat"
+        temp_file = "/temp/temp.mat"
 
         try:
             with open(temp_file, "wb") as f:
