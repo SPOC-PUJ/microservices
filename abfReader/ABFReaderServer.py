@@ -30,7 +30,7 @@ class ABFServiceServicer(abf_service_pb2_grpc.ABFServiceServicer):
     def readAbf(self, request, context):
         # Guardar temporalmente el archivo ABF recibido
         print("mensaje recibido")
-        temp_file = "temp.abf"
+        temp_file = "/temp/temp.abf"
         
         try:
             with open(temp_file, "wb") as f:
