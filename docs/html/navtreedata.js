@@ -36,7 +36,6 @@ var NAVTREE =
       ] ],
       [ "Arquitectura 🌉", "index.html#autotoc_md8", null ]
     ] ],
-    [ "readme", "md__home_aleyi_edf_microservices_abfReader_readme.html", null ],
     [ "Arquitectura", "Arquitectura.html", [
       [ "Vista lógica", "Arquitectura.html#logico", null ],
       [ "Vista de procesos", "Arquitectura.html#procesos", null ],
@@ -62,7 +61,6 @@ var NAVTREE =
       [ "First difference", "TableOFContents.html#microservicioFirstDiff", null ],
       [ "Running Sum", "TableOFContents.html#microservicioRunnSum", null ]
     ] ],
-    [ "readme", "md__home_aleyi_edf_microservices_matReader_readme.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
