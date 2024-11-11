@@ -1,0 +1,121 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}SPOK microservices Documentation}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Descripción Breve 🤗}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Características 🧠}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Tabla de Contenidos 🧾}{1}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Uso 🔬}{1}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}1. Subir un archivo EEG}{1}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}2. Seleccionar un análisis}{2}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}3. Visualizar los resultados}{2}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Arquitectura 🌉}{2}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Arquitectura}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Vista lógica}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Vista de procesos}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Vista de desarrollo}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Vista de despliegue}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Configuración de Kubernetes para la aplicación SPOK}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requisitos}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Instalación de Istio en el clúster}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Instalación de KEDA}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Despliegue de la Aplicación}{6}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Configuración de Archivos}{6}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Microservicios}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Wavelet transform}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Signals Average}{7}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Fourier trasnform}{7}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Inverser Fourier transform}{7}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Wavelet Descomposition}{7}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Moving averge filter}{7}{section.4.6}%
+\contentsline {section}{\numberline {4.7}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ABF reader}{8}{section.4.7}%
+\contentsline {section}{\numberline {4.8}.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mat reader}{8}{section.4.8}%
+\contentsline {section}{\numberline {4.9}First difference}{8}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Running Sum}{8}{section.4.10}%
+\contentsline {chapter}{\numberline {5}Module Index}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Modules}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Hierarchical Index}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Class Hierarchy}{11}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Class Index}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Class List}{13}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Module Documentation}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}ABF Reader}{15}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Detailed Description}{15}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Function Documentation}{15}{subsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.1}readAbf()}{15}{subsubsection.8.1.2.1}%
+\contentsline {section}{\numberline {8.2}Microservicio CWT}{16}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Detailed Description}{17}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Function Documentation}{17}{subsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.2.1}ComputeCWT()}{17}{subsubsection.8.2.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2.2}CWTEigen()}{18}{subsubsection.8.2.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.2.3}FFTconvolveEigen()}{19}{subsubsection.8.2.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.2.4}GenerateLogScales()}{20}{subsubsection.8.2.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.2.5}MorletWavelet()}{21}{subsubsection.8.2.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.2.6}ZeroPadGivenSize()}{22}{subsubsection.8.2.2.6}%
+\contentsline {section}{\numberline {8.3}Fast Wavelet Transform}{22}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Detailed Description}{23}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Function Documentation}{23}{subsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.2.1}ComputeFastWaveletTransform()}{23}{subsubsection.8.3.2.1}%
+\contentsline {subsubsection}{\numberline {8.3.2.2}FastWaveletTransform()}{24}{subsubsection.8.3.2.2}%
+\contentsline {subsubsection}{\numberline {8.3.2.3}FastWaveletTransformAux()}{25}{subsubsection.8.3.2.3}%
+\contentsline {subsubsection}{\numberline {8.3.2.4}FFTconvolveEigen()}{26}{subsubsection.8.3.2.4}%
+\contentsline {subsubsection}{\numberline {8.3.2.5}ZeroPadGivenSize()}{27}{subsubsection.8.3.2.5}%
+\contentsline {section}{\numberline {8.4}Fourier Transform Microservice}{27}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Detailed Description}{28}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Function Documentation}{28}{subsection.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.4.2.1}ComputeFFT()}{29}{subsubsection.8.4.2.1}%
+\contentsline {subsubsection}{\numberline {8.4.2.2}FFTEigen()}{29}{subsubsection.8.4.2.2}%
+\contentsline {section}{\numberline {8.5}First Difference Microservice}{30}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Detailed Description}{31}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Function Documentation}{31}{subsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.2.1}ComputeFirstDifference()}{31}{subsubsection.8.5.2.1}%
+\contentsline {subsubsection}{\numberline {8.5.2.2}FirstDifference()}{32}{subsubsection.8.5.2.2}%
+\contentsline {section}{\numberline {8.6}Inverse Fourier Transform Microservice}{32}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Detailed Description}{33}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}Function Documentation}{33}{subsection.8.6.2}%
+\contentsline {subsubsection}{\numberline {8.6.2.1}ComputeIFFT()}{33}{subsubsection.8.6.2.1}%
+\contentsline {subsubsection}{\numberline {8.6.2.2}IFFTEigen()}{34}{subsubsection.8.6.2.2}%
+\contentsline {section}{\numberline {8.7}MAT Reader}{34}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Detailed Description}{35}{subsection.8.7.1}%
+\contentsline {subsection}{\numberline {8.7.2}Function Documentation}{35}{subsection.8.7.2}%
+\contentsline {subsubsection}{\numberline {8.7.2.1}readMat()}{35}{subsubsection.8.7.2.1}%
+\contentsline {section}{\numberline {8.8}Moving Average Microservice}{36}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Detailed Description}{37}{subsection.8.8.1}%
+\contentsline {subsection}{\numberline {8.8.2}Function Documentation}{37}{subsection.8.8.2}%
+\contentsline {subsubsection}{\numberline {8.8.2.1}ComputeMovingAverage()}{37}{subsubsection.8.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.8.2.2}MovingAverage()}{38}{subsubsection.8.8.2.2}%
+\contentsline {section}{\numberline {8.9}Running Sum Microservice}{38}{section.8.9}%
+\contentsline {subsection}{\numberline {8.9.1}Detailed Description}{39}{subsection.8.9.1}%
+\contentsline {subsection}{\numberline {8.9.2}Function Documentation}{39}{subsection.8.9.2}%
+\contentsline {subsubsection}{\numberline {8.9.2.1}ComputeRuningSum()}{40}{subsubsection.8.9.2.1}%
+\contentsline {subsubsection}{\numberline {8.9.2.2}RuningSum()}{40}{subsubsection.8.9.2.2}%
+\contentsline {section}{\numberline {8.10}Signals Average Microservice}{41}{section.8.10}%
+\contentsline {subsection}{\numberline {8.10.1}Detailed Description}{42}{subsection.8.10.1}%
+\contentsline {subsection}{\numberline {8.10.2}Function Documentation}{42}{subsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.1}ComputeAverage()}{42}{subsubsection.8.10.2.1}%
+\contentsline {subsubsection}{\numberline {8.10.2.2}SignalsAverge()}{43}{subsubsection.8.10.2.2}%
+\contentsline {chapter}{\numberline {9}Class Documentation}{45}{chapter.9}%
+\contentsline {section}{\numberline {9.1}abf\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ABFService Class Reference}{45}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Detailed Description}{46}{subsection.9.1.1}%
+\contentsline {section}{\numberline {9.2}abf\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ABFService\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Servicer Class Reference}{46}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}Detailed Description}{47}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}Member Function Documentation}{47}{subsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.2.1}readAbf()}{47}{subsubsection.9.2.2.1}%
+\contentsline {section}{\numberline {9.3}ABFReader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ABFService\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Servicer Class Reference}{48}{section.9.3}%
+\contentsline {subsection}{\numberline {9.3.1}Detailed Description}{49}{subsection.9.3.1}%
+\contentsline {section}{\numberline {9.4}abf\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ABFService\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stub Class Reference}{49}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Detailed Description}{50}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Constructor \& Destructor Documentation}{50}{subsection.9.4.2}%
+\contentsline {subsubsection}{\numberline {9.4.2.1}\_\_init\_\_()}{50}{subsubsection.9.4.2.1}%
+\contentsline {section}{\numberline {9.5}mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service Class Reference}{51}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Detailed Description}{51}{subsection.9.5.1}%
+\contentsline {section}{\numberline {9.6}mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Servicer Class Reference}{52}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Detailed Description}{52}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Member Function Documentation}{53}{subsection.9.6.2}%
+\contentsline {subsubsection}{\numberline {9.6.2.1}readMat()}{53}{subsubsection.9.6.2.1}%
+\contentsline {section}{\numberline {9.7}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Reader\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Server.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Servicer Class Reference}{53}{section.9.7}%
+\contentsline {subsection}{\numberline {9.7.1}Detailed Description}{54}{subsection.9.7.1}%
+\contentsline {section}{\numberline {9.8}mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}pb2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}grpc.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Stub Class Reference}{55}{section.9.8}%
+\contentsline {subsection}{\numberline {9.8.1}Detailed Description}{55}{subsection.9.8.1}%
+\contentsline {subsection}{\numberline {9.8.2}Constructor \& Destructor Documentation}{56}{subsection.9.8.2}%
+\contentsline {subsubsection}{\numberline {9.8.2.1}\_\_init\_\_()}{56}{subsubsection.9.8.2.1}%
+\contentsline {section}{\numberline {9.9}Signal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Impl Class Reference}{56}{section.9.9}%
+\contentsline {subsection}{\numberline {9.9.1}Detailed Description}{58}{subsection.9.9.1}%

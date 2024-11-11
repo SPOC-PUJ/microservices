@@ -1,0 +1,77 @@
+\indexentry{ABF Reader@{ABF Reader}|hyperpage}{15}
+\indexentry{ABF Reader@{ABF Reader}!readAbf@{readAbf}|hyperpage}{15}
+\indexentry{readAbf@{readAbf}!ABF Reader@{ABF Reader}|hyperpage}{15}
+\indexentry{Microservicio CWT@{Microservicio CWT}|hyperpage}{16}
+\indexentry{Microservicio CWT@{Microservicio CWT}!ComputeCWT@{ComputeCWT}|hyperpage}{17}
+\indexentry{ComputeCWT@{ComputeCWT}!Microservicio CWT@{Microservicio CWT}|hyperpage}{17}
+\indexentry{Microservicio CWT@{Microservicio CWT}!CWTEigen@{CWTEigen}|hyperpage}{18}
+\indexentry{CWTEigen@{CWTEigen}!Microservicio CWT@{Microservicio CWT}|hyperpage}{18}
+\indexentry{Microservicio CWT@{Microservicio CWT}!FFTconvolveEigen@{FFTconvolveEigen}|hyperpage}{19}
+\indexentry{FFTconvolveEigen@{FFTconvolveEigen}!Microservicio CWT@{Microservicio CWT}|hyperpage}{19}
+\indexentry{Microservicio CWT@{Microservicio CWT}!GenerateLogScales@{GenerateLogScales}|hyperpage}{19}
+\indexentry{GenerateLogScales@{GenerateLogScales}!Microservicio CWT@{Microservicio CWT}|hyperpage}{19}
+\indexentry{Microservicio CWT@{Microservicio CWT}!MorletWavelet@{MorletWavelet}|hyperpage}{21}
+\indexentry{MorletWavelet@{MorletWavelet}!Microservicio CWT@{Microservicio CWT}|hyperpage}{21}
+\indexentry{Microservicio CWT@{Microservicio CWT}!ZeroPadGivenSize@{ZeroPadGivenSize}|hyperpage}{21}
+\indexentry{ZeroPadGivenSize@{ZeroPadGivenSize}!Microservicio CWT@{Microservicio CWT}|hyperpage}{21}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{22}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}!ComputeFastWaveletTransform@{ComputeFastWaveletTransform}|hyperpage}{23}
+\indexentry{ComputeFastWaveletTransform@{ComputeFastWaveletTransform}!Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{23}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}!FastWaveletTransform@{FastWaveletTransform}|hyperpage}{24}
+\indexentry{FastWaveletTransform@{FastWaveletTransform}!Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{24}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}!FastWaveletTransformAux@{FastWaveletTransformAux}|hyperpage}{25}
+\indexentry{FastWaveletTransformAux@{FastWaveletTransformAux}!Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{25}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}!FFTconvolveEigen@{FFTconvolveEigen}|hyperpage}{26}
+\indexentry{FFTconvolveEigen@{FFTconvolveEigen}!Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{26}
+\indexentry{Fast Wavelet Transform@{Fast Wavelet Transform}!ZeroPadGivenSize@{ZeroPadGivenSize}|hyperpage}{27}
+\indexentry{ZeroPadGivenSize@{ZeroPadGivenSize}!Fast Wavelet Transform@{Fast Wavelet Transform}|hyperpage}{27}
+\indexentry{Fourier Transform Microservice@{Fourier Transform Microservice}|hyperpage}{27}
+\indexentry{Fourier Transform Microservice@{Fourier Transform Microservice}!ComputeFFT@{ComputeFFT}|hyperpage}{28}
+\indexentry{ComputeFFT@{ComputeFFT}!Fourier Transform Microservice@{Fourier Transform Microservice}|hyperpage}{28}
+\indexentry{Fourier Transform Microservice@{Fourier Transform Microservice}!FFTEigen@{FFTEigen}|hyperpage}{29}
+\indexentry{FFTEigen@{FFTEigen}!Fourier Transform Microservice@{Fourier Transform Microservice}|hyperpage}{29}
+\indexentry{First Difference Microservice@{First Difference Microservice}|hyperpage}{30}
+\indexentry{First Difference Microservice@{First Difference Microservice}!ComputeFirstDifference@{ComputeFirstDifference}|hyperpage}{31}
+\indexentry{ComputeFirstDifference@{ComputeFirstDifference}!First Difference Microservice@{First Difference Microservice}|hyperpage}{31}
+\indexentry{First Difference Microservice@{First Difference Microservice}!FirstDifference@{FirstDifference}|hyperpage}{31}
+\indexentry{FirstDifference@{FirstDifference}!First Difference Microservice@{First Difference Microservice}|hyperpage}{31}
+\indexentry{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}|hyperpage}{32}
+\indexentry{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}!ComputeIFFT@{ComputeIFFT}|hyperpage}{33}
+\indexentry{ComputeIFFT@{ComputeIFFT}!Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}|hyperpage}{33}
+\indexentry{Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}!IFFTEigen@{IFFTEigen}|hyperpage}{34}
+\indexentry{IFFTEigen@{IFFTEigen}!Inverse Fourier Transform Microservice@{Inverse Fourier Transform Microservice}|hyperpage}{34}
+\indexentry{MAT Reader@{MAT Reader}|hyperpage}{34}
+\indexentry{MAT Reader@{MAT Reader}!readMat@{readMat}|hyperpage}{35}
+\indexentry{readMat@{readMat}!MAT Reader@{MAT Reader}|hyperpage}{35}
+\indexentry{Moving Average Microservice@{Moving Average Microservice}|hyperpage}{36}
+\indexentry{Moving Average Microservice@{Moving Average Microservice}!ComputeMovingAverage@{ComputeMovingAverage}|hyperpage}{37}
+\indexentry{ComputeMovingAverage@{ComputeMovingAverage}!Moving Average Microservice@{Moving Average Microservice}|hyperpage}{37}
+\indexentry{Moving Average Microservice@{Moving Average Microservice}!MovingAverage@{MovingAverage}|hyperpage}{37}
+\indexentry{MovingAverage@{MovingAverage}!Moving Average Microservice@{Moving Average Microservice}|hyperpage}{37}
+\indexentry{Running Sum Microservice@{Running Sum Microservice}|hyperpage}{38}
+\indexentry{Running Sum Microservice@{Running Sum Microservice}!ComputeRuningSum@{ComputeRuningSum}|hyperpage}{39}
+\indexentry{ComputeRuningSum@{ComputeRuningSum}!Running Sum Microservice@{Running Sum Microservice}|hyperpage}{39}
+\indexentry{Running Sum Microservice@{Running Sum Microservice}!RuningSum@{RuningSum}|hyperpage}{40}
+\indexentry{RuningSum@{RuningSum}!Running Sum Microservice@{Running Sum Microservice}|hyperpage}{40}
+\indexentry{Signals Average Microservice@{Signals Average Microservice}|hyperpage}{41}
+\indexentry{Signals Average Microservice@{Signals Average Microservice}!ComputeAverage@{ComputeAverage}|hyperpage}{42}
+\indexentry{ComputeAverage@{ComputeAverage}!Signals Average Microservice@{Signals Average Microservice}|hyperpage}{42}
+\indexentry{Signals Average Microservice@{Signals Average Microservice}!SignalsAverge@{SignalsAverge}|hyperpage}{42}
+\indexentry{SignalsAverge@{SignalsAverge}!Signals Average Microservice@{Signals Average Microservice}|hyperpage}{42}
+\indexentry{abf\_service\_pb2\_grpc.ABFService@{abf\_service\_pb2\_grpc.ABFService}|hyperpage}{45}
+\indexentry{abf\_service\_pb2\_grpc.ABFServiceServicer@{abf\_service\_pb2\_grpc.ABFServiceServicer}|hyperpage}{46}
+\indexentry{abf\_service\_pb2\_grpc.ABFServiceServicer@{abf\_service\_pb2\_grpc.ABFServiceServicer}!readAbf@{readAbf}|hyperpage}{47}
+\indexentry{readAbf@{readAbf}!abf\_service\_pb2\_grpc.ABFServiceServicer@{abf\_service\_pb2\_grpc.ABFServiceServicer}|hyperpage}{47}
+\indexentry{ABFReaderServer.ABFServiceServicer@{ABFReaderServer.ABFServiceServicer}|hyperpage}{48}
+\indexentry{abf\_service\_pb2\_grpc.ABFServiceStub@{abf\_service\_pb2\_grpc.ABFServiceStub}|hyperpage}{49}
+\indexentry{abf\_service\_pb2\_grpc.ABFServiceStub@{abf\_service\_pb2\_grpc.ABFServiceStub}!\_\_init\_\_@{\_\_init\_\_}|hyperpage}{50}
+\indexentry{\_\_init\_\_@{\_\_init\_\_}!abf\_service\_pb2\_grpc.ABFServiceStub@{abf\_service\_pb2\_grpc.ABFServiceStub}|hyperpage}{50}
+\indexentry{mat\_service\_pb2\_grpc.MatService@{mat\_service\_pb2\_grpc.MatService}|hyperpage}{51}
+\indexentry{mat\_service\_pb2\_grpc.MatServiceServicer@{mat\_service\_pb2\_grpc.MatServiceServicer}|hyperpage}{52}
+\indexentry{mat\_service\_pb2\_grpc.MatServiceServicer@{mat\_service\_pb2\_grpc.MatServiceServicer}!readMat@{readMat}|hyperpage}{53}
+\indexentry{readMat@{readMat}!mat\_service\_pb2\_grpc.MatServiceServicer@{mat\_service\_pb2\_grpc.MatServiceServicer}|hyperpage}{53}
+\indexentry{MatReaderServer.MatServiceServicer@{MatReaderServer.MatServiceServicer}|hyperpage}{53}
+\indexentry{mat\_service\_pb2\_grpc.MatServiceStub@{mat\_service\_pb2\_grpc.MatServiceStub}|hyperpage}{55}
+\indexentry{mat\_service\_pb2\_grpc.MatServiceStub@{mat\_service\_pb2\_grpc.MatServiceStub}!\_\_init\_\_@{\_\_init\_\_}|hyperpage}{56}
+\indexentry{\_\_init\_\_@{\_\_init\_\_}!mat\_service\_pb2\_grpc.MatServiceStub@{mat\_service\_pb2\_grpc.MatServiceStub}|hyperpage}{56}
+\indexentry{SignalServiceImpl@{SignalServiceImpl}|hyperpage}{56}
